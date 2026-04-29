@@ -55,7 +55,7 @@ body {
   pointer-events: none;
 }
 
-.nav-back {
+.nav-back { text-decoration: none !important; color: var(--muted) !important;
   position: absolute;
   top: 32px;
   left: 32px;
@@ -529,8 +529,34 @@ footer {
   .format-row { grid-template-columns: 1fr 1fr; }
   .transform-grid { grid-template-columns: 1fr; }
   .for-list { grid-template-columns: 1fr; }
-  .nav-back { top: 20px; left: 20px; }
+  .nav-back { text-decoration: none !important; color: var(--muted) !important; top: 20px; left: 20px; }
   section { padding: 80px 20px; }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 480px) {
+  section { padding: 60px 20px !important; }
+  .hero { padding: 80px 20px 60px !important; }
+  .nav-back { text-decoration: none !important; color: var(--muted) !important; top: 16px; left: 16px; font-size: 11px; }
+  h1, .hero-title { font-size: clamp(42px, 12vw, 72px) !important; }
+  .cta-primary, .cta-primary.solid { 
+    display: block; width: 100%; text-align: center; 
+    padding: 18px 20px; font-size: 12px;
+  }
+  .cta-secondary { display: block; width: 100%; text-align: center; padding: 16px 20px; }
+  .hero-ctas { flex-direction: column; gap: 12px; }
+  .price-card { padding: 40px 24px; }
+  .price-value { font-size: 64px; }
+  .format-grid, .problem-grid, .pillars-grid { grid-template-columns: 1fr !important; }
+  .for-grid { grid-template-columns: 1fr !important; }
+  .what-content, .what-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .process-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .tf-comparison { grid-template-columns: 1fr !important; }
+  .tf-center { display: none !important; }
+  .format-row, .format-strip { flex-direction: column !important; }
+  .transform-grid { grid-template-columns: 1fr !important; }
+  .for-list { grid-template-columns: 1fr !important; }
+  .card-featured .card-inner { flex-direction: column !important; }
 }
 </style>
 </head>
@@ -538,7 +564,7 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-  <a href="https://claudioalecrim.com.br" class="nav-back">Voltar ao site</a>
+  
   
   <p class="hero-eyebrow">Claudio Alecrim · Mentoria Individual</p>
   <span class="hero-cross">†</span>
@@ -590,7 +616,7 @@ footer {
       </div>
       
       <div class="what-pillars">
-        <img src="https://claudioalecrim.com.br/fotos/7.jpeg" alt="Claudio Alecrim" style="width:100%; height:320px; object-fit:cover; object-position:top; display:block; margin-bottom:2px; filter:grayscale(15%);">
+        
         <div class="pillar">
           <h3 class="pillar-title">Maturidade Espiritual</h3>
           <p class="pillar-text">Saindo da infância espiritual e construindo uma fé adulta, racional e consistente.</p>
@@ -701,10 +727,6 @@ footer {
 
 <!-- CTA FINAL -->
 <section class="final-cta">
-  <div style="max-width:900px; margin:0 auto 60px; display:grid; grid-template-columns:1fr 1fr; gap:2px;">
-    <img src="https://claudioalecrim.com.br/fotos/14.jpeg" alt="Claudio Alecrim" style="width:100%; height:400px; object-fit:cover; object-position:top; display:block; filter:grayscale(15%);">
-    <img src="https://claudioalecrim.com.br/fotos/7.jpeg" alt="Claudio Alecrim" style="width:100%; height:400px; object-fit:cover; object-position:top 20%; display:block; filter:grayscale(15%);">
-  </div>
   <div class="container fade-in">
     <p class="section-label">Próximo passo</p>
     <h2 class="section-title">O fundamento que muda tudo começa aqui.</h2>
@@ -722,10 +744,10 @@ footer {
   <p class="footer-name">Claudio Alecrim</p>
   <p class="footer-sub">Mentor de Homens</p>
   <div class="footer-links">
-    <a href="https://claudioalecrim.com.br">Site principal</a>
-    <a href="https://claudioalecrim.com.br/governopessoal">Governo Pessoal</a>
-    <a href="https://claudioalecrim.com.br/mesadoreino">Mesa do Reino</a>
-    <a href="https://claudioalecrim.com.br/mesadegoverno">Mesa de Governo</a>
+    <a href="/>Site principal</a>
+    <a href="/governopessoal">Governo Pessoal</a>
+    <a href="/mesadoreino">Mesa do Reino</a>
+    <a href="/mesadegoverno">Mesa de Governo</a>
     <a href="https://wa.me/5543996694899?text=Olá Claudio, quero conversar">WhatsApp</a>
   </div>
 </footer>
