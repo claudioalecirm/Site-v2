@@ -651,6 +651,29 @@ footer {
   .stats-row { gap: 40px; }
   footer { flex-direction: column; text-align: center; padding: 40px 24px; }
 }
+
+/* ── MOBILE FIRST REFORÇO ── */
+@media (max-width: 480px) {
+  nav { padding: 0 16px; height: 64px; }
+  .nav-brand { font-size: 15px; }
+  .hero { padding: 90px 20px 60px; gap: 32px; }
+  .hero-title { font-size: 48px; }
+  .hero-body { font-size: 15px; }
+  .hero-ctas { flex-direction: column; gap: 12px; }
+  .btn-gold, .btn-ghost { width: 100%; text-align: center; padding: 16px 24px; }
+  .hero-image img { max-width: 260px; height: 340px; }
+  .stats-row { gap: 24px; }
+  .stat-val { font-size: 32px; }
+  .mentorias, .sobre, .cta-final { padding: 60px 20px; }
+  .section-title { font-size: 30px; }
+  .card-inner { padding: 36px 24px; min-height: auto; }
+  .card-title { font-size: 30px; }
+  .card-featured .card-inner { padding: 36px 24px; min-height: auto; }
+  .sobre-img img { max-width: 100%; aspect-ratio: 4/5; }
+  .sobre-quote { padding: 24px 28px; font-size: 17px; }
+  .footer-links { gap: 16px; }
+  .footer-links a { font-size: 13px; }
+}
 </style>
 </head>
 <body>
@@ -664,7 +687,7 @@ footer {
   <ul class="nav-links">
     <li><a href="#mentorias">Mentorias</a></li>
     <li><a href="#sobre">Sobre</a></li>
-    <li><a href="https://claudioalecrim.com.br/mesadegoverno">Mesa de Governo</a></li>
+    <li><a href="/mesadegoverno">Mesa de Governo</a></li>
     <li><a href="https://wa.me/5543996694899?text=Olá Claudio, quero conversar" class="nav-cta">Falar com Claudio</a></li>
   </ul>
 </nav>
@@ -740,7 +763,7 @@ footer {
           <span class="card-meta-item">Individual</span>
           <span class="card-meta-item">Online ou presencial</span>
         </div>
-        <a href="https://claudioalecrim.com.br/homemespiritual" class="card-cta">Conhecer a mentoria</a>
+        <a href="/homemespiritual" class="card-cta">Conhecer a mentoria</a>
       </div>
     </div>
     
@@ -758,7 +781,7 @@ footer {
           <span class="card-meta-item">Individual</span>
           <span class="card-meta-item">Online ou presencial</span>
         </div>
-        <a href="https://claudioalecrim.com.br/governopessoal" class="card-cta">Conhecer a mentoria</a>
+        <a href="/governopessoal" class="card-cta">Conhecer a mentoria</a>
       </div>
     </div>
     
@@ -778,7 +801,7 @@ footer {
             <span class="card-meta-item">Zoom · Online</span>
             <span class="card-meta-item">Grupo fechado</span>
           </div>
-          <a href="https://claudioalecrim.com.br/mesadoreino" class="card-cta">Conhecer a Mesa do Reino</a>
+          <a href="/mesadoreino" class="card-cta">Conhecer a Mesa do Reino</a>
         </div>
         <div class="card-featured-right">
           <div class="card-price-badge">
@@ -800,10 +823,10 @@ footer {
           <p class="card-title-sub" style="color: #3a8fd6;">Governo</p>
           <div class="card-sep" style="background: #1a3d5c;"></div>
           <p class="card-desc">O programa mais intenso para homens que querem governar a própria vida com excelência. Novas turmas em breve — entre na fila de espera para ser avisado primeiro.</p>
-          <a href="https://claudioalecrim.com.br/mesadegoverno" class="card-cta" style="color: #3a8fd6;">Ver detalhes e fila de espera</a>
+          <a href="/mesadegoverno" class="card-cta" style="color: #3a8fd6;">Ver detalhes e fila de espera</a>
         </div>
         <div class="card-featured-right" style="flex: 0 0 280px; text-align: center;">
-          <a href="https://claudioalecrim.com.br/mesadegoverno" class="btn-ghost" style="border-color: #1a3d5c; color: #3a8fd6; font-size: 11px; padding: 14px 32px; display: inline-block;">Entrar na fila</a>
+          <a href="/mesadegoverno" class="btn-ghost" style="border-color: #1a3d5c; color: #3a8fd6; font-size: 11px; padding: 14px 32px; display: inline-block;">Entrar na fila</a>
         </div>
       </div>
     </div>
@@ -852,10 +875,10 @@ footer {
     <span>Mentor de Homens</span>
   </div>
   <div class="footer-links">
-    <a href="https://claudioalecrim.com.br/homemespiritual">Homem Espiritual</a>
-    <a href="https://claudioalecrim.com.br/governopessoal">Governo Pessoal</a>
-    <a href="https://claudioalecrim.com.br/mesadoreino">Mesa do Reino</a>
-    <a href="https://claudioalecrim.com.br/mesadegoverno">Mesa de Governo</a>
+    <a href="/homemespiritual">Homem Espiritual</a>
+    <a href="/governopessoal">Governo Pessoal</a>
+    <a href="/mesadoreino">Mesa do Reino</a>
+    <a href="/mesadegoverno">Mesa de Governo</a>
     <a href="https://wa.me/5543996694899?text=Olá Claudio, quero conversar">WhatsApp</a>
   </div>
 </footer>
