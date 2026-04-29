@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compra Confirmada — Claudio Alecrim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #0a0a0a;
+      color: #f0ece4;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      color: #c8a97a;
+      font-weight: 500;
+      letter-spacing: .05em;
+      margin-bottom: 6px;
+    }
+
+    .logo-sub {
+      font-size: 10px;
+      color: #5a5550;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      margin-bottom: 48px;
+    }
+
+    .card {
+      background: #111;
+      border: .5px solid rgba(200,169,122,.2);
+      border-radius: 16px;
+      padding: 40px 32px;
+      margin-bottom: 20px;
+    }
+
+    .check {
+      width: 64px;
+      height: 64px;
+      background: rgba(100,200,100,.1);
+      border: 1.5px solid rgba(100,200,100,.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 28px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 500;
+      color: #f0ece4;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #9a9590;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .steps {
+      text-align: left;
+      margin-bottom: 32px;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: .5px solid rgba(255,255,255,.06);
+    }
+
+    .step:last-child { border-bottom: none; }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      background: rgba(200,169,122,.12);
+      border: .5px solid rgba(200,169,122,.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #c8a97a;
+      font-weight: 500;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step-text {
+      font-size: 13px;
+      color: #9a9590;
+      line-height: 1.6;
+    }
+
+    .step-text strong { color: #f0ece4; font-weight: 500; }
+
+    .highlight {
+      background: rgba(200,169,122,.06);
+      border: .5px solid rgba(200,169,122,.15);
+      border-radius: 10px;
+      padding: 16px 18px;
+      font-size: 13px;
+      color: #9a9590;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .highlight strong { color: #c8a97a; }
+
+    footer {
+      font-size: 11px;
+      color: #3a3530;
+      margin-top: 24px;
+    }
+
+    footer a { color: #5a5550; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">Claudio Alecrim</div>
+    <div class="logo-sub">Portal de Mentoria</div>
+
+    <div class="card">
+      <div class="check">✓</div>
+
+      <h1>Pagamento confirmado!</h1>
+
+      <p class="subtitle">
+        Sua compra foi processada com sucesso.<br/>
+        Agora siga os passos abaixo para acessar o portal.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <strong>Verifique seu email</strong><br/>
+            Em instantes você receberá um email com o link para criar suas credenciais de acesso ao portal de mentoria.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <strong>Preencha o formulário</strong><br/>
+            Clique no link do email e preencha o alinhamento de expectativas. Isso leva menos de 5 minutos e é fundamental para personalizar o seu processo.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <strong>Crie sua senha e acesse</strong><br/>
+            Na última etapa do formulário você define sua senha. Após isso, seu portal estará disponível em:
+            <strong style="display:block;margin-top:6px;color:#c8a97a">dash.claudioalecrim.com.br</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight">
+        📧 Não encontrou o email? Verifique sua caixa de spam ou lixo eletrônico.<br/>
+        Se precisar de ajuda, entre em contato: <strong>claudioalecrim@icloud.com</strong>
+      </div>
+    </div>
+
+    <footer>
+      © Claudio Alecrim · <a href="https://claudioalecrim.com.br">claudioalecrim.com.br</a>
+    </footer>
+  </div>
+</body>
+</html>
