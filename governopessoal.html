@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Governo Pessoal — Claudio Alecrim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080c10;
+  --bg-2: #0d1117;
+  --bg-3: #141921;
+  --bg-4: #1c2330;
+  --blue: #2a6496;
+  --blue-bright: #3a8fd6;
+  --blue-dim: #1a3d5c;
+  --steel: #8fafc8;
+  --cream: #dce8f0;
+  --text: #8a9fb5;
+  --muted: #4a6070;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 100px 8% 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(42,100,150,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: 'GOVERNO';
+  position: absolute;
+  top: 50%;
+  right: -80px;
+  transform: translateY(-50%) rotate(90deg);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(80px, 12vw, 160px);
+  font-weight: 900;
+  color: rgba(42,100,150,0.04);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: 0.05em;
+}
+
+.nav-back {
+  position: absolute;
+  top: 36px;
+  left: 8%;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-back:hover { color: var(--blue-bright); }
+.nav-back::before { content: '←'; }
+
+.hero-tag {
+  display: inline-block;
+  background: rgba(42,100,150,0.15);
+  border: 1px solid rgba(42,100,150,0.3);
+  color: var(--blue-bright);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: slideIn 0.8s 0.2s forwards;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(52px, 9vw, 108px);
+  font-weight: 900;
+  line-height: 0.95;
+  color: var(--cream);
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: slideIn 0.8s 0.4s forwards;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--blue-bright);
+  display: block;
+}
+
+.hero-divider {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(to right, var(--blue-bright), transparent);
+  margin: 32px 0;
+  opacity: 0;
+  animation: slideIn 0.8s 0.6s forwards;
+}
+
+.hero-sub {
+  font-size: clamp(16px, 2.2vw, 20px);
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text);
+  max-width: 560px;
+  margin-bottom: 52px;
+  opacity: 0;
+  animation: slideIn 0.8s 0.8s forwards;
+}
+
+.hero-sub strong { color: var(--cream); font-weight: 500; }
+
+.hero-ctas {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: slideIn 0.8s 1s forwards;
+}
+
+.cta-primary {
+  display: inline-block;
+  background: var(--blue-bright);
+  color: var(--bg);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 17px 44px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.cta-primary:hover {
+  background: var(--cream);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(42,100,150,0.4);
+}
+
+.cta-secondary {
+  display: inline-block;
+  border: 1px solid var(--blue-dim);
+  color: var(--steel);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 17px 40px;
+  transition: all 0.3s;
+}
+.cta-secondary:hover {
+  border-color: var(--blue-bright);
+  color: var(--cream);
+}
+
+/* SECTIONS */
+section { padding: 100px 8%; }
+.container { max-width: 900px; }
+
+.label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--blue-bright);
+  margin-bottom: 20px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4.5vw, 54px);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.title em { font-style: italic; color: var(--blue-bright); }
+
+/* DIAGNOSTICO */
+.diag { background: var(--bg-2); }
+
+.diag-intro {
+  font-size: 17px;
+  line-height: 1.9;
+  color: var(--text);
+  max-width: 700px;
+  margin-bottom: 48px;
+}
+.diag-intro strong { color: var(--cream); font-weight: 500; }
+
+.diag-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+}
+
+.diag-card {
+  background: var(--bg-3);
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+.diag-card:hover { background: var(--bg-4); }
+
+.diag-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--blue-bright);
+  transition: width 0.4s;
+}
+.diag-card:hover::after { width: 100%; }
+
+.diag-icon { font-size: 28px; margin-bottom: 20px; display: block; }
+
+.diag-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 12px;
+}
+
+.diag-text { font-size: 14px; line-height: 1.7; color: var(--text); }
+
+/* O PROCESSO */
+.process { background: var(--bg); }
+
+.process-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-top: 60px;
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step {
+  display: flex;
+  gap: 24px;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  position: relative;
+}
+
+.step:last-child { border-bottom: none; }
+
+.step-num {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--blue-dim);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 52px;
+  transition: color 0.3s;
+}
+
+.step:hover .step-num { color: var(--blue-bright); }
+
+.step-content {}
+.step-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 10px;
+}
+
+.step-text { font-size: 14px; line-height: 1.7; color: var(--text); }
+
+.process-highlight {
+  background: linear-gradient(145deg, var(--bg-3), var(--bg-4));
+  border: 1px solid rgba(42,100,150,0.2);
+  padding: 48px;
+  position: sticky;
+  top: 40px;
+}
+
+.process-highlight::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--blue-bright), transparent);
+}
+
+.highlight-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 24px;
+  line-height: 1.3;
+}
+
+.highlight-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.highlight-list li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+  padding-left: 22px;
+  position: relative;
+}
+
+.highlight-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--blue-bright);
+  font-size: 11px;
+  top: 2px;
+}
+
+/* FORMATO */
+.format { background: var(--bg-2); }
+
+.format-strip {
+  display: flex;
+  gap: 2px;
+  margin-top: 60px;
+}
+
+.fstrip {
+  flex: 1;
+  background: var(--bg-3);
+  padding: 48px 32px;
+  text-align: center;
+  transition: background 0.3s;
+}
+.fstrip:hover { background: var(--bg-4); }
+
+.fstrip-val {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--blue-bright);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.fstrip-lbl {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.fstrip-desc { font-size: 13px; line-height: 1.6; color: var(--text); }
+
+/* TRANSFORMAÇÃO */
+.transformation { background: var(--bg); }
+
+.tf-comparison {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
+  margin-top: 60px;
+  align-items: stretch;
+}
+
+.tf-side {
+  padding: 48px;
+}
+
+.tf-side.left {
+  background: var(--bg-3);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.tf-side.right {
+  background: linear-gradient(135deg, rgba(42,100,150,0.1), rgba(42,100,150,0.04));
+  border: 1px solid rgba(42,100,150,0.2);
+}
+
+.tf-center {
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-2);
+}
+
+.tf-arrow {
+  font-size: 28px;
+  color: var(--blue-dim);
+}
+
+.tf-head {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  display: block;
+}
+
+.tf-side.left .tf-head { color: var(--muted); }
+.tf-side.right .tf-head { color: var(--blue-bright); }
+
+.tf-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tf-items li {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+  padding-left: 20px;
+  position: relative;
+}
+
+.tf-side.left .tf-items li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+}
+
+.tf-side.right .tf-items li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--blue-bright);
+  font-weight: 600;
+}
+
+/* PARA QUEM */
+.for-whom { background: var(--bg-2); }
+
+.for-body {
+  font-size: 17px;
+  line-height: 1.9;
+  color: var(--text);
+  max-width: 680px;
+  margin-bottom: 40px;
+}
+.for-body strong { color: var(--cream); font-weight: 500; }
+
+.for-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.for-item {
+  background: var(--bg-3);
+  padding: 24px 28px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+  border-left: 2px solid transparent;
+  transition: all 0.3s;
+}
+.for-item:hover {
+  background: var(--bg-4);
+  border-left-color: var(--blue-bright);
+  color: var(--cream);
+}
+
+/* CTA FINAL */
+.final { 
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(42,100,150,0.15) 0%, transparent 60%),
+    var(--bg);
+  padding: 120px 8%;
+}
+
+.final-inner {
+  max-width: 700px;
+}
+
+.final-inner .title { margin-bottom: 16px; }
+
+.final-sub {
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+.final-inner .hero-divider { margin: 32px 0; }
+
+.cta-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.cta-note {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.cta-note a { color: var(--blue-bright); text-decoration: none; }
+.cta-note a:hover { color: var(--cream); }
+
+/* FOOTER */
+footer {
+  background: var(--bg-2);
+  padding: 48px 8%;
+  text-align: center;
+  border-top: 1px solid rgba(42,100,150,0.1);
+}
+
+.footer-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 8px;
+}
+
+.footer-sub {
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--blue-bright); }
+
+/* ANIMATIONS */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 900px) {
+  .diag-cards { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr; }
+  .format-strip { flex-direction: column; }
+  .tf-comparison { grid-template-columns: 1fr; }
+  .tf-center { display: none; }
+  .for-grid { grid-template-columns: 1fr; }
+  section { padding: 80px 24px; }
+  .hero { padding: 100px 24px 80px; }
+  .nav-back { left: 24px; }
+  .final { padding: 100px 24px; }
+  footer { padding: 48px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <a href="https://claudioalecrim.com.br" class="nav-back">Voltar ao site</a>
+  
+  <div class="hero-tag">Mentoria Individual · 10 Encontros</div>
+  
+  <h1 class="hero-title">
+    Governo
+    <em>Pessoal</em>
+  </h1>
+  
+  <div class="hero-divider"></div>
+  
+  <p class="hero-sub">
+    Para o homem que está cansado de <strong>saber o que fazer</strong> e continuar não fazendo.<br>
+    Um acompanhamento personalizado do ponto A ao B — sem enrolação.
+  </p>
+  
+  <div class="hero-ctas">
+    <a href="https://pay.kiwify.com.br/VgXxig5" class="cta-primary">Quero começar agora</a>
+    <a href="https://wa.me/5543996694899?text=Olá Claudio, quero saber mais sobre a Mentoria Governo Pessoal" class="cta-secondary">Falar com Claudio</a>
+  </div>
+  <div style="position:absolute; right:0; top:0; bottom:0; width:38%; overflow:hidden; display:none;" class="hero-photo-side">
+    <img src="https://claudioalecrim.com.br/fotos/9.jpeg" alt="Claudio Alecrim" style="width:100%; height:100%; object-fit:cover; object-position:top; filter:grayscale(15%); opacity:0.5;">
+    <div style="position:absolute; inset:0; background:linear-gradient(to right, var(--bg), transparent);"></div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO -->
+<section class="diag">
+  <div class="container fade-in">
+    <p class="label">O problema real</p>
+    <h2 class="title">A estagnação tem nome.<br>Tem endereço. <em>Tem cura.</em></h2>
+    
+    <p class="diag-intro">Não é falta de esforço. Você trabalha. Você tenta. Mas algo <strong>trava antes de chegar lá</strong>. A procrastinação, o sabotador interno, a narrativa que diz que "pra você não vai funcionar" — isso tem raiz, e raiz se trata.</p>
+    
+    <div class="diag-cards">
+      <div class="diag-card">
+        <div style="width:24px;height:2px;background:var(--blue-bright);margin-bottom:20px;"></div>
+        <h3 class="diag-title">Sabotadores</h3>
+        <p class="diag-text">Padrões mentais e comportamentais que interrompem o avanço antes mesmo que você perceba que estão agindo.</p>
+      </div>
+      <div class="diag-card">
+        <div style="width:24px;height:2px;background:var(--blue-bright);margin-bottom:20px;"></div>
+        <h3 class="diag-title">Narrativas Destrutivas</h3>
+        <p class="diag-text">Crenças que você carrega sobre si mesmo, sobre o que merece e o que é possível para a sua vida.</p>
+      </div>
+      <div class="diag-card">
+        <div style="width:24px;height:2px;background:var(--blue-bright);margin-bottom:20px;"></div>
+        <h3 class="diag-title">Travas Emocionais</h3>
+        <p class="diag-text">Feridas e pontos cegos que seguram o homem em ciclos que se repetem, independente de quanto ele se esforce.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O PROCESSO -->
+<section class="process">
+  <div class="container fade-in">
+    <p class="label">A metodologia</p>
+    <h2 class="title">Do ponto A ao B.<br><em>Com estratégia e acompanhamento.</em></h2>
+    
+    <div class="process-grid">
+      <div class="process-steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <div class="step-content">
+            <h3 class="step-title">Diagnóstico Profundo</h3>
+            <p class="step-text">Mapeamos onde você está, o que está travando e o que exatamente precisa mudar. Sem presunção — com clareza real.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <div class="step-content">
+            <h3 class="step-title">Quebra dos Sabotadores</h3>
+            <p class="step-text">Identificamos e trabalhamos os padrões que te impedem de avançar. Comportamental e emocional juntos.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <div class="step-content">
+            <h3 class="step-title">Cura das Travas</h3>
+            <p class="step-text">As feridas que alimentam a procrastinação, o medo e a estagnação são tratadas — não ignoradas.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">04</span>
+          <div class="step-content">
+            <h3 class="step-title">Estratégia de Avanço</h3>
+            <p class="step-text">Construímos um plano real e personalizado para você ir do ponto A ao B nos objetivos que importam.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">05</span>
+          <div class="step-content">
+            <h3 class="step-title">Acompanhamento de Perto</h3>
+            <p class="step-text">10 encontros individuais. Você não caminha sozinho. Tem presença, cobranças e direcionamento real.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="process-highlight">
+        <h3 class="highlight-title">O que muda com um acompanhamento de perto</h3>
+        <ul class="highlight-list">
+          <li>Clareza sobre o que realmente está te travando</li>
+          <li>Objetivos definidos com prazo e estratégia</li>
+          <li>Responsabilidade real com alguém que cobra</li>
+          <li>Padrões destrutivos identificados e trabalhados</li>
+          <li>Mentalidade ajustada para o próximo nível</li>
+          <li>Avanço mensurável a cada encontro</li>
+          <li>Atenção 100% na sua situação específica</li>
+        </ul>
+        <img src="https://claudioalecrim.com.br/fotos/13.jpeg" alt="Claudio Alecrim" style="width:100%; height:220px; object-fit:cover; object-position:top 30%; display:block; margin-top:32px; filter:grayscale(15%);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATO -->
+<section class="format">
+  <div class="container fade-in">
+    <p class="label">Como funciona</p>
+    <h2 class="title">Um processo completo.<br><em>Personalizado. Individual.</em></h2>
+    
+    <div class="format-strip">
+      <div class="fstrip">
+        <div class="fstrip-val">10</div>
+        <div class="fstrip-lbl">Encontros</div>
+        <p class="fstrip-desc">Um processo completo de transformação e avanço real.</p>
+      </div>
+      <div class="fstrip">
+        <div class="fstrip-val">1×1</div>
+        <div class="fstrip-lbl">Individual</div>
+        <p class="fstrip-desc">Atenção total na sua situação. Sem divisão de foco.</p>
+      </div>
+      <div class="fstrip">
+        <div class="fstrip-val">Híbrido</div>
+        <div class="fstrip-lbl">Formato</div>
+        <p class="fstrip-desc">Online ou presencial — você escolhe o que funciona.</p>
+      </div>
+      <div class="fstrip">
+        <div class="fstrip-val">Real</div>
+        <div class="fstrip-lbl">Resultado</div>
+        <p class="fstrip-desc">Objetivos alcançados, não só conteúdo consumido.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMAÇÃO -->
+<section class="transformation">
+  <div class="container fade-in">
+    <p class="label">A jornada</p>
+    <h2 class="title">A versão que não cabe mais.<br><em>Versus a versão que você vai construir.</em></h2>
+    
+    <div class="tf-comparison">
+      <div class="tf-side left">
+        <span class="tf-head">Antes</span>
+        <ul class="tf-items">
+          <li>Sabe o que precisa fazer, mas não faz</li>
+          <li>Procrastina repetidamente nos mesmos pontos</li>
+          <li>Ciclos que se repetem sem progresso</li>
+          <li>Objetivos sem estratégia ou prazo real</li>
+          <li>Sabotadores atuando sem serem percebidos</li>
+          <li>Estagnação que consome energia e esperança</li>
+        </ul>
+      </div>
+      
+      <div class="tf-center">
+        <span class="tf-arrow">→</span>
+      </div>
+      
+      <div class="tf-side right">
+        <span class="tf-head">Depois</span>
+        <ul class="tf-items">
+          <li>Clareza e execução alinhadas</li>
+          <li>Sabotadores identificados e trabalhados</li>
+          <li>Ciclos quebrados, novos padrões instalados</li>
+          <li>Estratégia real para os objetivos que importam</li>
+          <li>Avanço mensurável encontro a encontro</li>
+          <li>Uma versão de você que está na estação certa</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="for-whom">
+  <div class="container fade-in">
+    <p class="label">Para quem é</p>
+    <h2 class="title">O homem <em>decidido a avançar.</em></h2>
+    
+    <p class="for-body">Esta mentoria é para o homem que <strong>não aceita mais essa versão</strong> que já não cabe na estação atual. Que está pronto para ser incomodado, confrontado e acompanhado rumo a um nível de vida diferente.</p>
+    
+    <div class="for-grid">
+      <div class="for-item">Cansado da procrastinação que nunca para</div>
+      <div class="for-item">Quer um acompanhamento de perto, não só conteúdo</div>
+      <div class="for-item">Precisa sair do ponto A e chegar no B com estratégia</div>
+      <div class="for-item">Quer entender o que realmente está te travando</div>
+      <div class="for-item">Está disposto a trabalhar duro com o suporte certo</div>
+      <div class="for-item">Busca transformação real, não motivação passageira</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="final-inner fade-in">
+    <p class="label">Próximo passo</p>
+    <h2 class="title">Chega de saber.<br><em>Hora de avançar.</em></h2>
+    
+    <p class="final-sub">10 encontros. Um a um. Do ponto A ao B.</p>
+    
+    <div class="hero-divider"></div>
+    
+    <div class="cta-group">
+      <a href="https://pay.kiwify.com.br/VgXxig5" class="cta-primary">Quero começar o Governo Pessoal</a>
+      <a href="https://wa.me/5543996694899?text=Olá Claudio, quero saber mais sobre a Mentoria Governo Pessoal" class="cta-secondary">Falar com Claudio</a>
+    </div>
+    
+    <p class="cta-note">
+      Ao clicar você será redirecionado ao checkout seguro da Kiwify.<br>
+      Dúvidas? <a href="https://wa.me/5543996694899?text=Olá Claudio, tenho dúvidas sobre o Governo Pessoal">Fale pelo WhatsApp antes de decidir.</a>
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-name">Claudio Alecrim</p>
+  <p class="footer-sub">Mentor de Homens</p>
+  <div class="footer-links">
+    <a href="https://claudioalecrim.com.br">Site principal</a>
+    <a href="https://claudioalecrim.com.br/homemespiritual">Homem Espiritual</a>
+    <a href="https://claudioalecrim.com.br/mesadoreino">Mesa do Reino</a>
+    <a href="https://claudioalecrim.com.br/mesadegoverno">Mesa de Governo</a>
+    <a href="https://wa.me/5543996694899?text=Olá Claudio, quero conversar">WhatsApp</a>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

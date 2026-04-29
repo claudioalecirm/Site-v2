@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homem Espiritual — Claudio Alecrim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lato:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --stone: #1c1814;
+  --stone-2: #231f1a;
+  --stone-3: #2a2520;
+  --stone-4: #322d27;
+  --amber: #b8865a;
+  --amber-light: #d4a87a;
+  --amber-dim: #7a5838;
+  --cream: #ede6d8;
+  --text: #c8bfaf;
+  --muted: #6e6050;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--stone);
+  color: var(--text);
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 24px 60px;
+  position: relative;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(184,134,90,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(184,134,90,0.06) 0%, transparent 50%),
+    var(--stone);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b8865a' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.nav-back {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-back:hover { color: var(--amber); }
+.nav-back::before { content: '←'; }
+
+.hero-eyebrow {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: reveal 1s 0.3s forwards;
+}
+
+.hero-cross {
+  font-size: 28px;
+  color: var(--amber);
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: reveal 1s 0.5s forwards;
+  display: block;
+}
+
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(44px, 8vw, 96px);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--cream);
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: reveal 1s 0.6s forwards;
+}
+
+.hero-title-sub {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(20px, 3.5vw, 36px);
+  font-weight: 400;
+  color: var(--amber);
+  letter-spacing: 0.1em;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: reveal 1s 0.8s forwards;
+}
+
+.hero-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--amber), transparent);
+  margin: 0 auto 48px;
+  opacity: 0;
+  animation: reveal 1s 0.9s forwards;
+}
+
+.hero-statement {
+  max-width: 580px;
+  font-size: clamp(15px, 2vw, 18px);
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--text);
+  margin-bottom: 56px;
+  opacity: 0;
+  animation: reveal 1s 1s forwards;
+}
+
+.hero-statement strong { color: var(--cream); font-weight: 400; }
+
+.cta-primary {
+  display: inline-block;
+  border: 1px solid var(--amber);
+  color: var(--cream);
+  background: transparent;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 18px 52px;
+  transition: all 0.4s;
+  opacity: 0;
+  animation: reveal 1s 1.2s forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--amber);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+  z-index: -1;
+}
+
+.cta-primary:hover {
+  color: var(--stone);
+  border-color: var(--amber);
+}
+
+.cta-primary:hover::before { transform: scaleX(1); }
+
+.cta-primary.solid {
+  background: var(--amber);
+  color: var(--stone);
+}
+.cta-primary.solid::before { display: none; }
+.cta-primary.solid:hover {
+  background: var(--amber-light);
+  color: var(--stone);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(184,134,90,0.3);
+}
+
+/* SECTION */
+section { padding: 100px 24px; }
+.container { max-width: 880px; margin: 0 auto; }
+
+.section-label {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(30px, 4.5vw, 52px);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.15;
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+
+.sep {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.sep-line { flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--amber-dim), transparent); }
+.sep-sym { color: var(--amber-dim); font-size: 14px; }
+
+/* DOR */
+.pain {
+  background: var(--stone-2);
+}
+
+.pain-text {
+  font-size: 17px;
+  line-height: 1.9;
+  color: var(--text);
+  max-width: 680px;
+  margin-bottom: 24px;
+}
+.pain-text strong { color: var(--cream); font-weight: 400; }
+
+.pain-quote {
+  margin-top: 48px;
+  padding: 40px 48px;
+  border-left: 2px solid var(--amber);
+  background: rgba(184,134,90,0.05);
+  font-family: 'Lato', sans-serif;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--cream);
+}
+
+/* O QUE É */
+.what { background: var(--stone); }
+
+.what-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 60px;
+  align-items: start;
+}
+
+.what-body p {
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+.what-body p strong { color: var(--cream); font-weight: 400; }
+
+.what-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pillar {
+  background: var(--stone-3);
+  padding: 28px 32px;
+  border-left: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.pillar:hover {
+  background: var(--stone-4);
+  border-left-color: var(--amber);
+}
+
+.pillar-title {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cream);
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.pillar-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* FORMATO */
+.format { background: var(--stone-2); }
+
+.format-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-top: 60px;
+}
+
+.fmt {
+  background: var(--stone-3);
+  padding: 40px 28px;
+  text-align: center;
+  transition: background 0.3s;
+}
+.fmt:hover { background: var(--stone-4); }
+
+.fmt-icon { font-size: 28px; margin-bottom: 16px; display: block; }
+.fmt-val {
+  font-family: 'Lato', sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--amber);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.fmt-lbl {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.fmt-desc { font-size: 13px; line-height: 1.6; color: var(--text); }
+
+/* TRANSFORMACAO */
+.transform { background: var(--stone); }
+
+.transform-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.tf-card {
+  padding: 48px;
+  position: relative;
+}
+
+.tf-card.before {
+  background: var(--stone-3);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.tf-card.after {
+  background: linear-gradient(135deg, rgba(184,134,90,0.1), rgba(184,134,90,0.03));
+  border: 1px solid rgba(184,134,90,0.2);
+}
+
+.tf-label {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  display: block;
+}
+
+.tf-card.before .tf-label { color: var(--muted); }
+.tf-card.after .tf-label { color: var(--amber); }
+
+.tf-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tf-list li {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+  padding-left: 24px;
+  position: relative;
+}
+
+.tf-card.before .tf-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+}
+
+.tf-card.after .tf-list li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--amber);
+  font-size: 10px;
+  top: 3px;
+}
+
+/* PARA QUEM */
+.for-whom { background: var(--stone-2); }
+
+.for-text {
+  font-size: 17px;
+  line-height: 1.9;
+  color: var(--text);
+  max-width: 680px;
+  margin-bottom: 40px;
+}
+.for-text strong { color: var(--cream); font-weight: 400; }
+
+.for-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 700px;
+}
+
+.for-list li {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+  padding-left: 24px;
+  position: relative;
+}
+
+.for-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--amber);
+}
+
+/* CTA FINAL */
+.final-cta {
+  background: 
+    radial-gradient(ellipse at center, rgba(184,134,90,0.12) 0%, transparent 70%),
+    var(--stone);
+  text-align: center;
+  padding: 120px 24px;
+}
+
+.final-cta .section-title {
+  max-width: 600px;
+  margin: 0 auto 16px;
+}
+
+.final-cta p {
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 48px;
+  font-style: italic;
+}
+
+.final-cta .cta-note {
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* FOOTER */
+footer {
+  background: var(--stone-2);
+  padding: 48px 24px;
+  text-align: center;
+  border-top: 1px solid rgba(184,134,90,0.1);
+}
+
+.footer-name {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--cream);
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.footer-sub {
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--amber); }
+
+/* ANIMATIONS */
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* SCROLL REVEAL */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  .what-grid { grid-template-columns: 1fr; gap: 40px; }
+  .format-row { grid-template-columns: 1fr 1fr; }
+  .transform-grid { grid-template-columns: 1fr; }
+  .for-list { grid-template-columns: 1fr; }
+  .nav-back { top: 20px; left: 20px; }
+  section { padding: 80px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <a href="https://claudioalecrim.com.br" class="nav-back">Voltar ao site</a>
+  
+  <p class="hero-eyebrow">Claudio Alecrim · Mentoria Individual</p>
+  <span class="hero-cross">†</span>
+  
+  <h1 class="hero-title">HOMEM</h1>
+  <p class="hero-title-sub">Espiritual</p>
+  
+  <div class="hero-line"></div>
+  
+  <p class="hero-statement">
+    Uma mentoria para o homem que cansou de ter uma <strong>relação superficial com Deus</strong>.<br>
+    10 encontros para construir uma base espiritual sólida, madura e de verdade.
+  </p>
+  
+  <a href="https://pay.kiwify.com.br/jh70oAo" class="cta-primary">Quero iniciar minha jornada</a>
+</section>
+
+<!-- DOR -->
+<section class="pain">
+  <div class="container fade-in">
+    <p class="section-label">Onde você está agora</p>
+    <h2 class="section-title">A vida espiritual que não<br>chegou onde deveria.</h2>
+    
+    <p class="pain-text">Você vai ao culto. Ouve pregações. Talvez ore de vez em quando. Mas lá no fundo sente que é <strong>tudo muito superficial</strong>. Que você ainda não encontrou aquilo que realmente parece uma relação viva com Deus.</p>
+    
+    <p class="pain-text">A espiritualidade virou rito, cultura, hábito de domingo. Mas não tem <strong>profundidade real</strong>. Não tem transformação. Não tem encontros genuínos. E essa sensação de vazio espiritual afeta tudo — a família, as decisões, o propósito, a estabilidade emocional.</p>
+    
+    <div class="pain-quote">
+      "Alta performance sem fundamento espiritual é velocidade na direção errada."
+    </div>
+  </div>
+</section>
+
+<div class="sep" style="padding: 20px 0;"><div class="sep-line"></div><div class="sep-sym">✦</div><div class="sep-line"></div></div>
+
+<!-- O QUE É -->
+<section class="what">
+  <div class="container">
+    <div class="what-grid fade-in">
+      <div class="what-body">
+        <p class="section-label">A mentoria</p>
+        <h2 class="section-title">O que é o Homem Espiritual</h2>
+        
+        <p>É uma <strong>mentoria individual, um a um</strong>, com Claudio Alecrim, em formato presencial ou online — você escolhe.</p>
+        
+        <p>Em <strong>10 encontros</strong>, construímos juntos um caminho real de maturidade espiritual. Não é mais um curso bíblico. É um acompanhamento personalizado para que você desenvolva uma relação <strong>contínua, profunda e duradoura com Deus</strong>.</p>
+        
+        <p>Vamos clarear suas práticas espirituais, eliminar o que é só religiosidade vazia e edificar uma base que sustenta tudo mais na sua vida.</p>
+      </div>
+      
+      <div class="what-pillars">
+        <img src="https://claudioalecrim.com.br/fotos/7.jpeg" alt="Claudio Alecrim" style="width:100%; height:320px; object-fit:cover; object-position:top; display:block; margin-bottom:2px; filter:grayscale(15%);">
+        <div class="pillar">
+          <h3 class="pillar-title">Maturidade Espiritual</h3>
+          <p class="pillar-text">Saindo da infância espiritual e construindo uma fé adulta, racional e consistente.</p>
+        </div>
+        <div class="pillar">
+          <h3 class="pillar-title">Clareza de Práticas</h3>
+          <p class="pillar-text">Entendendo como orar, estudar, adorar e se comunicar com Deus de forma real e não mecânica.</p>
+        </div>
+        <div class="pillar">
+          <h3 class="pillar-title">Relacionamento Contínuo</h3>
+          <p class="pillar-text">Não um encontro espiritual esporádico, mas uma vida com Deus integrada ao seu dia a dia.</p>
+        </div>
+        <div class="pillar">
+          <h3 class="pillar-title">Experiências Reais</h3>
+          <p class="pillar-text">Experiências com Deus que você ainda não viveu. Não teoria — vivência.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATO -->
+<section class="format">
+  <div class="container fade-in">
+    <p class="section-label">Como funciona</p>
+    <h2 class="section-title">10 encontros. Uma transformação.</h2>
+    
+    <div class="format-row">
+      <div class="fmt">
+        <div style="width:20px;height:1px;background:var(--amber);margin:0 auto 20px;"></div>
+        <div class="fmt-val">10</div>
+        <div class="fmt-lbl">Encontros</div>
+        <p class="fmt-desc">Um processo completo de construção espiritual.</p>
+      </div>
+      <div class="fmt">
+        <div style="width:20px;height:1px;background:var(--amber);margin:0 auto 20px;"></div>
+        <div class="fmt-val">1×1</div>
+        <div class="fmt-lbl">Individual</div>
+        <p class="fmt-desc">Atenção 100% focada na sua jornada e no seu momento.</p>
+      </div>
+      <div class="fmt">
+        <div style="width:20px;height:1px;background:var(--amber);margin:0 auto 20px;"></div>
+        <div class="fmt-val">Híbrido</div>
+        <div class="fmt-lbl">Online ou presencial</div>
+        <p class="fmt-desc">Você escolhe o formato que funciona melhor pra você.</p>
+      </div>
+      <div class="fmt">
+        <div style="width:20px;height:1px;background:var(--amber);margin:0 auto 20px;"></div>
+        <div class="fmt-val">Londrina</div>
+        <div class="fmt-lbl">Presencial</div>
+        <p class="fmt-desc">Opção presencial disponível para quem está na região.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMAÇÃO -->
+<section class="transform">
+  <div class="container fade-in">
+    <p class="section-label">A jornada</p>
+    <h2 class="section-title">De onde você está<br>para onde pode chegar.</h2>
+    
+    <div class="transform-grid">
+      <div class="tf-card before">
+        <span class="tf-label">Antes</span>
+        <ul class="tf-list">
+          <li>Espiritualidade como rito cultural</li>
+          <li>Oração mecânica, sem conexão real</li>
+          <li>Sensação de distância de Deus</li>
+          <li>Fé oscilante, dependente da emoção</li>
+          <li>Vida espiritual separada da vida real</li>
+          <li>Sem fundamento sólido para as decisões</li>
+        </ul>
+      </div>
+      <div class="tf-card after">
+        <span class="tf-label">Depois</span>
+        <ul class="tf-list">
+          <li>Culto consciente e racional, não por cultura</li>
+          <li>Relação contínua e profunda com Deus</li>
+          <li>Clareza de propósito e direção espiritual</li>
+          <li>Fé madura que sustenta os momentos difíceis</li>
+          <li>Espiritualidade integrada ao dia a dia</li>
+          <li>Experiências genuínas com Deus</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="for-whom">
+  <div class="container fade-in">
+    <p class="section-label">Para quem é</p>
+    <h2 class="section-title">O homem que está pronto.</h2>
+    
+    <p class="for-text">Esta mentoria é para o homem <strong>decidido a avançar</strong> e deixar para trás a versão superficial da fé que já não cabe mais na sua estação atual. Para quem quer sair do simples ritual e entrar de fato em uma relação viva com Deus.</p>
+    
+    <ul class="for-list">
+      <li>Cansou da religiosidade sem profundidade</li>
+      <li>Quer construir uma base espiritual real</li>
+      <li>Busca clareza de propósito e visão de vida</li>
+      <li>Está disposto a ser incomodado e crescer</li>
+      <li>Quer experiências genuínas com Deus</li>
+      <li>Precisa de fundamento para as grandes decisões</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final-cta">
+  <div style="max-width:900px; margin:0 auto 60px; display:grid; grid-template-columns:1fr 1fr; gap:2px;">
+    <img src="https://claudioalecrim.com.br/fotos/14.jpeg" alt="Claudio Alecrim" style="width:100%; height:400px; object-fit:cover; object-position:top; display:block; filter:grayscale(15%);">
+    <img src="https://claudioalecrim.com.br/fotos/7.jpeg" alt="Claudio Alecrim" style="width:100%; height:400px; object-fit:cover; object-position:top 20%; display:block; filter:grayscale(15%);">
+  </div>
+  <div class="container fade-in">
+    <p class="section-label">Próximo passo</p>
+    <h2 class="section-title">O fundamento que muda tudo começa aqui.</h2>
+    <p>10 encontros. Um a um. Sem superficialidade.</p>
+    
+    <a href="https://pay.kiwify.com.br/jh70oAo" class="cta-primary solid">Quero iniciar o Homem Espiritual</a>
+    
+    <p class="cta-note">Ao clicar você será redirecionado para o checkout seguro da Kiwify.<br>
+    Dúvidas? <a href="https://wa.me/5543996694899?text=Olá Claudio, quero saber mais sobre a Mentoria Homem Espiritual" style="color: var(--amber); text-decoration: none;">Fale com Claudio pelo WhatsApp.</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-name">Claudio Alecrim</p>
+  <p class="footer-sub">Mentor de Homens</p>
+  <div class="footer-links">
+    <a href="https://claudioalecrim.com.br">Site principal</a>
+    <a href="https://claudioalecrim.com.br/governopessoal">Governo Pessoal</a>
+    <a href="https://claudioalecrim.com.br/mesadoreino">Mesa do Reino</a>
+    <a href="https://claudioalecrim.com.br/mesadegoverno">Mesa de Governo</a>
+    <a href="https://wa.me/5543996694899?text=Olá Claudio, quero conversar">WhatsApp</a>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
