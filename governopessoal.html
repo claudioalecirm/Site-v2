@@ -621,13 +621,39 @@ footer {
   .final { padding: 100px 24px; }
   footer { padding: 48px 24px; }
 }
+
+/* ── MOBILE ── */
+@media (max-width: 480px) {
+  section { padding: 60px 20px !important; }
+  .hero { padding: 80px 20px 60px !important; }
+  .nav-back { top: 16px; left: 16px; font-size: 11px; }
+  h1, .hero-title { font-size: clamp(42px, 12vw, 72px) !important; }
+  .cta-primary, .cta-primary.solid { 
+    display: block; width: 100%; text-align: center; 
+    padding: 18px 20px; font-size: 12px;
+  }
+  .cta-secondary { display: block; width: 100%; text-align: center; padding: 16px 20px; }
+  .hero-ctas { flex-direction: column; gap: 12px; }
+  .price-card { padding: 40px 24px; }
+  .price-value { font-size: 64px; }
+  .format-grid, .problem-grid, .pillars-grid { grid-template-columns: 1fr !important; }
+  .for-grid { grid-template-columns: 1fr !important; }
+  .what-content, .what-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .process-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .tf-comparison { grid-template-columns: 1fr !important; }
+  .tf-center { display: none !important; }
+  .format-row, .format-strip { flex-direction: column !important; }
+  .transform-grid { grid-template-columns: 1fr !important; }
+  .for-list { grid-template-columns: 1fr !important; }
+  .card-featured .card-inner { flex-direction: column !important; }
+}
 </style>
 </head>
 <body>
 
 <!-- HERO -->
 <section class="hero">
-  <a href="https://claudioalecrim.com.br" class="nav-back">Voltar ao site</a>
+  
   
   <div class="hero-tag">Mentoria Individual · 10 Encontros</div>
   
@@ -647,11 +673,7 @@ footer {
     <a href="https://pay.kiwify.com.br/VgXxig5" class="cta-primary">Quero começar agora</a>
     <a href="https://wa.me/5543996694899?text=Olá Claudio, quero saber mais sobre a Mentoria Governo Pessoal" class="cta-secondary">Falar com Claudio</a>
   </div>
-  <div style="position:absolute; right:0; top:0; bottom:0; width:38%; overflow:hidden; display:none;" class="hero-photo-side">
-    <img src="https://claudioalecrim.com.br/fotos/9.jpeg" alt="Claudio Alecrim" style="width:100%; height:100%; object-fit:cover; object-position:top; filter:grayscale(15%); opacity:0.5;">
-    <div style="position:absolute; inset:0; background:linear-gradient(to right, var(--bg), transparent);"></div>
-  </div>
-</section>
+  </section>
 
 <!-- DIAGNÓSTICO -->
 <section class="diag">
@@ -737,7 +759,7 @@ footer {
           <li>Avanço mensurável a cada encontro</li>
           <li>Atenção 100% na sua situação específica</li>
         </ul>
-        <img src="https://claudioalecrim.com.br/fotos/13.jpeg" alt="Claudio Alecrim" style="width:100%; height:220px; object-fit:cover; object-position:top 30%; display:block; margin-top:32px; filter:grayscale(15%);">
+        
       </div>
     </div>
   </div>
@@ -858,10 +880,10 @@ footer {
   <p class="footer-name">Claudio Alecrim</p>
   <p class="footer-sub">Mentor de Homens</p>
   <div class="footer-links">
-    <a href="https://claudioalecrim.com.br">Site principal</a>
-    <a href="https://claudioalecrim.com.br/homemespiritual">Homem Espiritual</a>
-    <a href="https://claudioalecrim.com.br/mesadoreino">Mesa do Reino</a>
-    <a href="https://claudioalecrim.com.br/mesadegoverno">Mesa de Governo</a>
+    <a href="/>Site principal</a>
+    <a href="/homemespiritual">Homem Espiritual</a>
+    <a href="/mesadoreino">Mesa do Reino</a>
+    <a href="/mesadegoverno">Mesa de Governo</a>
     <a href="https://wa.me/5543996694899?text=Olá Claudio, quero conversar">WhatsApp</a>
   </div>
 </footer>
