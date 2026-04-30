@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: 'DM Sans', sans-serif;
       background: #0a0a0a;
@@ -20,125 +19,21 @@
       justify-content: center;
       padding: 40px 20px;
     }
-
-    .container {
-      width: 100%;
-      max-width: 480px;
-      text-align: center;
-    }
-
-    .logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 28px;
-      color: #c8a97a;
-      font-weight: 500;
-      letter-spacing: .05em;
-      margin-bottom: 6px;
-    }
-
-    .logo-sub {
-      font-size: 10px;
-      color: #5a5550;
-      letter-spacing: .25em;
-      text-transform: uppercase;
-      margin-bottom: 48px;
-    }
-
-    .card {
-      background: #111;
-      border: .5px solid rgba(200,169,122,.2);
-      border-radius: 16px;
-      padding: 40px 32px;
-      margin-bottom: 20px;
-    }
-
-    .check {
-      width: 64px;
-      height: 64px;
-      background: rgba(100,200,100,.1);
-      border: 1.5px solid rgba(100,200,100,.3);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 24px;
-      font-size: 28px;
-    }
-
-    h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      font-weight: 500;
-      color: #f0ece4;
-      margin-bottom: 12px;
-      line-height: 1.2;
-    }
-
-    .subtitle {
-      font-size: 14px;
-      color: #9a9590;
-      line-height: 1.7;
-      margin-bottom: 32px;
-    }
-
-    .steps {
-      text-align: left;
-      margin-bottom: 32px;
-    }
-
-    .step {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      padding: 14px 0;
-      border-bottom: .5px solid rgba(255,255,255,.06);
-    }
-
-    .step:last-child { border-bottom: none; }
-
-    .step-num {
-      width: 28px;
-      height: 28px;
-      background: rgba(200,169,122,.12);
-      border: .5px solid rgba(200,169,122,.3);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      color: #c8a97a;
-      font-weight: 500;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .step-text {
-      font-size: 13px;
-      color: #9a9590;
-      line-height: 1.6;
-    }
-
-    .step-text strong { color: #f0ece4; font-weight: 500; }
-
-    .highlight {
-      background: rgba(200,169,122,.06);
-      border: .5px solid rgba(200,169,122,.15);
-      border-radius: 10px;
-      padding: 16px 18px;
-      font-size: 13px;
-      color: #9a9590;
-      line-height: 1.6;
-      margin-bottom: 8px;
-    }
-
-    .highlight strong { color: #c8a97a; }
-
-    footer {
-      font-size: 11px;
-      color: #3a3530;
-      margin-top: 24px;
-    }
-
+    .container { width: 100%; max-width: 500px; text-align: center; }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #c8a97a; font-weight: 500; letter-spacing: .05em; margin-bottom: 4px; }
+    .logo-sub { font-size: 10px; color: #5a5550; letter-spacing: .25em; text-transform: uppercase; margin-bottom: 40px; }
+    .card { background: #111; border: .5px solid rgba(200,169,122,.2); border-radius: 16px; padding: 40px 32px; margin-bottom: 16px; text-align: left; }
+    .check { width: 56px; height: 56px; background: rgba(100,200,100,.1); border: 1.5px solid rgba(100,200,100,.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 24px; }
+    h1 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; color: #f0ece4; text-align: center; margin-bottom: 24px; line-height: 1.3; }
+    .item { display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-bottom: .5px solid rgba(255,255,255,.06); }
+    .item:last-child { border-bottom: none; padding-bottom: 0; }
+    .item:first-child { padding-top: 0; }
+    .icon { font-size: 18px; line-height: 1; margin-top: 1px; flex-shrink: 0; }
+    .item-text { font-size: 14px; color: #9a9590; line-height: 1.65; }
+    .item-text strong { color: #f0ece4; font-weight: 500; display: block; margin-bottom: 3px; }
+    .spam-box { background: rgba(200,169,122,.06); border: .5px solid rgba(200,169,122,.15); border-radius: 10px; padding: 14px 18px; font-size: 13px; color: #9a9590; line-height: 1.6; margin-top: 20px; }
+    .spam-box span { color: #c8a97a; }
+    footer { font-size: 11px; color: #3a3530; margin-top: 20px; }
     footer a { color: #5a5550; text-decoration: none; }
   </style>
 </head>
@@ -149,48 +44,39 @@
 
     <div class="card">
       <div class="check">✓</div>
+      <h1>Obrigado pela sua confiança!</h1>
 
-      <h1>Pagamento confirmado!</h1>
-
-      <p class="subtitle">
-        Sua compra foi processada com sucesso.<br/>
-        Agora siga os passos abaixo para acessar o portal.
-      </p>
-
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-text">
-            <strong>Verifique seu email</strong><br/>
-            Em instantes você receberá um email com o link para criar suas credenciais de acesso ao portal de mentoria.
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-text">
-            <strong>Preencha o formulário</strong><br/>
-            Clique no link do email e preencha o alinhamento de expectativas. Isso leva menos de 5 minutos e é fundamental para personalizar o seu processo.
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-text">
-            <strong>Crie sua senha e acesse</strong><br/>
-            Na última etapa do formulário você define sua senha. Após isso, seu portal estará disponível em:
-            <strong style="display:block;margin-top:6px;color:#c8a97a">dash.claudioalecrim.com.br</strong>
-          </div>
+      <div class="item">
+        <div class="icon">📧</div>
+        <div class="item-text">
+          <strong>Verifique seu email</strong>
+          Será enviado um email para você criar suas credenciais de acesso ao portal da mentoria. Confira também a caixa de <strong style="color:#c8a97a;display:inline;font-weight:500">spam</strong> caso não encontre na caixa de entrada.
         </div>
       </div>
 
-      <div class="highlight">
-        📧 Não encontrou o email? Verifique sua caixa de spam ou lixo eletrônico.<br/>
-        Se precisar de ajuda, entre em contato: <strong>claudioalecrim@icloud.com</strong>
+      <div class="item">
+        <div class="icon">📋</div>
+        <div class="item-text">
+          <strong>Preencha o formulário</strong>
+          Ao clicar no link do email, você será direcionado para um formulário de alinhamento de expectativas — para personalizar sua vivência no percurso da mentoria. Leva menos de 5 minutos.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="icon">🔑</div>
+        <div class="item-text">
+          <strong>Crie seu acesso</strong>
+          Na última etapa do formulário você define sua senha e já entra direto no portal em <span style="color:#c8a97a">dash.claudioalecrim.com.br</span>
+        </div>
+      </div>
+
+      <div class="spam-box">
+        Não encontrou o email? Verifique a caixa de <span>spam</span> ou lixo eletrônico.<br/>
+        Dúvidas? Entre em contato: <span>claudioalecrim@icloud.com</span>
       </div>
     </div>
 
-    <footer>
-      © Claudio Alecrim · <a href="https://claudioalecrim.com.br">claudioalecrim.com.br</a>
-    </footer>
+    <footer>© Claudio Alecrim · <a href="https://claudioalecrim.com.br">claudioalecrim.com.br</a></footer>
   </div>
 </body>
 </html>
