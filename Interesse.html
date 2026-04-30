@@ -260,17 +260,57 @@ body{
   </div>
 </div>
 
+
 <script>
-function enviar(e){
+const SB_URL = "https://lymmzhslhwidqcztcfsn.supabase.co";
+const SB_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5bW16aHNsaHdpZHFjenRjZnNuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU2ODI2ODMsImV4cCI6MjA5MTI1ODY4M30.BLlPs4BbxuV3TtCfPJz01fVbBsOBTEJmeTGMvTNkHEk";
+
+async function enviar(e) {
   e.preventDefault();
-  document.getElementById('form-area').style.display='none';
-  const s = document.getElementById('success');
-  s.style.display='block';
-  s.style.animation='fadeIn 0.8s ease';
+  const btn = document.querySelector('.btn-gold');
+  btn.textContent = 'Enviando...';
+  btn.disabled = true;
+
+  const form = e.target;
+  const mentoriaSel = form.querySelector('input[name="mentoria"]:checked');
+
+  const payload = {
+    nome: form.querySelector('input[type="text"]').value.trim(),
+    telefone: form.querySelector('input[type="tel"]').value.trim(),
+    mentoria: mentoriaSel ? mentoriaSel.value : '',
+    chamou_atencao: form.querySelectorAll('textarea')[0].value.trim(),
+    duvida: form.querySelectorAll('textarea')[1].value.trim()
+  };
+
+  try {
+    const res = await fetch(SB_URL + '/rest/v1/interesse_mentoria', {
+      method: 'POST',
+      headers: {
+        'apikey': SB_KEY,
+        'Authorization': 'Bearer ' + SB_KEY,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (res.ok || res.status === 201) {
+      document.getElementById('form-area').style.display = 'none';
+      const s = document.getElementById('success');
+      s.style.display = 'block';
+      s.style.animation = 'fadeIn 0.8s ease';
+    } else {
+      throw new Error('Erro ' + res.status);
+    }
+  } catch(err) {
+    btn.textContent = 'Confirmar meu interesse';
+    btn.disabled = false;
+    alert('Erro ao enviar. Tente novamente.');
+    console.error(err);
+  }
 }
 </script>
-<style>
-@keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-</style>
+
+
 </body>
 </html>
