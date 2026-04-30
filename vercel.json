@@ -6,6 +6,8 @@
     { "src": "/mesadoreino", "dest": "/mesadoreino.html" },
     { "src": "/homemespiritual", "dest": "/homemespiritual.html" },
     { "src": "/governopessoal", "dest": "/governopessoal.html" },
-    { "src": "/mesadegoverno", "dest": "/mesadegoverno.html" }
+    { "src": "/mesadegoverno", "dest": "/mesadegoverno.html" },
+    { "src": "/interesse", "dest": "/form_interesse.html" },
+    { "src": "/feedback", "dest": "/form_feedback.html" }
   ]
 }
