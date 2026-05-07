@@ -3,7 +3,6 @@
   "trailingSlash": false,
   "routes": [
     { "src": "/", "dest": "/index.html" },
-    { "src": "/mesadoreino", "dest": "/mesadoreino.html" },
     { "src": "/pontoderuptura", "dest": "/pontoderuptura.html" },
     { "src": "/lista-ruptura", "dest": "/lista_ruptura.html" },
     { "src": "/homemespiritual", "dest": "/homemespiritual.html" },
