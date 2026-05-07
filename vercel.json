@@ -4,6 +4,8 @@
   "routes": [
     { "src": "/", "dest": "/index.html" },
     { "src": "/mesadoreino", "dest": "/mesadoreino.html" },
+    { "src": "/pontoderuptura", "dest": "/pontoderuptura.html" },
+    { "src": "/lista-ruptura", "dest": "/lista_ruptura.html" },
     { "src": "/homemespiritual", "dest": "/homemespiritual.html" },
     { "src": "/governopessoal", "dest": "/governopessoal.html" },
     { "src": "/mesadegoverno", "dest": "/mesadegoverno.html" },
