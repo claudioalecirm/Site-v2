@@ -3,12 +3,13 @@
   "trailingSlash": false,
   "routes": [
     { "src": "/", "dest": "/index.html" },
-    { "src": "/pontoderuptura", "dest": "/pontoderuptura.html" },
+    { "src": "/pontoderuptura", "dest": "/Pontoderuptura.html" },
     { "src": "/lista-ruptura", "dest": "/lista_ruptura.html" },
     { "src": "/homemespiritual", "dest": "/homemespiritual.html" },
     { "src": "/governopessoal", "dest": "/governopessoal.html" },
-    { "src": "/mesadegoverno", "dest": "/mesadegoverno.html" },
-    { "src": "/interesse", "dest": "/form_interesse.html" },
-    { "src": "/feedback", "dest": "/form_feedback.html" }
+    { "src": "/mesadegoverno", "dest": "/MesadeGoverno.html" },
+    { "src": "/lista-mesa-governo", "dest": "/mesadegoverno.html" },
+    { "src": "/interesse", "dest": "/Interesse.html" },
+    { "src": "/feedback", "dest": "/feedback.html" }
   ]
 }
