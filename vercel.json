@@ -6,7 +6,7 @@
     { "src": "/pontoderuptura", "dest": "/Pontoderuptura.html" },
     { "src": "/lista-ruptura", "dest": "/lista_ruptura.html" },
     { "src": "/mesadegoverno", "dest": "/MesadeGoverno.html" },
-    { "src": "/lista-mesa-governo", "dest": "/mesadegoverno.html" },
+    { "src": "/lista-mesa-governo", "dest": "/lista_mesadegoverno.html" },
     { "src": "/homemespiritual", "dest": "/homemespiritual.html" },
     { "src": "/governopessoal", "dest": "/governopessoal.html" },
     { "src": "/interesse", "dest": "/Interesse.html" },
