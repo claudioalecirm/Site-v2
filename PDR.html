@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ponto de Ruptura — Mentoria Masculina</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C49A3C;
+  --gold-light: #E8C97A;
+  --gold-dim: #8B6B24;
+  --dark: #0A0A0A;
+  --dark-2: #111111;
+  --dark-3: #1A1A1A;
+  --dark-4: #222222;
+  --dark-5: #2A2A2A;
+  --text: #E8E0D0;
+  --text-2: #B0A890;
+  --text-3: #706858;
+  --border: rgba(196,154,60,0.15);
+  --border-2: rgba(196,154,60,0.08);
+  --purple: #534AB7;
+  --purple-bg: rgba(83,74,183,0.12);
+  --green: #0F6E56;
+  --green-bg: rgba(15,110,86,0.12);
+  --coral: #993C1D;
+  --coral-bg: rgba(153,60,29,0.12);
+  --amber: #854F0B;
+  --amber-bg: rgba(133,79,11,0.12);
+  --radius: 8px;
+  --radius-lg: 12px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--dark);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--dark-2); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 2px; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--border);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px;
+}
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--gold); letter-spacing: 0.05em; }
+.nav-tabs { display: flex; gap: 4px; }
+.nav-tab {
+  font-size: 12px; color: var(--text-3); padding: 6px 14px; border-radius: 99px;
+  cursor: pointer; transition: all 0.2s; border: none; background: none; font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.02em;
+}
+.nav-tab:hover { color: var(--text-2); background: var(--dark-4); }
+.nav-tab.active { color: var(--gold); background: rgba(196,154,60,0.1); }
+
+/* PAGES */
+.page { display: none; padding: 80px 2rem 3rem; max-width: 900px; margin: 0 auto; }
+.page.active { display: block; }
+
+/* HERO */
+.hero {
+  text-align: center; padding: 3rem 0 2.5rem;
+  border-bottom: 0.5px solid var(--border-2); margin-bottom: 2.5rem;
+}
+.hero-badge {
+  display: inline-block; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); background: rgba(196,154,60,0.08); border: 0.5px solid var(--border);
+  padding: 4px 14px; border-radius: 99px; margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 52px);
+  font-weight: 700; color: var(--text); letter-spacing: 0.03em;
+  line-height: 1.1; margin-bottom: 1rem;
+}
+.hero h1 span { color: var(--gold); }
+.hero-sub { font-size: 14px; color: var(--text-2); max-width: 480px; margin: 0 auto 1.5rem; }
+.hero-meta { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+.hero-meta-item { font-size: 12px; color: var(--text-3); display: flex; align-items: center; gap: 6px; }
+.hero-meta-item::before { content: "◆"; font-size: 6px; color: var(--gold); }
+
+/* SECTION TITLE */
+.sec-label {
+  font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-3); margin-bottom: 1rem; padding-bottom: 8px;
+  border-bottom: 0.5px solid var(--border-2);
+}
+
+/* PILLARS GRID */
+.pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 2.5rem; }
+.pillar {
+  border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem 1rem;
+  text-align: center; background: var(--dark-2); cursor: pointer;
+  transition: all 0.2s;
+}
+.pillar:hover { border-color: var(--gold); background: rgba(196,154,60,0.05); }
+.pillar .p-icon { font-size: 22px; margin-bottom: 8px; }
+.pillar .p-name { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--text); margin-bottom: 4px; }
+.pillar .p-enc { font-size: 10px; color: var(--text-3); }
+
+/* METHOD BOX */
+.method-box {
+  background: var(--dark-2); border: 0.5px solid var(--border); border-radius: var(--radius-lg);
+  padding: 1.5rem; margin-bottom: 2.5rem;
+}
+.method-title { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--gold); margin-bottom: 1rem; }
+.method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.method-item { display: flex; gap: 10px; align-items: flex-start; font-size: 12px; color: var(--text-2); padding: 6px 0; }
+.method-item .m-letter { color: var(--gold); font-weight: 500; min-width: 16px; font-size: 13px; }
+
+/* ENCONTROS LIST */
+.enc-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 2.5rem; }
+.enc {
+  border: 0.5px solid var(--border-2); border-radius: var(--radius-lg);
+  background: var(--dark-2); overflow: hidden; transition: border-color 0.2s;
+}
+.enc:hover { border-color: var(--border); }
+.enc.open { border-color: var(--border); }
+.enc-header {
+  display: flex; align-items: center; gap: 12px; padding: 14px 16px;
+  cursor: pointer;
+}
+.enc-num {
+  width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; font-size: 12px; font-weight: 500; flex-shrink: 0;
+  font-family: 'Playfair Display', serif;
+}
+.enc-info { flex: 1; }
+.enc-title { font-size: 14px; color: var(--text); font-weight: 400; }
+.enc-meta-line { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+.enc-badge {
+  font-size: 10px; font-weight: 500; padding: 3px 10px; border-radius: 99px;
+  flex-shrink: 0; letter-spacing: 0.04em;
+}
+.enc-arrow { font-size: 14px; color: var(--text-3); transition: transform 0.2s; }
+.enc.open .enc-arrow { transform: rotate(90deg); }
+
+.enc-body { display: none; padding: 0 16px 16px 60px; border-top: 0.5px solid var(--border-2); }
+.enc.open .enc-body { display: block; }
+
+.enc-obj { font-size: 13px; color: var(--text-2); line-height: 1.7; padding: 12px 0 10px; border-bottom: 0.5px solid var(--border-2); margin-bottom: 10px; }
+.enc-block-title { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin-bottom: 6px; margin-top: 10px; }
+.tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 4px; }
+.tag { font-size: 10px; color: var(--text-3); padding: 2px 8px; border-radius: 99px; border: 0.5px solid rgba(196,154,60,0.15); }
+.task-list { display: flex; flex-direction: column; gap: 0; }
+.task-item { font-size: 12px; color: var(--text-2); padding: 5px 0; border-bottom: 0.5px solid var(--border-2); line-height: 1.5; display: flex; gap: 8px; }
+.task-item:last-child { border-bottom: none; }
+.task-item::before { content: "→"; color: var(--gold); font-size: 11px; flex-shrink: 0; margin-top: 1px; }
+
+/* COLORS FOR PILARES */
+.c-deus { background: var(--purple-bg); color: #AFA9EC; }
+.c-self { background: var(--green-bg); color: #5DCAA5; }
+.c-familia { background: var(--coral-bg); color: #F0997B; }
+.c-negocios { background: var(--amber-bg); color: #EF9F27; }
+.c-ruptura { background: rgba(196,154,60,0.12); color: var(--gold); }
+
+/* SCRIPT PAGE */
+.script-header {
+  background: var(--dark-2); border: 0.5px solid var(--border); border-radius: var(--radius-lg);
+  padding: 1.5rem; margin-bottom: 1.5rem; border-left: 2px solid var(--gold);
+}
+.script-enc-title { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--text); margin-bottom: 4px; }
+.script-enc-sub { font-size: 13px; color: var(--text-2); line-height: 1.6; margin-bottom: 12px; }
+.script-enc-meta { display: flex; gap: 16px; flex-wrap: wrap; }
+.script-enc-meta span { font-size: 11px; color: var(--text-3); }
+
+.bloco {
+  border: 0.5px solid var(--border-2); border-radius: var(--radius); margin-bottom: 8px;
+  background: var(--dark-2); overflow: hidden;
+}
+.bloco-header {
+  display: flex; align-items: center; gap: 10px; padding: 12px 14px;
+  cursor: pointer; transition: background 0.15s;
+}
+.bloco-header:hover { background: var(--dark-3); }
+.bloco-tempo {
+  font-size: 10px; font-weight: 500; padding: 3px 10px; border-radius: 99px;
+  background: rgba(196,154,60,0.1); color: var(--gold); flex-shrink: 0; min-width: 58px; text-align: center;
+  font-family: 'DM Sans', sans-serif;
+}
+.bloco-titulo { font-size: 13px; color: var(--text); flex: 1; }
+.bloco-arrow { font-size: 12px; color: var(--text-3); transition: transform 0.2s; }
+.bloco.open .bloco-arrow { transform: rotate(90deg); }
+.bloco-body { display: none; padding: 0 14px 16px; border-top: 0.5px solid var(--border-2); }
+.bloco.open .bloco-body { display: block; }
+
+.script-sublabel { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin: 12px 0 6px; }
+.fala {
+  background: rgba(196,154,60,0.05); border-left: 2px solid var(--gold-dim);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 10px 14px; font-size: 13px; color: var(--text-2); line-height: 1.75;
+  font-style: italic; margin-bottom: 8px;
+}
+.instrucao { font-size: 12px; color: var(--text-2); line-height: 1.65; padding: 8px 0; }
+.instrucao strong { color: var(--text); font-weight: 500; }
+.dinamica {
+  background: var(--purple-bg); border-radius: var(--radius); padding: 12px 14px; margin: 10px 0;
+  border: 0.5px solid rgba(83,74,183,0.2);
+}
+.dinamica-title { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #AFA9EC; margin-bottom: 6px; }
+.dinamica-desc { font-size: 12px; color: var(--text-2); line-height: 1.7; }
+.dinamica-desc strong { color: var(--text); font-weight: 500; }
+
+.missoes-box {
+  background: var(--dark-3); border: 0.5px solid var(--border); border-radius: var(--radius-lg);
+  padding: 1.25rem; margin-top: 1.5rem;
+}
+.missoes-title { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--gold); margin-bottom: 1rem; }
+.missao-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 0.5px solid var(--border-2); }
+.missao-item:last-child { border-bottom: none; }
+.missao-num { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold-dim); min-width: 24px; }
+.missao-content .missao-nome { font-size: 13px; color: var(--text); font-weight: 400; margin-bottom: 3px; }
+.missao-content .missao-desc { font-size: 12px; color: var(--text-2); line-height: 1.6; }
+.missao-content .missao-tag { font-size: 10px; color: var(--text-3); margin-top: 4px; }
+
+/* COMERCIAL PAGE */
+.metric-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 1.5rem; }
+.metric-card {
+  background: var(--dark-2); border: 0.5px solid var(--border); border-radius: var(--radius-lg);
+  padding: 1.25rem; text-align: center;
+}
+.metric-val { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--gold); margin-bottom: 4px; }
+.metric-lbl { font-size: 11px; color: var(--text-3); }
+
+.price-table { background: var(--dark-2); border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.5rem; }
+.price-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-bottom: 0.5px solid var(--border-2); }
+.price-row:last-child { border-bottom: none; }
+.price-lbl { font-size: 12px; color: var(--text-2); }
+.price-val { font-size: 13px; color: var(--text); font-weight: 500; }
+.price-val.gold { color: var(--gold); font-size: 16px; font-family: 'Playfair Display', serif; }
+
+.funil-list { display: flex; flex-direction: column; gap: 4px; margin-bottom: 1.5rem; }
+.funil-step { display: flex; gap: 14px; align-items: flex-start; padding: 14px 16px; background: var(--dark-2); border: 0.5px solid var(--border-2); border-radius: var(--radius-lg); }
+.funil-num { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold-dim); min-width: 24px; }
+.funil-content .funil-title { font-size: 14px; color: var(--text); margin-bottom: 4px; }
+.funil-content .funil-desc { font-size: 12px; color: var(--text-2); line-height: 1.6; margin-bottom: 6px; }
+.funil-badge { display: inline-block; font-size: 10px; padding: 2px 10px; border-radius: 99px; font-weight: 500; }
+
+.timeline-list { background: var(--dark-2); border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.5rem; }
+.tl-row { display: flex; gap: 14px; padding: 12px 16px; border-bottom: 0.5px solid var(--border-2); }
+.tl-row:last-child { border-bottom: none; }
+.tl-day { font-size: 11px; color: var(--gold); min-width: 68px; padding-top: 2px; font-weight: 500; }
+.tl-content .tl-action { font-size: 12px; color: var(--text); line-height: 1.5; }
+.tl-content .tl-sub { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+
+.insta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 1.5rem; }
+.insta-card { background: var(--dark-2); border: 0.5px solid var(--border-2); border-radius: var(--radius); padding: 12px; }
+.insta-type { font-size: 10px; font-weight: 500; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+.insta-title { font-size: 12px; color: var(--text-2); line-height: 1.5; }
+
+.ritual-box { background: var(--dark-2); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; }
+.ritual-title { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--gold); margin-bottom: 8px; }
+.ritual-desc { font-size: 13px; color: var(--text-2); line-height: 1.75; }
+.ritual-desc strong { color: var(--text); }
+
+/* ENC SELECTOR */
+.enc-selector { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.enc-btn {
+  font-size: 11px; padding: 6px 14px; border-radius: 99px; border: 0.5px solid var(--border-2);
+  background: none; color: var(--text-3); cursor: pointer; transition: all 0.15s;
+  font-family: 'DM Sans', sans-serif;
+}
+.enc-btn:hover { border-color: var(--border); color: var(--text-2); }
+.enc-btn.active { background: rgba(196,154,60,0.1); border-color: var(--border); color: var(--gold); }
+
+.script-placeholder {
+  text-align: center; padding: 3rem; background: var(--dark-2); border: 0.5px solid var(--border-2);
+  border-radius: var(--radius-lg); color: var(--text-3); font-size: 13px;
+}
+.script-placeholder span { display: block; font-size: 24px; margin-bottom: 8px; }
+
+/* NOTE BOX */
+.note-box { background: rgba(196,154,60,0.05); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 12px 14px; margin-top: 10px; }
+.note-box p { font-size: 12px; color: var(--text-2); line-height: 1.65; }
+.note-box strong { color: var(--gold); }
+
+@media (max-width: 640px) {
+  nav { padding: 0 1rem; }
+  .nav-logo { font-size: 14px; }
+  .nav-tab { font-size: 11px; padding: 5px 10px; }
+  .page { padding: 70px 1rem 2rem; }
+  .pillars { grid-template-columns: repeat(2, 1fr); }
+  .metric-grid { grid-template-columns: 1fr 1fr; }
+  .method-grid { grid-template-columns: 1fr; }
+  .insta-grid { grid-template-columns: repeat(2, 1fr); }
+  .enc-body { padding-left: 16px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">PONTO DE RUPTURA</div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="showPage('visao')">Visão Geral</button>
+    <button class="nav-tab" onclick="showPage('scripts')">Scripts</button>
+    <button class="nav-tab" onclick="showPage('comercial')">Comercial</button>
+  </div>
+</nav>
+
+<!-- VISÃO GERAL -->
+<div class="page active" id="page-visao">
+  <div class="hero">
+    <div class="hero-badge">Mentoria 100% Masculina · Turmas de 20 homens</div>
+    <h1>PONTO DE<br><span>RUPTURA</span></h1>
+    <div class="hero-sub">Clareza que gera decisão. Decisão que gera mudança.</div>
+    <div class="hero-meta">
+      <div class="hero-meta-item">10 encontros</div>
+      <div class="hero-meta-item">1h por semana</div>
+      <div class="hero-meta-item">Online + Encerramento presencial</div>
+      <div class="hero-meta-item">Claudio Alecrim</div>
+    </div>
+  </div>
+
+  <div class="sec-label">Os 4 Pilares</div>
+  <div class="pillars">
+    <div class="pillar"><div class="p-icon">✝</div><div class="p-name">Deus</div><div class="p-enc">Encontros 1 e 2</div></div>
+    <div class="pillar"><div class="p-icon">◉</div><div class="p-name">Consigo Mesmo</div><div class="p-enc">Encontros 3 e 4</div></div>
+    <div class="pillar"><div class="p-icon">⌂</div><div class="p-name">Família</div><div class="p-enc">Encontros 5 e 6</div></div>
+    <div class="pillar"><div class="p-icon">◈</div><div class="p-name">Negócios</div><div class="p-enc">Encontros 7 e 8</div></div>
+  </div>
+
+  <div class="sec-label">Método VALCR — 7 Modalidades Integradas</div>
+  <div class="method-box">
+    <div class="method-title">Sistema de Aprendizagem Masculino</div>
+    <div class="method-grid">
+      <div class="method-item"><span class="m-letter">V</span>Visual — mapas mentais, timelines, quadros</div>
+      <div class="method-item"><span class="m-letter">A</span>Auditivo — reflexão guiada, discussão oral</div>
+      <div class="method-item"><span class="m-letter">L</span>Leitura/Escrita — diário, cartas, leituras</div>
+      <div class="method-item"><span class="m-letter">C</span>Cinestésico — rituais físicos, desafios práticos</div>
+      <div class="method-item"><span class="m-letter">R</span>Racional/Lógico — análises, planos, frameworks</div>
+      <div class="method-item"><span class="m-letter">S</span>Social — missões com pessoa real</div>
+      <div class="method-item"><span class="m-letter">V</span>Verbal — declarações, conversas difíceis</div>
+    </div>
+  </div>
+
+  <div class="sec-label">Os 10 Encontros</div>
+  <div class="enc-list" id="enc-list-visao"></div>
+</div>
+
+<!-- SCRIPTS -->
+<div class="page" id="page-scripts">
+  <div class="hero" style="padding-top:1.5rem">
+    <div class="hero-badge">Scripts Completos</div>
+    <h1 style="font-size:clamp(24px,4vw,36px)">Roteiros dos <span>Encontros</span></h1>
+    <div class="hero-sub">Selecione o encontro para acessar o script completo com falas, dinâmicas e missões.</div>
+  </div>
+
+  <div class="enc-selector" id="enc-selector"></div>
+  <div id="script-content"></div>
+</div>
+
+<!-- COMERCIAL -->
+<div class="page" id="page-comercial">
+  <div class="hero" style="padding-top:1.5rem">
+    <div class="hero-badge">Estratégia Comercial</div>
+    <h1 style="font-size:clamp(24px,4vw,36px)">Funil de <span>Vendas</span></h1>
+    <div class="hero-sub">Números, cronograma, Instagram e ritual de encerramento.</div>
+  </div>
+
+  <div class="sec-label">Números do Negócio</div>
+  <div class="metric-grid">
+    <div class="metric-card"><div class="metric-val">R$ 1.617</div><div class="metric-lbl">Líquido por aluno — 12x Kiwify</div></div>
+    <div class="metric-card"><div class="metric-val">R$ 1.897</div><div class="metric-lbl">Líquido por aluno — PIX/à vista</div></div>
+    <div class="metric-card"><div class="metric-val">R$ 32.340</div><div class="metric-lbl">Turma cheia — parcelado</div></div>
+    <div class="metric-card"><div class="metric-val">R$ 37.940</div><div class="metric-lbl">Turma cheia — à vista</div></div>
+  </div>
+
+  <div class="sec-label">Estrutura de Preço</div>
+  <div class="price-table">
+    <div class="price-row"><div class="price-lbl">PIX / À vista</div><div class="price-val gold">R$ 1.997</div></div>
+    <div class="price-row"><div class="price-lbl">Cartão 12x (com acréscimo)</div><div class="price-val">R$ 199,90/mês · total R$ 2.397</div></div>
+    <div class="price-row"><div class="price-lbl">Cartão 6x (com acréscimo)</div><div class="price-val">R$ 366/mês · total R$ 2.196</div></div>
+    <div class="price-row"><div class="price-lbl">Vagas por turma</div><div class="price-val">20 homens</div></div>
+    <div class="price-row"><div class="price-lbl">Plataforma</div><div class="price-val">Kiwify</div></div>
+  </div>
+  <div class="note-box" style="margin-top:-1rem;margin-bottom:1.5rem"><p><strong>Regra de ouro:</strong> Nunca ofereça parcelado sem acréscimo. Configure na Kiwify com preço parcelado maior. Quem não paga R$ 199/mês provavelmente não terminaria a mentoria.</p></div>
+
+  <div class="sec-label">Funil de Vendas — Ordem de Ataque</div>
+  <div class="funil-list">
+    <div class="funil-step">
+      <div class="funil-num">1</div>
+      <div class="funil-content">
+        <div class="funil-title">Lista Mesa de Governo — Abordagem direta</div>
+        <div class="funil-desc">70 leads quentes. WhatsApp individual com contexto — mencionar o evento. Conversão esperada de 10–20%.</div>
+        <span class="funil-badge" style="background:var(--green-bg);color:#5DCAA5">Meta: 8–14 vendas</span>
+      </div>
+    </div>
+    <div class="funil-step">
+      <div class="funil-num">2</div>
+      <div class="funil-content">
+        <div class="funil-title">Instagram — Sequência de conteúdo pré-lançamento</div>
+        <div class="funil-desc">14 dias de conteúdo temático para ativar os 1.203 seguidores nichados. Stories diários + 3 posts de alto valor + 2 Reels.</div>
+        <span class="funil-badge" style="background:var(--amber-bg);color:#EF9F27">Meta: 3–6 vendas</span>
+      </div>
+    </div>
+    <div class="funil-step">
+      <div class="funil-num">3</div>
+      <div class="funil-content">
+        <div class="funil-title">Live de lançamento — Evento gratuito online</div>
+        <div class="funil-desc">60–90 min de entrega real com abertura de inscrições ao vivo. Bônus para quem comprar durante a live.</div>
+        <span class="funil-badge" style="background:var(--purple-bg);color:#AFA9EC">Meta: 2–5 vendas</span>
+      </div>
+    </div>
+    <div class="funil-step">
+      <div class="funil-num">4</div>
+      <div class="funil-content">
+        <div class="funil-title">Indicação — Boca a boca ativado</div>
+        <div class="funil-desc">Participantes da turma 1 que indicarem ganham benefício na turma 2. Reduz CAC e cria comunidade.</div>
+        <span class="funil-badge" style="background:var(--coral-bg);color:#F0997B">Estruturar após turma 1</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-label">Cronograma de Lançamento — 21 dias</div>
+  <div class="timeline-list">
+    <div class="tl-row"><div class="tl-day">Dia 1–3</div><div class="tl-content"><div class="tl-action">Preparação interna — Kiwify, checkout, data de início da turma</div><div class="tl-sub">Nada público ainda</div></div></div>
+    <div class="tl-row"><div class="tl-day">Dia 4–5</div><div class="tl-content"><div class="tl-action">Disparo para lista Mesa de Governo — WhatsApp individual + email</div><div class="tl-sub">Mensagem personalizada, mencionar o evento</div></div></div>
+    <div class="tl-row"><div class="tl-day">Dia 6</div><div class="tl-content"><div class="tl-action">Primeiro post Instagram — "Algo está vindo"</div><div class="tl-sub">Sem revelar o produto. Gerar curiosidade.</div></div></div>
+    <div class="tl-row"><div class="tl-day">Dia 7–14</div><div class="tl-content"><div class="tl-action">Sequência de conteúdo — 1 story/dia + 3 posts + 2 Reels</div><div class="tl-sub">Temas: travamento, falta de clareza, os 4 pilares, dor do homem que não decide</div></div></div>
+    <div class="tl-row"><div class="tl-day">Dia 15</div><div class="tl-content"><div class="tl-action">Live de lançamento — 60 min + abertura de inscrições</div><div class="tl-sub">Bônus exclusivo para quem comprar durante a live</div></div></div>
+    <div class="tl-row"><div class="tl-day">Dia 16–19</div><div class="tl-content"><div class="tl-action">Janela de inscrições — stories de prova social e urgência</div><div class="tl-sub">Mostrar vagas restantes. Depoimentos ao vivo.</div></div></div>
+    <div class="tl-row"><div class="tl-day">Dia 20–21</div><div class="tl-content"><div class="tl-action">Encerramento — 48h finais com virada de preço</div><div class="tl-sub">Último dia: PIX com desconto expira à meia-noite</div></div></div>
+  </div>
+
+  <div class="sec-label">Conteúdo Instagram — Pré-lançamento</div>
+  <div class="insta-grid">
+    <div class="insta-card"><div class="insta-type">Post</div><div class="insta-title">O homem travado não precisa de motivação — precisa de clareza</div></div>
+    <div class="insta-card"><div class="insta-type">Reels</div><div class="insta-title">3 sinais que você está no automático e não percebeu</div></div>
+    <div class="insta-card"><div class="insta-type">Carrossel</div><div class="insta-title">Os 4 pilares que definem a vida de um homem</div></div>
+    <div class="insta-card"><div class="insta-type">Story</div><div class="insta-title">Enquete: Qual área está mais travada na sua vida?</div></div>
+    <div class="insta-card"><div class="insta-type">Post</div><div class="insta-title">A decisão que você adia hoje vai custar mais caro amanhã</div></div>
+    <div class="insta-card"><div class="insta-type">Reels</div><div class="insta-title">Por que homens inteligentes repetem os mesmos erros</div></div>
+    <div class="insta-card"><div class="insta-type">Carrossel</div><div class="insta-title">Ruptura não é crise — é quando você decide mudar de nível</div></div>
+    <div class="insta-card"><div class="insta-type">Story</div><div class="insta-title">Revelação: o que vem aí (prévia da mentoria)</div></div>
+    <div class="insta-card"><div class="insta-type">Post</div><div class="insta-title">Prova social — depoimento do Mesa de Governo</div></div>
+  </div>
+
+  <div class="sec-label">Ritual de Encerramento — Encontro 10 Presencial</div>
+  <div class="ritual-box">
+    <div class="ritual-title">O Rito de Ruptura — Londrina</div>
+    <div class="ritual-desc">
+      Os participantes sabem que é presencial. <strong>Não sabem o que vai acontecer.</strong><br><br>
+      <strong>Estrutura sugerida:</strong><br>
+      • Abertura em círculo — cada homem declara sua decisão de ruptura em voz alta<br>
+      • Queima simbólica — escrever no papel o que vai deixar para trás e queimar<br>
+      • Declaração de compromisso — cada um assina o "Pacto de Ruptura"<br>
+      • Entrega do brinde surpresa<br><br>
+      <strong>Ideias de brinde:</strong><br>
+      • Moeda/pedra gravada com "Ponto de Ruptura" + data da turma — carrega no bolso, lembra toda vez que toca<br>
+      • Diário encadernado em couro com nome e data — uso contínuo, valor percebido alto<br>
+      • Carta lacrada escrita por eles no enc. 9 e entregue aqui — impacto emocional máximo<br>
+      • Canivete com gravação — símbolo de corte com o passado (verificar entrega pelos Correios)
+    </div>
+  </div>
+</div>
+
+<script>
+// DADOS DOS ENCONTROS
+const encontros = [
+  {
+    num: 1, pilar: "Deus", cor: "c-deus",
+    titulo: "A Âncora que Você Perdeu",
+    meta: "Reconexão espiritual · Abertura do processo",
+    obj: "Criar o ambiente de segurança e honestidade radical que vai sustentar toda a jornada. Fazer o participante se ver — talvez pela primeira vez — sem defesa e sem performance.",
+    temas: ["Religião vs. relação com Deus", "Propósito vs. performance", "O que você pede e o que você teme", "A âncora que mantém o homem de pé"],
+    aprend: ["Silêncio guiado (A)", "Carta escrita (L/E)", "Linha do tempo espiritual (V)", "Rodada de compartilhamento (S)"],
+    tarefas: [
+      "Escrever a Carta para Deus — sem filtro, mínimo 1 página, total honestidade",
+      "Desenhar a Linha do Tempo Espiritual no papel — da infância até hoje",
+      "5 minutos de silêncio diário — todo dia, sem celular, sem exceção"
+    ],
+    temScript: true
+  },
+  {
+    num: 2, pilar: "Deus", cor: "c-deus",
+    titulo: "Quem Manda na Sua Vida?",
+    meta: "Soberania · Controle · Confiança",
+    obj: "Confrontar a ilusão de controle total e aprender a operar na tensão entre fé e ação. Construir uma prática espiritual diária funcional.",
+    temas: ["A ansiedade do homem que não confia", "Oração como estratégia, não fraqueza", "Gratidão como prática de ruptura", "Fé que move vs. fé que paralisa"],
+    aprend: ["Meditação dirigida (C/A)", "Ritual matinal escrito (L/R)", "Debate em grupo (S)"],
+    tarefas: [
+      "Criar seu ritual espiritual matinal de 10 minutos — testar por 7 dias",
+      "Listar 10 coisas que você tenta controlar e que não dependem de você",
+      "Conversa com alguém de confiança sobre fé — ouvir, não só falar"
+    ],
+    temScript: false
+  },
+  {
+    num: 3, pilar: "Consigo Mesmo", cor: "c-self",
+    titulo: "O Homem no Espelho",
+    meta: "Autoconhecimento radical · Identidade real",
+    obj: "Quebrar a máscara social e chegar ao perfil real do participante — forças, sombras, padrões destrutivos e o que ele realmente quer.",
+    temas: ["Identidade construída vs. identidade real", "Padrões que se repetem em todas as áreas", "A voz interna — aliada ou sabotadora", "O que você tolera que não deveria"],
+    aprend: ["Perfil de temperamento (R/V)", "Diário de padrões (L/E)", "Desafio físico simbólico (C)"],
+    tarefas: [
+      "Preencher a Ferramenta de Temperamento + análise escrita própria",
+      "Diário por 7 dias: 'O que fiz hoje que não queria ter feito?'",
+      "Desafio: acordar 1h mais cedo por 5 dias consecutivos"
+    ],
+    temScript: false
+  },
+  {
+    num: 4, pilar: "Consigo Mesmo", cor: "c-self",
+    titulo: "Suas Feridas Viram Seu Filtro",
+    meta: "Trauma · Emoção · Libertação interna",
+    obj: "Identificar as feridas não resolvidas que estão distorcendo percepção, decisões e relacionamentos. Criar um plano de cura real.",
+    temas: ["As 5 feridas emocionais masculinas", "Raiva, medo e vergonha disfarçados de força", "O pai que você teve e o pai que você é", "Perdão como ato estratégico, não sentimental"],
+    aprend: ["Carta de perdão (L/C)", "Áudio de meditação dirigida (A)", "Mapa visual de feridas e impactos (V)"],
+    tarefas: [
+      "Escrever carta para quem você precisa perdoar — sem enviar ainda",
+      "Fazer o mapa visual: ferida → comportamento → impacto na vida",
+      "Ouvir o áudio de meditação guiada 3x na semana"
+    ],
+    temScript: false
+  },
+  {
+    num: 5, pilar: "Família", cor: "c-familia",
+    titulo: "O Legado que Você Está Deixando",
+    meta: "Paternidade · Presença · Influência",
+    obj: "Confrontar o gap entre o pai/marido/filho que você acha que é e o que as pessoas ao redor experimentam. Criar um plano de presença real.",
+    temas: ["A diferença entre provedor e presente", "O que seus filhos vão lembrar de você", "Herança emocional — o que você reproduz", "Conversas que você evita em casa"],
+    aprend: ["Dinâmica de perspectiva familiar (S)", "Carta para filhos/família (L/E)", "Framework de presença semanal (R/V)"],
+    tarefas: [
+      "Perguntar para alguém da família: 'Como você me descreve?' — e ouvir sem se defender",
+      "Escrever carta para seus filhos sobre quem você quer ser",
+      "Criar 3 rituais fixos semanais com a família — e cumprir"
+    ],
+    temScript: false
+  },
+  {
+    num: 6, pilar: "Família", cor: "c-familia",
+    titulo: "O Homem que Sua Família Precisa",
+    meta: "Liderança doméstica · Comunicação · Reparação",
+    obj: "Aprender a liderar a família com autoridade e amor. Fechar ciclos e iniciar novos padrões de comunicação e conexão.",
+    temas: ["Liderança servil na prática doméstica", "Como ter conversas difíceis com quem você ama", "Reparação real — além do 'desculpa'", "Construindo ambiente seguro em casa"],
+    aprend: ["Role-play de conversa difícil (S/V)", "Plano de reparação escrito (L/R)", "Desafio de ação física em casa (C)"],
+    tarefas: [
+      "Ter UMA conversa difícil que você está evitando — essa semana",
+      "Fazer um gesto concreto de reparação — não palavras, uma ação",
+      "Criar as 'Regras da Casa' — valores que sua família vai viver"
+    ],
+    temScript: false
+  },
+  {
+    num: 7, pilar: "Negócios", cor: "c-negocios",
+    titulo: "O Negócio que Consome Você",
+    meta: "Clareza estratégica · Diagnóstico real",
+    obj: "Fazer um diagnóstico brutal do negócio atual — o que está funcionando, o que está destruindo energia e quais as decisões adiadas que custam caro.",
+    temas: ["Você trabalha no negócio ou no caos?", "As decisões que você evita e o custo disso", "Clareza de oferta, público e posicionamento", "O negócio te liberta ou te prende?"],
+    aprend: ["Framework de diagnóstico (R/V)", "Mapa visual de gargalos (V)", "Declaração estratégica em voz alta (V/A)"],
+    tarefas: [
+      "Preencher o Diagnóstico Ponto de Ruptura — 8 áreas do negócio",
+      "Criar o mapa visual: onde sua energia vai e o que retorna",
+      "Listar as 3 decisões que você está adiando — com prazo para decidir"
+    ],
+    temScript: false
+  },
+  {
+    num: 8, pilar: "Negócios", cor: "c-negocios",
+    titulo: "Do Caos para o Sistema",
+    meta: "Estrutura · Escala · Saída do operacional",
+    obj: "Transformar intenções em estrutura real. Construir o modelo de operação que libera o dono e gera crescimento sustentável.",
+    temas: ["O dono que não consegue sair do operacional", "Estrutura mínima para escalar", "Pessoas, processos e tecnologia no lugar certo", "Visão de 12 meses — onde quer chegar"],
+    aprend: ["Canvas do negócio (V/R)", "Plano de 90 dias (L/R)", "Mentoria quente em grupo (S)"],
+    tarefas: [
+      "Montar o Plano de 90 dias com metas e marcos claros",
+      "Identificar 1 processo para delegar ou automatizar essa semana",
+      "Descrever em 1 parágrafo sua visão de negócio para 12 meses"
+    ],
+    temScript: false
+  },
+  {
+    num: 9, pilar: "Integração", cor: "c-ruptura",
+    titulo: "Integrando os 4 Pilares",
+    meta: "Síntese · Coerência · Clareza final",
+    obj: "Integrar os aprendizados das 4 áreas e identificar onde estão os maiores gaps e as maiores alavancas. Preparar o terreno para a decisão de ruptura.",
+    temas: ["O homem fragmentado vs. o homem integrado", "Onde os pilares se alimentam e se sabotam", "Identificando a decisão central que muda tudo", "A vida que quer vs. a vida que está vivendo"],
+    aprend: ["Diagrama de integração (V/R)", "Apresentação pessoal para o grupo (S/V)", "Plano de vida em 1 página (L/R)"],
+    tarefas: [
+      "Criar o Diagrama de Integração — como os 4 pilares estão se relacionando",
+      "Escrever o 'Plano de Vida em 1 Página' — visão, valores, missão, metas",
+      "Preparar apresentação de 5 min para o grupo no enc. 10"
+    ],
+    temScript: false
+  },
+  {
+    num: 10, pilar: "Ruptura", cor: "c-ruptura",
+    titulo: "Ponto de Ruptura — A Decisão",
+    meta: "Compromisso · Declaração · Próximo passo",
+    obj: "O encontro mais poderoso. Cada participante declara publicamente sua decisão de mudança, assume compromisso concreto e recebe o framework para os próximos 90 dias.",
+    temas: ["A diferença entre intenção e decisão", "Declaração pública como ato de comprometimento", "Rituais de encerramento e abertura", "O que vem depois do Ponto de Ruptura"],
+    aprend: ["Apresentação individual (S/V)", "Carta para si mesmo — abrir em 6 meses (L/E)", "Ritual físico de compromisso (C)", "Gravação em vídeo do compromisso (A/V)"],
+    tarefas: [
+      "Escrever a 'Carta para o Futuro Eu' — abrir em 6 meses",
+      "Gravar vídeo de 2 min declarando sua decisão — guardar para rever",
+      "Definir os 3 primeiros atos concretos nos próximos 7 dias"
+    ],
+    temScript: false
+  }
+];
+
+// SCRIPT DO ENCONTRO 1
+const script_enc1 = `
+<div class="script-header">
+  <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Pilar: Deus · Encontro 1 de 10</div>
+  <div class="script-enc-title">A Âncora que Você Perdeu</div>
+  <div class="script-enc-sub">O primeiro encontro não é sobre dar respostas. É sobre criar um espaço de honestidade que o participante provavelmente nunca teve com outro homem.</div>
+  <div class="script-enc-meta">
+    <span>⏱ 60 minutos</span>
+    <span>👥 Turma completa — até 20 homens</span>
+    <span>🎯 Abertura + Quebra de gelo + Diagnóstico espiritual</span>
+  </div>
+</div>
+
+<div class="bloco open" id="s1b1">
+  <div class="bloco-header" onclick="toggleBloco('s1b1')">
+    <div class="bloco-tempo">0–5 min</div>
+    <div class="bloco-titulo">Abertura — Presença e intenção</div>
+    <div class="bloco-arrow">›</div>
+  </div>
+  <div class="bloco-body">
+    <div class="script-sublabel">Fala do mentor</div>
+    <div class="fala">"Bem-vindos. Antes de qualquer coisa, quero que vocês saibam que esse não é um curso. Não tem slides pra decorar, não tem prova no final. O que acontece aqui é diferente de tudo que vocês já participaram. Aqui a gente vai falar do que os homens raramente falam."</div>
+    <div class="fala">"Antes de me apresentar, quero que cada um feche os olhos por 30 segundos. Sem explicação. Só 30 segundos de silêncio. Respira fundo."</div>
+    <div class="instrucao"><strong>Instrução:</strong> Fique em silêncio com eles. Não preencha o espaço. Deixe o silêncio pesar. Após 30 segundos, fale suavemente.</div>
+    <div class="fala">"Quando foi a última vez que você ficou em silêncio de verdade — sem celular, sem música, sem nada? Esse silêncio que vocês acabaram de sentir é o primeiro passo do processo que começa hoje."</div>
+  </div>
+</div>
+
+<div class="bloco" id="s1b2">
+  <div class="bloco-header" onclick="toggleBloco('s1b2')">
+    <div class="bloco-tempo">5–15 min</div>
+    <div class="bloco-titulo">Apresentação — Quem sou eu e por que esse espaço existe</div>
+    <div class="bloco-arrow">›</div>
+  </div>
+  <div class="bloco-body">
+    <div class="script-sublabel">Fala do mentor</div>
+    <div class="fala">"Meu nome é Cláudio Alecrim. Sou mentor de homens. Mas antes disso, sou um homem que já esteve exatamente onde muitos de vocês estão agora — com a sensação de que a vida tá andando, mas algo tá errado. Que você tá funcionando, mas não tá vivendo."</div>
+    <div class="fala">"Esse espaço existe porque homens não têm espaço pra falar de verdade. A gente aprende desde cedo a resolver, a aguentar, a parecer que tá bem. E aí vai acumulando. Vai adiando. E o que era uma decisão vira um peso."</div>
+    <div class="fala">"Nos próximos 10 encontros, a gente vai trabalhar 4 áreas: sua relação com Deus, com você mesmo, com sua família e com seus negócios. Não como áreas separadas — porque elas nunca são. Um homem travado no espiritual vai travar no negócio."</div>
+    <div class="script-sublabel">Rodada de apresentação</div>
+    <div class="dinamica">
+      <div class="dinamica-title">Dinâmica — 3 perguntas de apresentação</div>
+      <div class="dinamica-desc">Cada participante responde em até 1 minuto:<br><br>
+      <strong>1.</strong> Seu nome e o que você faz.<br>
+      <strong>2.</strong> Uma palavra que define como você está chegando aqui hoje.<br>
+      <strong>3.</strong> O que te fez dizer sim pra essa mentoria?<br><br>
+      <strong>Instrução:</strong> Anote mentalmente as palavras que se repetem. Elas aparecem no fechamento. Não interrompa, não avalie — só escute com atenção visível.</div>
+    </div>
+  </div>
+</div>
+
+<div class="bloco" id="s1b3">
+  <div class="bloco-header" onclick="toggleBloco('s1b3')">
+    <div class="bloco-tempo">15–20 min</div>
+    <div class="bloco-titulo">O Pacto do Grupo — As 4 Regras</div>
+    <div class="bloco-arrow">›</div>
+  </div>
+  <div class="bloco-body">
+    <div class="script-sublabel">Fala do mentor</div>
+    <div class="fala">"Antes de avançar, preciso que a gente firme um pacto. São 4 regras. Não é burocracia — é o que vai fazer esse espaço funcionar."</div>
+    <div class="dinamica">
+      <div class="dinamica-title">As 4 Regras do Grupo</div>
+      <div class="dinamica-desc">
+      <strong>1. O que acontece aqui, fica aqui.</strong> Confidencialidade total.<br><br>
+      <strong>2. Sem julgamento.</strong> Cada um está num ponto diferente. Ninguém é superior.<br><br>
+      <strong>3. Honestidade antes de performance.</strong> Não tem resposta certa. Tem resposta verdadeira.<br><br>
+      <strong>4. Presença total.</strong> 1 hora por semana. Câmera aberta. Sem multitarefa.
+      </div>
+    </div>
+    <div class="fala">"Quem concorda e se compromete a honrar essas 4 regras, digita 'ESTOU DENTRO' no chat agora."</div>
+    <div class="instrucao"><strong>Instrução:</strong> Aguarde todos digitarem. Se alguém não digitar, pergunte diretamente. Não deixe passar.</div>
+  </div>
+</div>
+
+<div class="bloco" id="s1b4">
+  <div class="bloco-header" onclick="toggleBloco('s1b4')">
+    <div class="bloco-tempo">20–40 min</div>
+    <div class="bloco-titulo">Conteúdo — A Âncora que Você Perdeu</div>
+    <div class="bloco-arrow">›</div>
+  </div>
+  <div class="bloco-body">
+    <div class="script-sublabel">Abertura do conteúdo</div>
+    <div class="fala">"Vamos falar de Deus. E antes que alguém trave — não importa a religião de cada um. O que importa é a pergunta: existe algo maior que você guiando sua vida? Ou você está tentando carregar tudo sozinho?"</div>
+    <div class="script-sublabel">Bloco 1 — Religião vs. Relação</div>
+    <div class="fala">"A maioria dos homens aqui cresceu dentro de uma religião. A gente aprende as regras, aprende o que pode e o que não pode. Mas ninguém ensina a ter uma relação real. Uma conversa de verdade. Uma confiança de verdade."</div>
+    <div class="fala">"Pergunta pra vocês: você tem uma relação com Deus, ou você tem uma religião? A diferença é simples: relação é pessoal, viva, imperfeita. Religião pode virar performance. E homem que performa pra Deus, performa pra todo mundo."</div>
+    <div class="instrucao"><strong>Pause 20–30 segundos.</strong> Não explique. Não suavize. Deixe a provocação trabalhar.</div>
+    <div class="script-sublabel">Bloco 2 — Propósito vs. Performance</div>
+    <div class="fala">"Um dos maiores dramas do homem moderno é que ele confunde ocupação com propósito. Ele tá sempre fazendo. Sempre resolvendo. E aí chega num momento e percebe que não sabe por que tá fazendo nada disso."</div>
+    <div class="fala">"Propósito não é uma frase bonita no Instagram. Propósito é a resposta pra: mesmo se eu perdesse tudo, o que ainda faria sentido? Muitos de vocês nunca pararam pra responder isso de verdade. E tudo bem — é exatamente por isso que estão aqui."</div>
+    <div class="script-sublabel">Bloco 3 — O que você pede e o que você teme</div>
+    <div class="fala">"A maioria dos homens ora pedindo coisas. E aí, quando não vem, a fé balança. Porque a relação era transacional — não era relação, era negociação."</div>
+    <div class="fala">"E tem outra coisa: o homem às vezes tem medo de se aproximar de Deus de verdade. Porque se aproximar significa ser visto. E ser visto significa que as mentiras aparecem — as que conta pros outros e as que conta pra si mesmo."</div>
+  </div>
+</div>
+
+<div class="bloco" id="s1b5">
+  <div class="bloco-header" onclick="toggleBloco('s1b5')">
+    <div class="bloco-tempo">40–53 min</div>
+    <div class="bloco-titulo">Dinâmica — Linha do Tempo Espiritual</div>
+    <div class="bloco-arrow">›</div>
+  </div>
+  <div class="bloco-body">
+    <div class="dinamica">
+      <div class="dinamica-title">Parte 1 — Reflexão silenciosa (5 min)</div>
+      <div class="dinamica-desc">"Agora quero que cada um pense na sua linha do tempo com Deus. Da infância até hoje. Onde estava mais próximo? Onde se afastou? O que causou esse afastamento?"<br><br>
+      <strong>Coloque cronômetro de 5 min. Fique em silêncio junto com o grupo.</strong> Não preencha com música ou conversa.</div>
+    </div>
+    <div class="dinamica">
+      <div class="dinamica-title">Parte 2 — Compartilhamento voluntário (8 min)</div>
+      <div class="dinamica-desc">"Quem quiser compartilhar algo do que veio — uma frase, uma lembrança, uma percepção — pode falar. Ninguém é obrigado. Mas cada vez que alguém fala a verdade aqui, libera espaço pra outro fazer o mesmo."<br><br>
+      <strong>Escute sem comentar muito.</strong> Se ninguém falar, aguarde 10 segundos antes de convidar alguém pelo nome. Ao final, conecte os padrões que ouviu: "Percebam que quase todos tocaram em algo parecido..."</div>
+    </div>
+  </div>
+</div>
+
+<div class="bloco" id="s1b6">
+  <div class="bloco-header" onclick="toggleBloco('s1b6')">
+    <div class="bloco-tempo">53–60 min</div>
+    <div class="bloco-titulo">Encerramento — Missões da Semana</div>
+    <div class="bloco-arrow">›</div>
+  </div>
+  <div class="bloco-body">
+    <div class="script-sublabel">Fala do mentor</div>
+    <div class="fala">"O que acontece entre um encontro e outro é mais importante do que o que acontece aqui dentro. Aqui a gente acende. Lá fora, vocês executam."</div>
+    <div class="dinamica">
+      <div class="dinamica-title">Missões da Semana 1</div>
+      <div class="dinamica-desc">
+      <strong>Missão 1 — A Carta [L/E]:</strong> Escrever uma carta para Deus. Sem regras, sem linguagem religiosa, sem filtro. Só verdade. Mínimo de 1 página. Não precisa mostrar pra ninguém.<br><br>
+      <strong>Missão 2 — A Linha do Tempo [Visual]:</strong> Desenhar no papel a linha do tempo espiritual. Da infância até hoje. Marcar pontos de aproximação e distância.<br><br>
+      <strong>Missão 3 — O Silêncio Diário [C/A]:</strong> 5 minutos por dia, todo dia, em silêncio total. Sem celular, sem fone. A consistência importa, não o horário.
+      </div>
+    </div>
+    <div class="fala">"Semana que vem a gente vai falar de controle. De quem manda de verdade na sua vida. Venham com as missões feitas."</div>
+    <div class="fala">"Se alguém tiver algo pesado depois de hoje — pode me chamar no privado. Esse espaço não existe só nos encontros."</div>
+  </div>
+</div>
+
+<div class="missoes-box">
+  <div class="missoes-title">Resumo — Missões Semana 1</div>
+  <div class="missao-item">
+    <div class="missao-num">01</div>
+    <div class="missao-content">
+      <div class="missao-nome">A Carta para Deus</div>
+      <div class="missao-desc">Sem filtro, sem regra, mínimo 1 página. Total honestidade.</div>
+      <div class="missao-tag">Leitura/Escrita · Cinestésico</div>
+    </div>
+  </div>
+  <div class="missao-item">
+    <div class="missao-num">02</div>
+    <div class="missao-content">
+      <div class="missao-nome">Linha do Tempo Espiritual</div>
+      <div class="missao-desc">Desenhar no papel — da infância até hoje. Trazer no próximo encontro.</div>
+      <div class="missao-tag">Visual</div>
+    </div>
+  </div>
+  <div class="missao-item">
+    <div class="missao-num">03</div>
+    <div class="missao-content">
+      <div class="missao-nome">Silêncio Diário</div>
+      <div class="missao-desc">5 minutos por dia, todo dia, sem celular, sem fone.</div>
+      <div class="missao-tag">Cinestésico · Auditivo</div>
+    </div>
+  </div>
+</div>
+`;
+
+// RENDER VISÃO GERAL
+function renderEncList() {
+  const container = document.getElementById('enc-list-visao');
+  encontros.forEach(e => {
+    const div = document.createElement('div');
+    div.className = 'enc';
+    div.id = `enc-visao-${e.num}`;
+    div.innerHTML = `
+      <div class="enc-header" onclick="toggleEnc('enc-visao-${e.num}')">
+        <div class="enc-num ${e.cor}">${e.num}</div>
+        <div class="enc-info">
+          <div class="enc-title">${e.titulo}</div>
+          <div class="enc-meta-line">${e.pilar} · ${e.meta}</div>
+        </div>
+        <div class="enc-badge ${e.cor}">${e.pilar}</div>
+        <div class="enc-arrow">›</div>
+      </div>
+      <div class="enc-body">
+        <div class="enc-obj">${e.obj}</div>
+        <div class="enc-block-title">Temas</div>
+        <div class="tags">${e.temas.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+        <div class="enc-block-title">Modalidades de aprendizagem</div>
+        <div class="tags">${e.aprend.map(a => `<span class="tag">${a}</span>`).join('')}</div>
+        <div class="enc-block-title">Tarefas e desafios</div>
+        <div class="task-list">${e.tarefas.map(t => `<div class="task-item">${t}</div>`).join('')}</div>
+      </div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+// RENDER SCRIPTS SELECTOR
+function renderScriptSelector() {
+  const sel = document.getElementById('enc-selector');
+  encontros.forEach(e => {
+    const btn = document.createElement('button');
+    btn.className = `enc-btn${e.num === 1 ? ' active' : ''}`;
+    btn.textContent = `Enc. ${e.num}`;
+    btn.onclick = () => selectScript(e.num, btn);
+    sel.appendChild(btn);
+  });
+  renderScript(1);
+}
+
+function selectScript(num, btn) {
+  document.querySelectorAll('.enc-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderScript(num);
+}
+
+function renderScript(num) {
+  const container = document.getElementById('script-content');
+  if (num === 1) {
+    container.innerHTML = script_enc1;
+  } else {
+    const e = encontros[num - 1];
+    container.innerHTML = `
+      <div class="script-header">
+        <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Pilar: ${e.pilar} · Encontro ${e.num} de 10</div>
+        <div class="script-enc-title">${e.titulo}</div>
+        <div class="script-enc-sub">${e.obj}</div>
+      </div>
+      <div class="script-placeholder">
+        <span>⏳</span>
+        Script em desenvolvimento — sendo construído em sequência.<br>
+        <span style="font-size:11px;margin-top:6px;display:block">Encontros 2 a 10 serão adicionados conforme avançamos na construção.</span>
+      </div>
+    `;
+  }
+}
+
+// TOGGLE FUNCTIONS
+function toggleEnc(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+function toggleBloco(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+
+// NAVIGATION
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(`page-${name}`).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// INIT
+renderEncList();
+renderScriptSelector();
+</script>
+</body>
+</html>
