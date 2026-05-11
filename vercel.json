@@ -10,7 +10,7 @@
     { "src": "/homemespiritual", "dest": "/homemespiritual.html" },
     { "src": "/governopessoal", "dest": "/governopessoal.html" },
     { "src": "/interesse", "dest": "/Interesse.html" },
-    { "src": "/feedback", "dest": "/feedback.html" }
+    { "src": "/feedback", "dest": "/feedback.html" },
     { "src": "/PDR", "dest": "/PDR.html" }
   ]
 }
