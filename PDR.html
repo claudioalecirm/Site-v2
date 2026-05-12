@@ -270,14 +270,544 @@ S[2]=`<div class="script-header"><div style="font-size:10px;letter-spacing:0.12e
 <div class="bloco" id="s2b3"><div class="bloco-header" onclick="tB('s2b3')"><div class="bloco-tempo">35–50 min</div><div class="bloco-titulo">Dinâmica — Lista do Controle + Ritual Matinal</div><div class="bloco-arrow">›</div></div><div class="bloco-body"><div class="script-sublabel">Parte 1 — A Lista do Controle (7 min)</div><div class="fala">"Pega papel e caneta. Divide o papel em dois lados."</div><div class="dinamica"><div class="din-title">Dois lados do papel</div><div class="din-desc"><strong>Lado esquerdo — "O que depende de mim":</strong> suas ações, respostas, esforço, foco, postura, preparo, escolhas diárias.<br><br><strong>Lado direito — "O que não depende de mim":</strong> resultado final, opinião dos outros, tempo que os processos levam para acontecer, cenário econômico externo (inflação, juros, mercado), saúde alheia, passado.</div></div><div class="obs-box"><div class="obs-title">👁 Explique "tempo" e "economia" se surgir dúvida</div><div class="obs-desc"><strong>"Tempo"</strong> = você não controla quando o negócio decola, quando o filho amadurece, quando o casamento se restaura. Você planta e cuida — mas não controla quando brota.<br><br><strong>"Cenário econômico"</strong> = inflação, dólar, juros, recessão. Você pode se adaptar, mas não controla o cenário macro. Carregar isso como falha pessoal é ilusão de controle disfarçada de responsabilidade.</div></div><div class="fala">"Essa lista vai num lugar que você vê todos os dias. Toda vez que sentir a ansiedade, você olha pra lista da direita: isso depende de mim? Se não depende, não é seu para carregar."</div><div class="lembrete">📋 Lista do Controle fica na parede durante toda a mentoria — exercício contínuo até o enc. 10</div><div class="script-sublabel">Parte 2 — Construção do Ritual Matinal (8 min)</div><div class="dinamica"><div class="din-title">4 perguntas estruturantes — responder no papel, em silêncio</div><div class="din-desc"><strong>P1 — O horário:</strong> Que horas você acorda? Qual o primeiro momento do dia onde você tem 10 minutos só para você?<br><br><strong>P2 — O movimento de abertura:</strong> Silêncio, oração, leitura? O que ressoa — não o que parece certo.<br><br><strong>P3 — A gratidão específica:</strong> 3 coisas pelas quais você é genuinamente grato hoje. Não genéricas — específicas.<br><br><strong>P4 — A intenção do dia:</strong> Uma palavra que vai guiar como você quer agir hoje. Ex: Presença. Paciência. Clareza.<br><br><div class="lembrete">📋 Ritual Matinal: exercício diário contínuo até o enc. 10 — anotar horário de cada participante para cobrar pelo nome no enc. 3</div></div></div></div></div>
 <div class="bloco" id="s2b4"><div class="bloco-header" onclick="tB('s2b4')"><div class="bloco-tempo">55–60 min</div><div class="bloco-titulo">Encerramento — Missões da Semana 2</div><div class="bloco-arrow">›</div></div><div class="bloco-body"><div class="fala">"Estamos no final do segundo encontro. Dois de dez. Já aconteceu mais nessas duas horas do que muitos homens processam em anos — porque a maioria nunca para para fazer essas perguntas."</div><div class="missoes-box"><div class="missoes-title">Missões — Semana 2</div><div class="missao-item"><div class="missao-num">01</div><div><div class="missao-nome">Ritual Espiritual Matinal</div><div class="missao-desc">Executar o ritual construído hoje — 7 dias, sem exceção. No enc. 3 cada um reporta quantos dias cumpriu e o que notou.</div><div class="missao-tag">Cinestésico · Lógico</div><div class="missao-lembrete">📋 Exercício contínuo até o enc. 10 — anotar horário declarado para cobrar no enc. 3</div></div></div><div class="missao-item"><div class="missao-num">02</div><div><div class="missao-nome">Lista do Controle na Parede</div><div class="missao-desc">Afixar em lugar visível. Toda vez que sentir ansiedade: "Isso depende de mim?"</div><div class="missao-tag">Visual · Cinestésico</div><div class="missao-lembrete">📋 Permanece durante toda a mentoria</div></div></div><div class="missao-item"><div class="missao-num">03</div><div><div class="missao-nome">A Conversa de Fé</div><div class="missao-desc">Conversa honesta sobre fé com alguém de confiança — não religiosa, real. Com quem e em qual dia?</div><div class="missao-tag">Social · Verbal</div><div class="missao-lembrete">📋 Anotar com quem e o dia — cobrar no enc. 3 pelo nome</div></div></div></div><div class="ponte-box"><div class="ponte-label">Ponte para o Encontro 3</div><div class="ponte-fala">"Semana que vem viramos o espelho. Paramos de olhar pra fora e começamos a olhar com honestidade pra dentro. Entramos no segundo pilar: Consigo Mesmo. Vai ser desconfortável — e vai ser necessário. Uma última coisa: quem fez a carta pra Deus e ainda não leu de volta — lê essa semana. Não pra avaliar o que escreveu. Pra se ver."</div></div></div></div>`;
 
-function scriptResumido(e){
-  return `<div class="script-header"><div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Pilar: ${e.p} · Encontro ${e.n} de 10</div><div class="script-enc-title">${e.t}</div><div class="script-enc-sub">${e.o}</div><div class="script-enc-meta"><span>⏱ 60 minutos</span><span>👥 Turma completa</span></div></div>
-<div class="obs-box" style="margin-bottom:16px"><div class="obs-title">📄 Script completo disponível no PDF do encontro</div><div class="obs-desc">Este encontro tem script completo em PDF — com todas as falas em primeira pessoa, dinâmicas, lembretes e ponte para o próximo encontro. Acesse o PDF na pasta do Encontro ${e.n}.</div></div>
-<div style="margin-bottom:12px"><div class="script-sublabel">Temas</div><div class="tags" style="margin-top:6px">${e.temas.map(t=>`<span class="tag">${t}</span>`).join('')}</div></div>
-<div style="margin-bottom:12px"><div class="script-sublabel">Modalidades</div><div class="tags" style="margin-top:6px">${e.ap.map(a=>`<span class="tag">${a}</span>`).join('')}</div></div>
-<div class="missoes-box"><div class="missoes-title">Missões — Semana ${e.n}</div>${e.ta.map((t,i)=>`<div class="missao-item"><div class="missao-num">0${i+1}</div><div><div class="missao-desc">${t}</div></div></div>`).join('')}</div>`;
-}
-for(let i=3;i<=10;i++) S[i]=scriptResumido(E[i-1]);
+S[3]=`<div class="script-header">
+  <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#5DCAA5;margin-bottom:8px">Pilar: Consigo Mesmo · Encontro 3 de 10</div>
+  <div class="script-enc-title">O Homem no Espelho</div>
+  <div class="script-enc-sub">No enc. 1 e 2 o homem olhou para cima — sua relação com Deus. Agora vira o espelho. Olha para dentro. Esse é o encontro mais desconfortável e mais necessário do pilar Consigo Mesmo.</div>
+  <div class="script-enc-meta"><span>⏱ 60 minutos</span><span>👥 Turma completa</span><span>🎯 Identidade · Padrões · Voz interna · Tolerância</span></div>
+</div>
+
+<div class="bloco open" id="s3b1"><div class="bloco-header" onclick="tB('s3b1')"><div class="bloco-tempo">0–8 min</div><div class="bloco-titulo">Abertura — cobrança das missões</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Terceiro encontro. Antes de avançar — missões. Quem executou o ritual matinal todos os dias? Digita o número de dias no chat."</div>
+<div class="dinamica"><div class="din-title">Check-in — cobrar pelo nome e horário declarado no enc. 2</div><div class="din-desc">Ritual matinal: "João — você havia dito 6h. Cumpriu?" Chame pelo nome. A cobrança personalizada cria responsabilização real.<br><br>Lista do Controle: "Quem consultou a lista quando sentiu ansiedade essa semana? S ou N."<br><br>Conversa de fé: "Quem fez a conversa com alguém de confiança?" Para quem fez — o que foi diferente?</div></div>
+<div class="fala">"Hoje entramos no segundo pilar: Consigo Mesmo. E vou começar com uma pergunta que quero que vocês guardem durante todo o encontro: você conhece o homem que você é — ou apenas o homem que você apresenta?"</div>
+</div></div>
+
+<div class="bloco" id="s3b2"><div class="bloco-header" onclick="tB('s3b2')"><div class="bloco-tempo">8–38 min</div><div class="bloco-titulo">Conteúdo — O Homem no Espelho</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="script-sublabel">3.1 — Identidade construída vs. identidade real</div>
+<div class="fala">"A maioria dos homens passa a vida inteira gerenciando a imagem que os outros têm deles. No trabalho são um. Em casa são outro. Com os amigos são outro. E quando ficam sozinhos — muitas vezes não sabem quem são de verdade. Porque nunca pararam para olhar."</div>
+<div class="fala">"Identidade construída é a soma das expectativas que você internalizou ao longo da vida. O que seu pai esperava. O que a sociedade espera de um homem de sucesso. O que sua esposa precisava quando vocês se casaram. Você foi moldando quem você é em função do que era esperado."</div>
+<div class="fala">"Identidade real é o que resta quando você tira todas as máscaras. É o que você pensa quando ninguém está olhando. É o que você sente quando as conquistas não chegam. É o que você faz quando ninguém vai saber."</div>
+<div class="instrucao"><strong>Pause 20 segundos. Deixe essa distinção pousar.</strong></div>
+
+<div class="script-sublabel">3.2 — Os padrões que se repetem</div>
+<div class="fala">"Vou falar de algo que ninguém gosta de encarar: padrões. Todo homem tem padrões de comportamento que se repetem. Nas relações, nas decisões, nas reações. E a maioria desses padrões não foi escolhida — foi herdada ou desenvolvida como mecanismo de sobrevivência."</div>
+<div class="fala">"O homem que sempre foge do conflito. O homem que sempre precisa ter razão. O homem que autossabota quando está perto do sucesso. O homem que não consegue pedir ajuda. O homem que trata as pessoas próximas pior do que trata estranhos. Esses padrões aparecem nas 4 áreas que trabalhamos — em Deus, em você mesmo, na família, no negócio."</div>
+<div class="dinamica"><div class="din-title">Pergunta para o grupo — chat</div><div class="din-desc">"Em uma palavra — qual é o padrão que você mais reconhece em si mesmo? Aquele que se repete e que você já está cansado de ver. Digita no chat."<br><br><strong>Instrução:</strong> Leia as respostas em voz alta sem comentar individualmente. Deixe o grupo ouvir. Depois: "Olha quantos padrões se repetem entre vocês. Isso não é coincidência — é a condição masculina não trabalhada."</div></div>
+
+<div class="script-sublabel">3.3 — A voz interna — aliada ou sabotadora?</div>
+<div class="fala">"Todo homem tem uma voz interna. A voz que comenta tudo que você faz. Que avalia, que critica, que compara. A questão não é se a voz existe — é o que ela diz e se você acredita nela sem questionar."</div>
+<div class="fala">"Para muitos homens essa voz foi moldada por um pai crítico, por uma infância de humilhação, por fracassos que nunca foram processados. E essa voz se tornou o filtro pelo qual a realidade passa. Você não vê as coisas como elas são — você as vê como essa voz interpreta."</div>
+<div class="fala">"A ruptura começa quando você aprende a observar a voz — não acreditar automaticamente nela. Quando você consegue dizer: 'Essa voz está falando. Mas essa voz não sou eu.'"</div>
+
+<div class="script-sublabel">3.4 — O que você tolera que não deveria</div>
+<div class="fala">"A última parte do conteúdo de hoje é sobre tolerância. Não a tolerância com os outros — a tolerância consigo mesmo. O que você continua fazendo mesmo sabendo que não deveria? O que você continua adiando mesmo sabendo o custo? O que você continua aceitando em si mesmo que nunca aceitaria em outra pessoa?"</div>
+<div class="fala">"Tolerância com seus próprios padrões negativos não é compaixão. É cumplicidade. E enquanto você tolera o que deveria mudar, o padrão se fortalece."</div>
+<div class="verde-box"><div class="verde-title">Frase âncora do encontro</div><div class="verde-desc"><strong>"Você não é o que a voz diz que você é. Você é o que você escolhe fazer apesar do que a voz diz."</strong><br><br>Peça que digitem no chat como declaração.</div></div>
+</div></div>
+
+<div class="bloco" id="s3b3"><div class="bloco-header" onclick="tB('s3b3')"><div class="bloco-tempo">38–50 min</div><div class="bloco-titulo">Dinâmica — Ferramenta de Temperamento + Diário de Padrões</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Agora vamos ao papel. Dois exercícios — diretos, sem enrolação."</div>
+<div class="dinamica"><div class="din-title">Exercício 1 — Ferramenta de Temperamento (8 min)</div><div class="din-desc">Cada um responde no papel as 4 perguntas:<br><br><strong>1.</strong> Qual é o seu maior ponto forte — aquele que as pessoas ao redor reconhecem mesmo sem você falar?<br><strong>2.</strong> Qual é o seu maior ponto cego — aquele que você percebe nos outros mas raramente admite em si mesmo?<br><strong>3.</strong> Em qual das 4 áreas (Deus, você mesmo, família, negócios) o seu padrão negativo aparece com mais força?<br><strong>4.</strong> Se você fosse 100% honesto consigo mesmo — qual é a versão de você que você está escondendo?<br><br>5 minutos em silêncio. Compartilhamento voluntário — 2 ou 3 que queiram falar uma resposta.</div></div>
+<div class="dinamica"><div class="din-title">Exercício 2 — Construção do Diário de Padrões</div><div class="din-desc">Explicar a missão da semana antes de fechar:<br><br>"Por 7 dias, toda noite antes de dormir, você responde uma pergunta no papel ou no celular: <strong>'O que fiz hoje que não queria ter feito?'</strong><br><br>Não é para se punir. É para observar. Você vai começar a ver o padrão — quando acontece, com quem, em que circunstâncias. Você não pode mudar o que não consegue ver."<br><br><div class="lembrete">📋 Diário de Padrões: exercício contínuo até o enc. 10 — acumula junto com o silêncio diário e o ritual matinal</div></div></div>
+</div></div>
+
+<div class="bloco" id="s3b4"><div class="bloco-header" onclick="tB('s3b4')"><div class="bloco-tempo">50–55 min</div><div class="bloco-titulo">Desafio físico — acordar 1h mais cedo por 5 dias</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Antes das missões — um desafio desta semana que vai além do papel. Acordar 1 hora mais cedo do que o horário normal por 5 dias consecutivos."</div>
+<div class="fala">"Não é sobre produtividade. É sobre domínio. O homem que não consegue vencer o travesseiro dificilmente vai conseguir vencer os padrões que identificamos hoje. Disciplina começa com pequenas vitórias sobre si mesmo — e não existe menor e mais concreta do que escolher acordar quando o corpo quer ficar."</div>
+<div class="obs-box"><div class="obs-title">👁 Se alguém resistir ao desafio</div><div class="obs-desc">Diga: <strong>"Essa resistência que você está sentindo agora — anota. Ela vai aparecer de novo no Diário de Padrões. É o mesmo mecanismo que aparece nas decisões do negócio, nas conversas difíceis em casa, na prática espiritual. Sempre o mesmo padrão, em roupas diferentes."</strong></div></div>
+<div class="instrucao">Pergunte a cada um que horas vai acordar. Digitem no chat. Cobrar no enc. 4 pelo nome e horário declarado.</div>
+</div></div>
+
+<div class="bloco" id="s3b5"><div class="bloco-header" onclick="tB('s3b5')"><div class="bloco-tempo">55–60 min</div><div class="bloco-titulo">Encerramento — Missões da Semana 3</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="missoes-box"><div class="missoes-title">Missões — Semana 3</div>
+<div class="missao-item"><div class="missao-num">01</div><div><div class="missao-nome">Análise da Ferramenta de Temperamento</div><div class="missao-desc">Escrever 1 página com os resultados do exercício de hoje — ponto forte, ponto cego, onde o padrão aparece mais e qual versão está escondendo.</div><div class="missao-tag">Leitura/Escrita · Lógico</div></div></div>
+<div class="missao-item"><div class="missao-num">02</div><div><div class="missao-nome">Diário de Padrões — 7 dias</div><div class="missao-desc">"O que fiz hoje que não queria ter feito?" — toda noite, sem pular. Continua até o enc. 10.</div><div class="missao-tag">Leitura/Escrita · Cinestésico</div><div class="missao-lembrete">📋 Exercício contínuo até o enc. 10</div></div></div>
+<div class="missao-item"><div class="missao-num">03</div><div><div class="missao-nome">Desafio físico — acordar 1h mais cedo</div><div class="missao-desc">Por 5 dias consecutivos. Anotar o horário declarado de cada um — cobrar no enc. 4 pelo nome.</div><div class="missao-tag">Cinestésico</div><div class="missao-lembrete">📋 Anotar horário de cada participante para cobrar no enc. 4</div></div></div>
+</div>
+<div class="ponte-box"><div class="ponte-label">Ponte para o Encontro 4</div><div class="ponte-fala">"Semana que vem vamos um nível mais fundo. Saímos dos padrões e vamos para a raiz deles — as feridas. O que formou o homem que você identificou hoje no espelho. E vamos fazer algo que poucos homens fazem: olhar para isso de frente, sem fugir. Venham com o diário feito."</div></div>
+</div></div>`;
+S[4]=`<div class="script-header">
+  <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#5DCAA5;margin-bottom:8px">Pilar: Consigo Mesmo · Encontro 4 de 10</div>
+  <div class="script-enc-title">Suas Feridas Viram Seu Filtro</div>
+  <div class="script-enc-sub">O quarto encontro vai fundo nas feridas não resolvidas que distorcem percepção, decisões e relacionamentos. Inclui a condução VAK ao vivo — O Encontro com a Criança. Câmeras abertas, olhos fechados, você supervisiona em tempo real.</div>
+  <div class="script-enc-meta"><span>⏱ 60 minutos</span><span>📷 Câmeras abertas obrigatório</span><span>🎯 Feridas · Perdão · Condução VAK ao vivo</span></div>
+</div>
+
+<div class="bloco open" id="s4b1"><div class="bloco-header" onclick="tB('s4b1')"><div class="bloco-tempo">0–8 min</div><div class="bloco-titulo">Abertura — cobrança das missões</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Quarto encontro. Missões primeiro — como sempre."</div>
+<div class="dinamica"><div class="din-title">Check-in — cobrar pelo nome e horário declarado</div><div class="din-desc"><strong>Desafio físico:</strong> "João — você havia dito 5h30. Quantos dias cumpriu?" Chame pelo nome. Para quem não cumpriu: "O que aconteceu?" Sem julgamento — com curiosidade genuína.<br><br><strong>Diário de padrões:</strong> "Quem manteve os 7 dias? Digita o número de dias no chat." Para quem manteve — o que começou a aparecer de padrão?<br><br><strong>Análise de temperamento:</strong> "Quem escreveu a página? Quem quiser compartilhar uma frase — uma coisa que descobriu sobre si mesmo — o grupo ouve."</div></div>
+<div class="fala">"Hoje vamos mais fundo. Saímos dos padrões e vamos para a raiz deles. Porque padrão sem causa não muda — você corta a erva daninha mas a raiz continua lá."</div>
+</div></div>
+
+<div class="bloco" id="s4b2"><div class="bloco-header" onclick="tB('s4b2')"><div class="bloco-tempo">8–35 min</div><div class="bloco-titulo">Conteúdo — Suas Feridas Viram Seu Filtro</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="script-sublabel">4.1 — As 5 feridas emocionais masculinas</div>
+<div class="fala">"Vou apresentar 5 feridas. Enquanto eu falar, quero que cada um observe internamente — não precisa declarar em voz alta. Só observe."</div>
+<div class="dinamica"><div class="din-title">As 5 feridas — apresentar uma por vez, com pausa entre cada uma</div><div class="din-desc"><strong>1. Rejeição:</strong> A ferida de não ser aceito como você é. Gera o homem que se isola antes de ser rejeitado, que não pede ajuda, que prefere desaparecer a se expor.<br><br><strong>2. Abandono:</strong> A ferida de não poder contar com quem deveria estar. Gera o homem hiperindependente, que não confia em ninguém, que faz tudo sozinho porque aprendeu que apoio some.<br><br><strong>3. Humilhação:</strong> A ferida de ter sido diminuído, ridicularizado, envergonhado. Gera o homem que precisa provar o tempo todo, que não admite erro, que confunde humildade com humilhação.<br><br><strong>4. Traição:</strong> A ferida de quem confiou e foi decepcionado por alguém próximo. Gera o homem que desconfia de todos, que controla porque não consegue soltar, que nunca está 100% presente numa relação.<br><br><strong>5. Injustiça:</strong> A ferida de quem foi tratado com dureza, frieza ou parcialidade quando merecia cuidado. Gera o homem rígido consigo mesmo e com os outros, perfeccionista, intolerante com falhas.</div></div>
+<div class="instrucao"><strong>Pause 30 segundos após apresentar as 5. Não preencha. Deixe cada um sentar com o que reconheceu.</strong></div>
+
+<div class="script-sublabel">4.2 — Raiva, medo e vergonha disfarçados de força</div>
+<div class="fala">"O homem não chora — mas explode. O homem não tem medo — mas controla tudo. O homem não se envergonha — mas desaparece quando erra. Raiva, medo e vergonha são as emoções mais comuns nas feridas masculinas. E a maioria dos homens aprendeu a disfarçá-las de força."</div>
+<div class="fala">"A raiva que você sente no trânsito raramente é sobre o trânsito. O controle que você exerce na empresa raramente é sobre a empresa. A frieza que você demonstra quando alguém precisa de você raramente é indiferença real. São feridas velhas em situações novas."</div>
+
+<div class="script-sublabel">4.3 — O pai que você teve e o pai que você é</div>
+<div class="fala">"Vou fazer uma pergunta difícil. Não precisa responder em voz alta agora — mas precisa responder por dentro com honestidade: que tipo de pai você teve? E onde você está repetindo os padrões dele — ou reagindo tão forte contra eles que criou padrões igualmente destrutivos no outro extremo?"</div>
+<div class="instrucao"><strong>Pause 20 segundos.</strong></div>
+<div class="fala">"Filho de pai ausente que se tornou pai presente mas workaholic — mesma ausência, roupa diferente. Filho de pai explosivo que se tornou pai frio e distante — mesma ferida, reação oposta. O padrão muda de forma mas o motor continua sendo a ferida original."</div>
+
+<div class="script-sublabel">4.4 — Perdão como ato estratégico</div>
+<div class="fala">"Antes de entrarmos na dinâmica de hoje, preciso dizer algo sobre perdão — porque vamos trabalhar com isso. Perdão não é dizer que o que foi feito estava certo. Não é reconciliação. Não é esquecer. É a decisão de parar de pagar o preço emocional de uma dívida que não é sua para cobrar."</div>
+<div class="fala">"Enquanto você carrega ressentimento, a pessoa que te feriu aluga espaço gratuito dentro da sua cabeça. Perdão é despejar esse inquilino — não por ele, mas por você."</div>
+<div class="verde-box"><div class="verde-title">Frase âncora do encontro</div><div class="verde-desc"><strong>"Sua ferida não é sua identidade. É o ponto de partida da sua transformação."</strong><br><br>Peça que digitem no chat.</div></div>
+</div></div>
+
+<div class="bloco" id="s4b3"><div class="bloco-header" onclick="tB('s4b3')"><div class="bloco-tempo">35–43 min</div><div class="bloco-titulo">Dinâmica — Mapa ferida → comportamento → impacto</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Pega papel e caneta. Três colunas."</div>
+<div class="dinamica"><div class="din-title">As 3 colunas — preencher em silêncio, 7 minutos</div><div class="din-desc"><strong>Coluna 1 — A ferida:</strong> Qual das 5 feridas mais ressoa com você? Pode ser mais de uma — escolha a mais forte.<br><br><strong>Coluna 2 — O comportamento:</strong> Como essa ferida aparece no seu comportamento hoje? O que você faz, evita, exagera ou minimiza por causa dela?<br><br><strong>Coluna 3 — O impacto:</strong> Quem paga o preço desse comportamento? Sua esposa? Seus filhos? Sua equipe? Você mesmo?<br><br><strong>Instrução:</strong> 7 minutos em silêncio. Compartilhamento voluntário — quem quiser falar uma linha do que escreveu. Não force. O grupo como testemunha já tem peso.</div></div>
+</div></div>
+
+<div class="bloco" id="s4b4"><div class="bloco-header" onclick="tB('s4b4')"><div class="bloco-tempo">43–58 min</div><div class="bloco-titulo">Condução VAK ao vivo — O Encontro com a Criança</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="alerta-box"><div class="alerta-title">⚠ Protocolo de segurança — leia antes de iniciar</div><div class="alerta-desc">Câmeras abertas é inegociável. Você precisa ver o estado de cada participante durante toda a condução. Se alguém demonstrar agitação intensa ou dissociação — chame pelo nome em voz firme, peça para abrir os olhos e respirar. Não encerre abruptamente — o protocolo de retorno é parte da técnica.</div></div>
+<div class="fala">"Agora vamos fazer algo diferente de tudo que fizemos até aqui. Microfones no mudo. Câmeras abertas. Vou estar olhando pra vocês o tempo todo. Se precisar de qualquer coisa, abre os olhos e acena pra mim. Eu vejo. Sentem com a coluna ereta, pés no chão, mãos pousadas nas coxas. Fechem os olhos."</div>
+<div class="instrucao"><strong>Pausa de 8 segundos. Observe todos na tela.</strong></div>
+<div class="fala">"Respira fundo pelo nariz. Enche o peito completamente."</div>
+<div class="instrucao">4 seg</div>
+<div class="fala">"Solta devagar pela boca. Todo o ar."</div>
+<div class="instrucao">5 seg. Repita mais 2 vezes. Depois:</div>
+<div class="fala">"Agora a respiração volta ao ritmo natural. Sente o peso do corpo na cadeira. Sente os pés firmes no chão. Sente o calor das mãos pousadas nas coxas. Nada pra resolver agora. Só estar aqui."</div>
+<div class="instrucao"><strong>Pausa de 10 segundos.</strong></div>
+<div class="fala">"Você está num parque. É fim de tarde. O sol está baixo e dourado, jogando luz entre as árvores. À sua frente tem um caminho de terra batida, largo, tranquilo. Dos dois lados do caminho tem árvores altas — o tipo de árvore com raízes grossas que entram fundo na terra. A grama ao redor é verde e densa. Limpa."</div>
+<div class="instrucao"><strong>Pausa de 8 segundos.</strong></div>
+<div class="fala">"Ao lado do caminho corre um riacho. Você ouve a água correndo sobre as pedras — aquele som limpo e contínuo de água que nunca para. Ao longe, pássaros. E além disso — silêncio. O tipo de silêncio que só existe longe de tudo."</div>
+<div class="instrucao"><strong>Pausa de 8 segundos.</strong></div>
+<div class="fala">"Você sente o vento fresco no rosto. Suave. Não faz frio — é a temperatura exata que faz o corpo relaxar. O sol toca a sua pele com calor leve nas costas dos seus ombros. O chão de terra firme sob seus pés. Você está aqui. Nesse parque. Nesse silêncio."</div>
+<div class="instrucao"><strong>Pausa de 10 segundos.</strong></div>
+<div class="fala">"Você caminha pelo parque. E um pouco mais à frente, saindo do caminho, sob a sombra de uma árvore grande — você vê um banco de madeira. Um banco simples, velho, com a madeira gasta pelo tempo. E sentada nesse banco — tem uma criança."</div>
+<div class="instrucao"><strong>Pausa de 10 segundos.</strong></div>
+<div class="fala">"Você chega mais perto. E você reconhece essa criança. É você. Pequeno. Do tamanho que você tinha quando a vida ainda era maior do que você."</div>
+<div class="instrucao"><strong>Pausa de 12 segundos. Momento de maior intensidade — observe todas as câmeras.</strong></div>
+<div class="fala">"Olha pro rosto dessa criança. Os olhos. A expressão. Vê o que ela está carregando — aquilo que era grande demais pra um corpo tão pequeno carregar."</div>
+<div class="instrucao"><strong>Pausa de 12 segundos.</strong></div>
+<div class="fala">"Você vai até ela. Senta ao lado dela no banco. Perto o suficiente pra ela sentir que não está mais sozinha. Você coloca a mão no ombro dela — ou abraça, se vier natural. Sente o peso desse corpo pequeno encostado em você."</div>
+<div class="instrucao"><strong>Pausa de 12 segundos.</strong></div>
+<div class="fala">"Agora você fala com ela. Não em voz alta — lá dentro, só entre vocês dois. Você fala o que ela mais precisava ouvir naquela época — e nunca ouviu. Pode ser: 'Eu estou aqui.' 'Você não está sozinho.' 'O que aconteceu não foi culpa sua.' 'Você é suficiente exatamente do jeito que é.'"</div>
+<div class="instrucao"><strong>Pausa de 15 segundos completos. Não preencha. É aqui que o trabalho mais profundo acontece.</strong></div>
+<div class="fala">"Sente o que acontece nesse banco quando você diz isso. O que muda no corpo dela? E o que muda em você — no seu peito, na sua respiração, no peso dos seus ombros?"</div>
+<div class="instrucao"><strong>Pausa de 12 segundos.</strong></div>
+<div class="fala">"Olha nos olhos dela agora. E faz uma promessa — simples, verdadeira. 'Eu não vou te deixar sozinho de novo.' 'De agora em diante — eu cuido de você.'"</div>
+<div class="instrucao"><strong>Pausa de 15 segundos.</strong></div>
+<div class="fala">"Ficam juntos nesse banco por mais um momento. O riacho correndo ao lado. O vento suave. O sol dourado entre as árvores. Só vocês dois — em paz."</div>
+<div class="instrucao"><strong>Pausa de 15 segundos.</strong></div>
+<div class="fala">"Agora essa criança se levanta do banco. Ela olha pra você uma última vez. E ela vem em direção a você. E entra — entra no seu peito, no seu coração. Ela não vai embora. Ela fica. Dentro de você. Protegida por você."</div>
+<div class="instrucao"><strong>Pausa de 10 segundos.</strong></div>
+<div class="fala">"Respira fundo uma vez com ela dentro. Você agora carrega os dois — o homem que você se tornou e a criança que você foi. E o homem que você é, a partir de agora, cuida."</div>
+<div class="instrucao"><strong>Pausa de 10 segundos. Início do retorno.</strong></div>
+<div class="fala">"Começa a trazer a atenção de volta. Sente os pés no chão. Sente o peso do corpo na cadeira. Move os dedos das mãos devagar."</div>
+<div class="instrucao">5 seg</div>
+<div class="fala">"Respira fundo — e solta. Você está aqui. Nessa sala. Nesse momento. Escuta os sons do ambiente ao seu redor. Esses sons te trazem completamente de volta."</div>
+<div class="instrucao"><strong>Pausa de 8 segundos.</strong></div>
+<div class="fala">"Quando estiver pronto — no seu tempo — abre os olhos devagar."</div>
+<div class="instrucao"><strong>Aguarde 15 segundos. Observe cada rosto. Não fale até a maioria ter aberto os olhos. Alguém além de 30 seg — chame pelo nome suavemente.</strong></div>
+<div class="ritual-box"><div class="ritual-title">Pós-condução — aterrissagem (2–3 min)</div><div class="ritual-desc">"Bem-vindos de volta. O que acabou de acontecer nesse banco — guarda. Não precisa explicar pra ninguém. Não precisa entender tudo agora. Só sabe que você foi lá. E você cuidou."<br><br>Pausa de 8 seg. Depois: "Quem quiser compartilhar uma palavra — só uma — pode falar agora." Receba sem analisar. Diga somente "obrigado por compartilhar." Não aprofunde — o grupo precisa de estabilidade coletiva agora.</div></div>
+</div></div>
+
+<div class="bloco" id="s4b5"><div class="bloco-header" onclick="tB('s4b5')"><div class="bloco-tempo">58–60 min</div><div class="bloco-titulo">Encerramento — Missões da Semana 4</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="missoes-box"><div class="missoes-title">Missões — Semana 4</div>
+<div class="missao-item"><div class="missao-num">01</div><div><div class="missao-nome">Carta de Perdão</div><div class="missao-desc">Escrever uma carta para a pessoa (ou versão de si mesmo) que precisa de perdão. Sem filtro, sem enviar. Guardar — vai ser usada no enc. 9.</div><div class="missao-tag">Leitura/Escrita · Cinestésico</div><div class="missao-lembrete">📋 Guardar para o enc. 9 — não enviar</div></div></div>
+<div class="missao-item"><div class="missao-num">02</div><div><div class="missao-nome">Áudio de meditação — 3x na semana</div><div class="missao-desc">Ouvir o áudio de meditação sobre perdão 3 vezes durante a semana. De preferência de manhã, após o ritual matinal.</div><div class="missao-tag">Auditivo · Cinestésico</div></div></div>
+</div>
+<div class="ponte-box"><div class="ponte-label">Ponte para o Encontro 5</div><div class="ponte-fala">"Nos últimos dois encontros fomos fundo em você. Nas suas feridas, nos seus padrões, na criança que você foi. Agora viramos o olhar. Entramos no terceiro pilar: Família. E quero ser direto desde o início: esse pilar não é sobre culpar ninguém. É sobre enxergar — com os olhos de quem já se conhece melhor — o que você está construindo dentro de casa."</div></div>
+</div></div>`;
+S[5]=`<div class="script-header">
+  <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#F0997B;margin-bottom:8px">Pilar: Família · Encontro 5 de 10</div>
+  <div class="script-enc-title">O Legado que Você Está Deixando</div>
+  <div class="script-enc-sub">O quinto encontro é uma virada de perspectiva. O homem saiu de dentro de si mesmo — agora vira o olhar para quem mais sente o peso de quem ele é ou não é. Não para culpar. Para enxergar com honestidade o legado que está sendo construído hoje.</div>
+  <div class="script-enc-meta"><span>⏱ 60 minutos</span><span>👥 Turma completa</span><span>🎯 Presença · Legado · Paternidade · Herança emocional</span></div>
+</div>
+
+<div class="bloco open" id="s5b1"><div class="bloco-header" onclick="tB('s5b1')"><div class="bloco-tempo">0–8 min</div><div class="bloco-titulo">Abertura — aterrissagem do enc. 4 + cobrança de missões</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Quinto encontro. Antes de qualquer coisa — como vocês chegam hoje? A semana passada foi pesada pra muitos de vocês. Quero saber, brevemente, como estão chegando."</div>
+<div class="instrucao"><strong>Ouça 2–3 respostas curtas. Não aprofunde agora. Só receba. Depois siga para a cobrança.</strong></div>
+<div class="dinamica"><div class="din-title">Check-in — missões do enc. 4</div><div class="din-desc"><strong>Carta de perdão:</strong> "Quem escreveu a carta? Digita S, N ou P no chat." Para quem escreveu — "O que foi mais difícil de colocar no papel?" Não peça para ler. A carta é deles.<br><br><strong>Áudio de meditação:</strong> "Quem ouviu as 3 vezes? Digita o número de vezes que ouviu." Sem julgamento — só registro.<br><br><div class="lembrete">📋 Quem não fez a carta — pergunte quando vai fazer. Não essa semana genérica — um dia específico. Digita no chat.</div></div></div>
+<div class="fala">"Nos últimos dois encontros fomos fundo em você. Nas suas feridas, nos seus padrões, na criança que você foi. Agora viramos o olhar. Entramos no terceiro pilar: Família. E quero ser direto desde o início: esse pilar não é sobre culpar ninguém. É sobre enxergar — com os olhos de quem já se conhece melhor — o que você está construindo dentro de casa."</div>
+</div></div>
+
+<div class="bloco" id="s5b2"><div class="bloco-header" onclick="tB('s5b2')"><div class="bloco-tempo">8–38 min</div><div class="bloco-titulo">Conteúdo — O Legado que Você Está Deixando</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="script-sublabel">5.1 — Provedor vs. presente</div>
+<div class="fala">"Vou começar com uma distinção que parece óbvia — mas que poucos homens realmente vivem. A diferença entre ser provedor e ser presente."</div>
+<div class="fala">"Provedor é função. É o homem que garante o teto, a comida, a escola, o plano de saúde. É fundamental. Mas é o mínimo. É o que você deve — não o que você doa."</div>
+<div class="fala">"Presente é algo diferente. É o homem que está na mesa no jantar — de verdade, não com o celular na mão. É o homem que sabe o nome do melhor amigo do filho. É o homem que a esposa consegue olhar nos olhos e sentir que está sendo vista — não administrada."</div>
+<div class="fala">"Muitos homens são excelentes provedores e péssimos presentes. E o drama é que eles não percebem — porque confundem o esforço de prover com o ato de amar. Mas a família não experimenta o seu esforço. Ela experimenta a sua presença."</div>
+<div class="dinamica"><div class="din-title">Pergunta para o grupo — reflexão interna</div><div class="din-desc">"Pergunta honesta — responde só pra você: na escala de 1 a 10, qual nota você daria pra sua presença real em casa na última semana? Não sua intenção — sua presença de fato."<br><br><strong>Pause 15 segundos.</strong> Depois: "Não precisa me dizer o número. Mas guarda ele. Porque ele vai aparecer de novo no exercício de hoje."</div></div>
+
+<div class="script-sublabel">5.2 — O que seus filhos vão lembrar de você</div>
+<div class="fala">"Vou fazer uma pergunta que incomoda. Você não precisa responder em voz alta agora — mas precisa responder por dentro, com honestidade: o que seus filhos vão lembrar de você?"</div>
+<div class="instrucao"><strong>Pause 20 segundos. Deixe a pergunta trabalhar.</strong></div>
+<div class="fala">"Não o que você quer que eles lembrem. O que eles de fato vão lembrar — com base no que você tem feito, não no que você pretende fazer."</div>
+<div class="fala">"Filhos raramente lembram do presente caro. Eles lembram da vez que o pai apareceu na apresentação escolar. Da conversa no carro voltando do jogo. Do abraço dado sem motivo numa tarde de sábado. Lembram da presença — não do provimento."</div>
+<div class="fala">"E lembram também das ausências. Do pai que estava em casa mas não estava presente. Do homem que vivia no celular, no trabalho, nas preocupações — e que os filhos aprenderam a não incomodar porque 'pai está ocupado.'"</div>
+<div class="alerta-box"><div class="alerta-title">⚠ Ponto de tensão — não suavize</div><div class="alerta-desc">Essa fala vai doer em alguns. Não recue. Não diga "mas vocês estão fazendo o melhor que podem." Deixe a dor do reconhecimento trabalhar. Ela é o motor da mudança.</div></div>
+
+<div class="script-sublabel">5.3 — A herança emocional que você está transmitindo agora</div>
+<div class="fala">"No enc. 4 falamos de herança emocional — o que você recebeu do seu pai. Agora vira a chave: o que você está transmitindo para os seus filhos agora?"</div>
+<div class="fala">"Não o que você ensina com palavras. O que você transmite com comportamento. Com a forma como você trata a mãe deles. Com a forma como você lida com pressão. Com a forma como você reage ao erro — deles e seu. Filhos não copiam o que os pais falam. Copiam o que os pais fazem quando acham que ninguém está olhando. E sempre tem alguém olhando."</div>
+
+<div class="script-sublabel">5.4 — Os 3 rituais de presença — diário, semanal e mensal</div>
+<div class="fala">"Vou fechar o conteúdo com algo prático. Presença não acontece por intenção — acontece por ritual. Por coisa combinada, esperada, que não muda por conta de trabalho ou cansaço."</div>
+<div class="obs-box"><div class="obs-title">📌 Explique os 3 rituais ANTES do exercício — os 3 são para fazer, não escolha um</div><div class="obs-desc"><strong>Ritual 1 — Diário:</strong> O mais simples e o mais poderoso pelo acúmulo. Uma coisa pequena que não toma mais de 15 minutos — mas que acontece todo dia sem exceção. O jantar sem celular. O beijo de boa noite. O café com a esposa antes da correria. Parece pouco — mas são 70 dias de presença real que antes não existiam.<br><br><strong>Ritual 2 — Semanal:</strong> O momento de qualidade intencional. Uma vez por semana, algo dedicado — um passeio com o filho, um almoço com a esposa sem falar de dinheiro, um jogo, uma caminhada. Não só estar junto — estar junto fazendo algo que os dois gostam.<br><br><strong>Ritual 3 — Mensal:</strong> A conversa de profundidade. Uma vez por mês — não sobre o dia a dia, sobre como está indo a relação. Com a esposa, com o filho mais velho, com quem precisar mais.<br><br><strong>A lógica dos 3 juntos:</strong> o diário cria conexão. O semanal cria memória. O mensal cria profundidade. Nenhum substitui o outro.</div></div>
+<div class="verde-box"><div class="verde-title">Frase âncora do encontro</div><div class="verde-desc"><strong>"Minha família não precisa de um homem perfeito. Precisa de um homem presente. E presente começa agora — não quando as condições melhorarem."</strong><br><br>Peça que digitem no chat.</div></div>
+</div></div>
+
+<div class="bloco" id="s5b3"><div class="bloco-header" onclick="tB('s5b3')"><div class="bloco-tempo">38–50 min</div><div class="bloco-titulo">Dinâmica — Carta para os filhos + 3 rituais de presença</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Agora vamos ao papel. Dois exercícios — rápidos, diretos."</div>
+<div class="dinamica"><div class="din-title">Exercício 1 — Esboço da Carta para os Filhos (5 min)</div><div class="din-desc">Cada um começa uma carta para seus filhos — ou para a pessoa mais importante da família, se não tiver filhos.<br><br><strong>Frase de partida:</strong> "O homem que quero ser para você é..."<br><br>Escrever o que vier — sem editar, sem caprichar. O rascunho honesto vale mais que o texto bonito. A carta completa é missão da semana.<br><br><strong>Instrução:</strong> 5 minutos em silêncio. A carta completa é missão da semana.<br><br><div class="lembrete">📋 Ao encerrar, pergunte quando cada um vai terminar a carta. Digitem o dia no chat.</div></div></div>
+<div class="dinamica"><div class="din-title">Exercício 2 — Construindo os 3 rituais de presença (7 min)</div><div class="din-desc">Cada um responde no papel os 3 rituais — os 3 são para fazer:<br><br><strong>Ritual 1 — O momento diário:</strong> O que você vai fazer todos os dias. Fixo e sagrado. Máximo 15 minutos.<br><strong>Ritual 2 — O momento semanal:</strong> Uma vez por semana, algo só seu com alguém da família. Sem exceção.<br><strong>Ritual 3 — A conversa mensal:</strong> Uma conversa de profundidade, uma vez por mês. Não sobre logística — sobre sentimento.<br><br><strong>Compartilhamento voluntário:</strong> 2 ou 3 que queiram falar um dos rituais em voz alta. Cria comprometimento público.<br><br><div class="lembrete">📋 Pergunte quando o Ritual 1 começa. "A partir de amanhã ou já hoje?" Empurre para o mais cedo possível.</div></div></div>
+<div class="obs-box"><div class="obs-title">👁 Participantes sem filhos</div><div class="obs-desc">A carta pode ser para a esposa, para os pais, para alguém que depende da sua presença. Os rituais também se aplicam. Não adapte publicamente — cada um faz a sua versão naturalmente.</div></div>
+</div></div>
+
+<div class="bloco" id="s5b4"><div class="bloco-header" onclick="tB('s5b4')"><div class="bloco-tempo">50–55 min</div><div class="bloco-titulo">A missão mais corajosa — a pergunta</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Agora vou propor a missão mais corajosa dessa semana. Mais corajosa do que a carta. Mais corajosa do que qualquer desafio físico."</div>
+<div class="fala">"Você vai perguntar para alguém da sua família — a esposa, um filho, os pais — uma única pergunta. E vai ouvir a resposta sem se defender, sem explicar, sem justificar. Só ouvir."</div>
+<div class="dinamica"><div class="din-title">A Missão da Pergunta</div><div class="din-desc"><strong>A pergunta é: "Como você me descreve?"</strong><br><br>Não "como você me vê" — "como você me descreve." Pra alguém de fora, pra um amigo. O que você fala de mim?<br><br><strong>Regras para receber a resposta:</strong><br>— Não interrompe · Não explica · Não justifica · Não contra-ataca<br>— Só ouve, olha nos olhos e diz: "Obrigado por ser honesto comigo."<br><br><div class="lembrete">📋 Perguntar com quem vai fazer e em qual dia. Trazer o que ouviu para o próximo encontro.</div></div></div>
+<div class="alerta-box"><div class="alerta-title">Prepare-os para o que podem ouvir</div><div class="alerta-desc">A resposta pode surpreender positivamente — e vão descobrir que subestimavam seu impacto. Pode ser difícil — e vão ouvir algo que dói mas que precisavam ouvir. Em qualquer caso, o ato de perguntar já é uma mudança de comportamento.</div></div>
+</div></div>
+
+<div class="bloco" id="s5b5"><div class="bloco-header" onclick="tB('s5b5')"><div class="bloco-tempo">55–60 min</div><div class="bloco-titulo">Encerramento — Missões da Semana 5</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Cinco encontros. Estamos na metade da jornada. E olha o que já aconteceu: você se reconectou com algo maior que você, encarou o que não controla, quebrou a máscara, foi fundo nas suas feridas, encontrou a criança que você foi — e agora está aqui, olhando pra dentro de casa com outros olhos. Isso não é pouco. Isso é exatamente o Ponto de Ruptura."</div>
+<div class="missoes-box"><div class="missoes-title">Missões — Semana 5</div>
+<div class="missao-item"><div class="missao-num">01</div><div><div class="missao-nome">Terminar a Carta para os Filhos</div><div class="missao-desc">Completar a carta iniciada hoje. Guardar — vamos retomar no enc. 9.</div><div class="missao-tag">Leitura/Escrita · Cinestésico</div><div class="missao-lembrete">📋 Pedir o dia em que vão terminar — digitar no chat</div></div></div>
+<div class="missao-item"><div class="missao-num">02</div><div><div class="missao-nome">Iniciar o Ritual 1 de presença diária</div><div class="missao-desc">O ritual diário construído hoje começa essa semana. Não na semana que vem. Essa. Todos os 7 dias.</div><div class="missao-tag">Cinestésico · Social</div><div class="missao-lembrete">📋 Confirmar que começa essa semana</div></div></div>
+<div class="missao-item"><div class="missao-num">03</div><div><div class="missao-nome">A Pergunta</div><div class="missao-desc">"Como você me descreve?" — para alguém da família. Ouvir sem se defender. Trazer o que ouviu para o enc. 6.</div><div class="missao-tag">Social · Verbal</div><div class="missao-lembrete">📋 Perguntar com quem e em qual dia — cobrar no enc. 6</div></div></div>
+</div>
+<div class="fala">"Uma observação antes de fechar: a missão da pergunta vai exigir humildade real de vocês. Não a humildade de parecer humilde — a humildade de realmente querer saber. Se vocês forem com ego disfarçado de abertura, a família sente. Vão de verdade."</div>
+<div class="ponte-box"><div class="ponte-label">Ponte para o Encontro 6</div><div class="ponte-fala">"Semana que vem vamos um nível mais fundo dentro do pilar Família. Hoje vimos o legado que você está deixando. Na semana que vem vamos falar sobre como liderar a família que você tem. Sobre como reparar o que foi quebrado — não com palavras, com ações. Venham com a pergunta feita e com o que ouviram. Porque o que sua família te disser essa semana vai ser o material mais honesto que vamos trabalhar juntos."</div></div>
+</div></div>`;
+S[6]=`<div class="script-header">
+  <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#F0997B;margin-bottom:8px">Pilar: Família · Encontro 6 de 10</div>
+  <div class="script-enc-title">O Homem que Sua Família Precisa</div>
+  <div class="script-enc-sub">O sexto encontro é o mais prático do pilar Família. O participante chegou aqui com algo que poucos homens têm — a descrição real de como é visto pela família. Agora a pergunta muda: não mais "quem você está sendo" — mas "quem você vai ser a partir de hoje."</div>
+  <div class="script-enc-meta"><span>⏱ 60 minutos</span><span>👥 Turma completa</span><span>🎯 Liderança · Reparação · Conexão real</span></div>
+</div>
+
+<div class="bloco open" id="s6b1"><div class="bloco-header" onclick="tB('s6b1')"><div class="bloco-tempo">0–8 min</div><div class="bloco-titulo">Abertura — colhendo a missão da pergunta</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Sexto encontro. Encerramos hoje o pilar Família. E quero começar ouvindo de vocês — porque a missão da semana passada foi a mais corajosa que pedi até agora."</div>
+<div class="fala">"Quem fez a pergunta? 'Como você me descreve?' — Digita S ou N no chat."</div>
+<div class="instrucao"><strong>Para quem fez:</strong> pergunte a 3 ou 4 — "O que você ouviu? Pode ser uma frase, uma palavra — o que ficou." Ouça sem comentar muito. Ao final conecte: "O ato de perguntar já mudou alguma coisa. A família percebeu que você quer saber de verdade."</div>
+<div class="lembrete">📋 Para quem não fez: "O que impediu?" Registre — quem evitou a pergunta provavelmente vai evitar conexão real também. Isso aparece no exercício de hoje.</div>
+<div class="fala">"Esse material que vocês trouxeram hoje é o ponto de partida. Porque a pergunta muda. Não é mais 'quem você está sendo'. É 'quem você vai ser a partir de agora.'"</div>
+</div></div>
+
+<div class="bloco" id="s6b2"><div class="bloco-header" onclick="tB('s6b2')"><div class="bloco-tempo">8–38 min</div><div class="bloco-titulo">Conteúdo — O Homem que Sua Família Precisa</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="script-sublabel">6.1 — Liderança servil: autoridade com amor</div>
+<div class="fala">"Liderança não é controle. Não é ter a última palavra. Não é ser o mais duro ou o mais distante. Liderança doméstica real é a capacidade de criar um ambiente onde a família se sente segura o suficiente para ser quem é — com você presente, acessível e confiável."</div>
+<div class="fala">"Chamo isso de liderança servil. O líder servil lidera pelo exemplo. Não pede da família o que não pratica. Não exige respeito — inspira. Não grita pra ser ouvido — fala de um lugar de tal clareza e presença que as pessoas naturalmente prestam atenção."</div>
+<div class="fala">"E tem uma coisa que a liderança servil exige: que você se conheça bem o suficiente pra não projetar seus problemas não resolvidos na família. O homem que grita com os filhos porque teve um dia ruim no trabalho — não está liderando. Está descarregando. E a família aprende a andar na ponta dos pés perto dele."</div>
+
+<div class="script-sublabel">6.2 — A estrutura das 4 partes para conversa difícil</div>
+<div class="fala">"Conversas difíceis não ficam mais fáceis com o tempo. Elas ficam mais pesadas. Cada semana de silêncio adiciona uma camada de distância que vai ficando mais difícil de atravessar."</div>
+<div class="dinamica"><div class="din-title">A estrutura das 4 partes</div><div class="din-desc"><strong>Parte 1 — Abertura sem acusação:</strong> "Eu preciso conversar sobre algo que me pesa." Começa com 'eu', não com 'você'. 'Você sempre faz isso' fecha. 'Eu sinto isso' abre.<br><br><strong>Parte 2 — O que você sente, não o que o outro fez:</strong> "Quando isso acontece, eu me sinto..." Não "você me ignora."<br><br><strong>Parte 3 — O que você precisa:</strong> "O que eu preciso é..." Não espere que adivinhem.<br><br><strong>Parte 4 — O espaço para o outro falar:</strong> "Quero ouvir como você está se sentindo." E aí — ouve. Sem planejar resposta.<br><br><div class="lembrete">📋 Pergunte: "Qual dessas 4 partes você costuma pular?" Digitem no chat. Cria consciência imediata.</div></div></div>
+
+<div class="script-sublabel">6.3 — Reparação real — além do desculpa</div>
+<div class="fala">"Desculpa é fala. Reparação é ação. É o comportamento diferente que prova que a desculpa foi real. É aparecer na apresentação depois de ter faltado nas últimas três. É cozinhar o jantar sem avisar porque percebeu que sua esposa está esgotada. Reparação não precisa de anúncio. A família percebe. E quando percebe — sem anúncio, sem espera de reconhecimento — é quando começa a confiar de novo."</div>
+
+<div class="script-sublabel">6.4 — Construindo um ambiente seguro em casa</div>
+<div class="fala">"Um ambiente seguro é onde os filhos podem errar sem medo de destruição. Onde a esposa pode discordar sem sentir que vai perder o amor. Esse ambiente é criado pelo homem que lidera a família. O homem que não consegue admitir que errou ensina os filhos que erro é vergonha. E filhos que aprendem que erro é vergonha — escondem os erros. E erros escondidos dentro de casa viram bombas com prazo."</div>
+<div class="verde-box"><div class="verde-title">Frase âncora do encontro</div><div class="verde-desc"><strong>"O ambiente da minha casa é reflexo direto de quem eu estou sendo. Se quero uma família mais aberta, mais conectada, mais leve — começo em mim."</strong><br><br>Peça que digitem no chat.</div></div>
+</div></div>
+
+<div class="bloco" id="s6b3"><div class="bloco-header" onclick="tB('s6b3')"><div class="bloco-tempo">38–50 min</div><div class="bloco-titulo">Dinâmica — Plano de reparação + As Regras da Casa</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Dois exercícios. Pega papel e caneta."</div>
+<div class="dinamica"><div class="din-title">Exercício 1 — O plano de reparação concreto (5 min)</div><div class="din-desc"><strong>Pergunta 1:</strong> Com quem na sua família você tem uma dívida emocional — algo feito ou deixado de fazer que ainda está entre vocês?<br><br><strong>Pergunta 2:</strong> Qual ação concreta — não a frase, a ação — você pode fazer essa semana como primeiro gesto de reparação?<br><br><strong>Regra:</strong> A ação precisa ser específica e realizável em 7 dias. Não "vou ser mais presente" — "vou aparecer na academia do meu filho na quinta-feira."<br><br><strong>Compartilhamento voluntário:</strong> quem quiser falar a ação que escolheu — o grupo funciona como testemunha.<br><br><div class="lembrete">📋 Ao encerrar, pergunte em qual dia da semana a ação acontece. Digitem no chat.</div></div></div>
+<div class="fala">"Segundo exercício — vamos construir algo que a maioria das famílias nunca teve: valores escritos, intencionais, que governam como a família vive."</div>
+<div class="dinamica"><div class="din-title">Exercício 2 — As Regras da Casa</div><div class="din-desc">Escrever 3 a 5 regras que começam com: <strong>"Nessa casa, a gente..."</strong><br><br>Exemplos para inspirar — não para copiar:<br>— "...pede desculpa quando erra."<br>— "...ouve antes de responder."<br>— "...não resolve problema gritando."<br>— "...aparece, mesmo quando é difícil."<br><br>É um rascunho — vai ser apresentado e discutido com a família essa semana como conversa, não como imposição.<br><br><div class="lembrete">📋 Missão: apresentar as Regras para a família. "Escrevi isso e quero ouvir o que vocês acham. Podem sugerir, podem mudar."</div></div></div>
+<div class="obs-box"><div class="obs-title">👁 Se o grupo resistir ao exercício das regras</div><div class="obs-desc">Diga: <strong>"Toda família tem regras — a maioria só não as escreveu. Escrever força você a ser intencional. E intencional é o oposto de automático. Você está aqui exatamente para sair do automático."</strong></div></div>
+</div></div>
+
+<div class="bloco" id="s6b4"><div class="bloco-header" onclick="tB('s6b4')"><div class="bloco-tempo">50–55 min</div><div class="bloco-titulo">Exercício de Conexão Real — olho no olho e abraço em silêncio</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Agora vou propor algo que parece simples — e que vai ser o exercício mais difícil que já pedi. Mais difícil do que a carta. Mais difícil do que acordar cedo. Porque esse exige o que o homem moderno menos pratica: presença sem palavra."</div>
+<div class="dinamica"><div class="din-title">O Exercício de Conexão Real — duas etapas, sem palavras</div><div class="din-desc"><strong>Etapa 1 — Olho no olho em silêncio por 1 minuto:</strong><br>Você chega perto da pessoa. Olha nos olhos dela. E fica. Em silêncio. Por 1 minuto inteiro. Sem rir nervosamente. Sem desviar o olhar. Sem falar nada. Só olha. E tenta sentir — não pensar, sentir — quem está na sua frente.<br><br><strong>Etapa 2 — Abraço de 1 minuto, ainda em silêncio:</strong><br>Logo depois — sem falar — você abraça. Com os dois braços. Com peso. Com intenção. Fica por 1 minuto inteiro. Sem soltar antes. Só abraça. E respira junto com o outro.<br><br><strong>Por que funciona:</strong> Abraços acima de 20 segundos liberam ocitocina — o hormônio da conexão. 1 minuto de olho no olho em silêncio quebra a armadura social que o homem usa até dentro de casa. Você aprende mais sobre uma relação nesses 2 minutos do que em 1 hora de conversa sobre logística.<br><br><div class="lembrete">📋 Pergunte: "Com quem vai fazer?" — digitar no chat. "Em qual dia?" — empurre para essa semana.</div></div></div>
+<div class="instrucao"><strong>Prepare-os para o desconforto:</strong> "Esse exercício vai parecer estranho. A pessoa vai perguntar 'o que é isso?' Não explica. Só faz. O estranhamento do início é o sinal de que vocês não faziam isso — e deveriam. Depois do abraço — aí sim podem conversar. Mas primeiro sintam."</div>
+</div></div>
+
+<div class="bloco" id="s6b5"><div class="bloco-header" onclick="tB('s6b5')"><div class="bloco-tempo">55–60 min</div><div class="bloco-titulo">Encerramento — Missões da Semana 6</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Encerramos hoje o pilar Família. O pilar Família é o que mais revela. Porque não tem como fingir dentro de casa por muito tempo. A família vê quem você é nos momentos em que você acha que ninguém está olhando."</div>
+<div class="missoes-box"><div class="missoes-title">Missões — Semana 6</div>
+<div class="missao-item"><div class="missao-num">01</div><div><div class="missao-nome">Gesto de Reparação</div><div class="missao-desc">Ação específica, realizável, sem anúncio e sem espera de reconhecimento. Essa semana.</div><div class="missao-tag">Cinestésico · Social</div><div class="missao-lembrete">📋 Perguntar em qual dia a ação acontece — digitar no chat</div></div></div>
+<div class="missao-item"><div class="missao-num">02</div><div><div class="missao-nome">As Regras da Casa</div><div class="missao-desc">Apresentar para a família como conversa — ouvir, sugerir, construir juntos.</div><div class="missao-tag">Social · Verbal · Leitura/Escrita</div><div class="missao-lembrete">📋 Perguntar quando vai apresentar — digitar o dia no chat</div></div></div>
+<div class="missao-item"><div class="missao-num">03</div><div><div class="missao-nome">Exercício de Conexão Real</div><div class="missao-desc">Olho no olho em silêncio 1 min + abraço de 1 min sem palavras. Com alguém da família. Trazer o que sentiu para o enc. 7.</div><div class="missao-tag">Cinestésico · Social</div><div class="missao-lembrete">📋 Confirmar com quem e em qual dia — digitar no chat</div></div></div>
+</div>
+<div class="ponte-box"><div class="ponte-label">Ponte para o Encontro 7</div><div class="ponte-fala">"Semana que vem entramos no quarto e último pilar — Negócios. E fazemos uma virada importante: saímos do mundo interno e da família, e vamos olhar para o que você está construindo profissionalmente. Não vou falar de estratégia de mercado. Vou falar do homem por trás do negócio — do que está travando, do que está drenando sua energia, das decisões que você está adiando. Venham com os olhos abertos e com honestidade. Porque o que vamos ver no negócio vai ter o DNA de tudo que trabalhamos nos últimos seis encontros."</div></div>
+</div></div>`;
+S[7]=`<div class="script-header">
+  <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#EF9F27;margin-bottom:8px">Pilar: Negócios · Encontro 7 de 10</div>
+  <div class="script-enc-title">O Negócio que Consome Você</div>
+  <div class="script-enc-sub">O sétimo encontro é uma virada de perspectiva. O homem passou seis semanas olhando pra dentro e pra família. Agora vira o olhar pro negócio — com os olhos de quem já se conhece. O negócio que você construiu tem o DNA de quem você é.</div>
+  <div class="script-enc-meta"><span>⏱ 60 minutos</span><span>👥 Turma completa</span><span>🎯 Diagnóstico · Clareza · Decisões adiadas · Energia drenada</span></div>
+</div>
+<div class="bloco open" id="s7b1"><div class="bloco-header" onclick="tB('s7b1')"><div class="bloco-tempo">0–8 min</div><div class="bloco-titulo">Abertura — aterrissagem do pilar Família + entrada em negócios</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Sétimo encontro. Antes de entrar no novo pilar, quero ouvir brevemente do exercício de conexão da semana passada. Quem fez — o que sentiu? Só uma palavra ou frase curta."</div>
+<div class="instrucao"><strong>Ouça 3 ou 4 relatos. Após ouvir, conecte e vire a chave:</strong></div>
+<div class="fala">"Guardem o que acabaram de falar. Porque o homem que consegue estar presente num abraço de 1 minuto com quem ama — esse homem vai conseguir estar presente nas decisões que importam no negócio. Presença não é só familiar. É tudo."</div>
+<div class="dinamica"><div class="din-title">Check-in rápido — missões do enc. 6</div><div class="din-desc"><strong>Reparação:</strong> "Quem executou a ação de reparação? S ou N." Para quem fez — o que foi? Breve.<br><br><strong>Regras da Casa:</strong> "Quem apresentou pra família? S ou N." Como foi recebido?<br><br><div class="lembrete">📋 Quem não fez — registre. No enc. 9 de integração esses compromissos voltam.</div></div></div>
+<div class="fala">"Hoje entramos no quarto e último pilar — Negócios. E quero começar com uma verdade que pode incomodar: o negócio que você tem é um espelho do homem que você é. Não estou falando do mercado, da concorrência, da economia. Estou falando de você. O negócio sempre revela o dono."</div>
+</div></div>
+<div class="bloco" id="s7b2"><div class="bloco-header" onclick="tB('s7b2')"><div class="bloco-tempo">8–35 min</div><div class="bloco-titulo">Conteúdo — O Negócio que Consome Você</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="script-sublabel">7.1 — O negócio tem o DNA do dono</div>
+<div class="fala">"Um negócio desorganizado tem um dono desorganizado internamente. Um negócio que não consegue crescer tem um dono com medo de crescer. Um negócio onde ninguém assume responsabilidade tem um dono que nunca aprendeu a exigir com clareza."</div>
+<div class="fala">"Isso não é crítica — é diagnóstico. O homem que passou pelos últimos seis encontros olhando pra dentro agora tem uma vantagem enorme: ele já conhece os seus padrões. Agora é identificar onde esses padrões aparecem no negócio."</div>
+<div class="dinamica"><div class="din-title">Pergunta para o grupo — chat</div><div class="din-desc">"Pensando no padrão que você identificou no enc. 3 — aquele comportamento que se repete — onde ele aparece no seu negócio? Uma palavra ou frase curta no chat."<br><br><strong>Instrução:</strong> Leia em voz alta. Vão aparecer: procrastinação nas decisões, dificuldade de delegar, excesso de controle. Conecte: "Olha — os mesmos padrões. Em roupas diferentes. Mas o motor é o mesmo."</div></div>
+<div class="script-sublabel">7.2 — Você trabalha no negócio ou no caos?</div>
+<div class="fala">"Existe uma diferença entre trabalhar no negócio e trabalhar no caos. Trabalhar no negócio é quando você tem clareza do papel de cada um, dos processos que funcionam, das metas que guiam as decisões. O negócio funciona com você — e até sem você por alguns dias."</div>
+<div class="fala">"Trabalhar no caos é quando cada dia é apagar incêndio. Quando você é insubstituível em tudo — porque nada está documentado, nada está delegado. Quando você sai, o negócio trava. Quando você entra de férias, o celular não para."</div>
+<div class="fala">"A maioria dos donos de pequeno e médio negócio está presa no caos — e confunde isso com dedicação. Não é dedicação. É ausência de estrutura. E ausência de estrutura custa saúde, casamento, presença com os filhos, clareza mental."</div>
+<div class="alerta-box"><div class="alerta-title">⚠ Ponto de tensão — deixe pesar</div><div class="alerta-desc">Alguns participantes vão se reconhecer totalmente nessa descrição. Não suavize. Diga com firmeza: "Reconhecer isso não é fraqueza. É o primeiro passo real pra sair do caos."</div></div>
+<div class="script-sublabel">7.3 — As decisões que você evita e o custo disso</div>
+<div class="fala">"Vou falar agora de algo que todo empreendedor conhece mas poucos admitem: a decisão adiada. Pode ser demitir alguém que não performa. Pode ser encerrar uma linha de produto que não dá lucro. Pode ser ter uma conversa difícil com um sócio. Cada decisão adiada tem um custo. A decisão adiada não desaparece com o tempo — ela cresce."</div>
+<div class="script-sublabel">7.4 — Clareza de oferta, público e posicionamento</div>
+<div class="fala">"Quando um dono de negócio não consegue explicar o que faz em uma frase simples — o negócio está com problema de posicionamento. Quando ele atende qualquer cliente porque tem medo de recusar dinheiro — o negócio está sem foco. E negócio sem foco drena energia sem gerar resultado proporcional."</div>
+<div class="verde-box"><div class="verde-title">Frase âncora do encontro</div><div class="verde-desc"><strong>"Meu negócio é o que é porque eu sou quem sou. Quando eu mudo — o negócio muda. Não o contrário."</strong><br><br>Peça que digitem no chat.</div></div>
+</div></div>
+<div class="bloco" id="s7b3"><div class="bloco-header" onclick="tB('s7b3')"><div class="bloco-tempo">35–50 min</div><div class="bloco-titulo">Dinâmica — Diagnóstico Ponto de Ruptura (8 áreas)</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Agora vamos colocar o negócio na mesa. Pega papel e caneta. Vou apresentar 8 áreas — e você vai dar uma nota de 1 a 10 para cada uma. Não a nota que você gostaria de ter. A nota honesta de como está agora."</div>
+<div class="dinamica"><div class="din-title">Diagnóstico Ponto de Ruptura — 8 áreas, nota de 1 a 10</div><div class="din-desc"><strong>Área 1 — Clareza de oferta:</strong> Você consegue explicar o que faz em 1 frase simples que qualquer pessoa entende?<br><strong>Área 2 — Clareza de público:</strong> Você sabe exatamente para quem serve — e para quem não serve?<br><strong>Área 3 — Previsibilidade financeira:</strong> Você sabe quanto vai entrar no mês que vem? Tem reserva? Tem controle real?<br><strong>Área 4 — Pessoas e equipe:</strong> As pessoas certas estão nos lugares certos? Você lidera ou só gerencia crise?<br><strong>Área 5 — Processos documentados:</strong> O negócio funciona sem você? Tudo depende da sua memória?<br><strong>Área 6 — Geração de novos clientes:</strong> Você tem um sistema previsível de entrada de clientes ou depende de indicação e sorte?<br><strong>Área 7 — Energia do dono:</strong> Você sai do negócio renovado ou esgotado? O negócio te liberta ou te prende?<br><strong>Área 8 — Visão de futuro:</strong> Você tem clareza de onde o negócio estará em 12 meses?<br><br><strong>Como interpretar o total (máximo 80 pontos):</strong><br>60–80: Negócio estruturado — trabalhar em crescimento.<br>40–59: Negócio funcional com gargalos — priorizar as 3 áreas mais baixas.<br>Abaixo de 40: Negócio em caos operacional — estrutura antes de crescimento.<br><br><div class="lembrete">📋 Compartilhamento: "Quem quer compartilhar a área com nota mais baixa — digita no chat. Só a área, sem a nota."</div></div></div>
+<div class="dinamica"><div class="din-title">Mapa de energia — onde vai e o que retorna (5 min)</div><div class="din-desc">Divide uma folha em dois lados:<br><br><strong>Lado esquerdo — "Onde minha energia vai":</strong> As 5 atividades que mais consomem seu tempo e energia no negócio hoje.<br><br><strong>Lado direito — "O que retorna":</strong> Para cada atividade, marque: R (resultado direto), I (indireto) ou N (não gera resultado proporcional).<br><br><div class="lembrete">📋 Pergunte: "Quem tem mais N do que R na lista?" Esse é o dado mais honesto sobre onde a energia está sendo desperdiçada.</div></div></div>
+</div></div>
+<div class="bloco" id="s7b4"><div class="bloco-header" onclick="tB('s7b4')"><div class="bloco-tempo">50–55 min</div><div class="bloco-titulo">As 3 decisões adiadas — nomeando com prazo</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Antes de fechar — 3 minutos. Pega o papel de novo. Escreva as 3 decisões que você sabe que precisa tomar no negócio e está adiando. Para cada uma: por que está adiando? Qual o custo de continuar? Uma data real para decidir."</div>
+<div class="instrucao"><strong>Compartilhamento:</strong> Quem quiser nomear uma das 3 em voz alta — o grupo ouve como testemunha. Pergunte a quem compartilhou: "Qual é o prazo que você está se dando?" Empurre para o menor prazo responsável.</div>
+<div class="obs-box"><div class="obs-title">👁 Participantes sem negócio próprio</div><div class="obs-desc">As decisões adiadas podem ser sobre carreira, transição profissional ou projeto que nunca sai do papel. Não adapte publicamente — cada um faz a sua versão.</div></div>
+</div></div>
+<div class="bloco" id="s7b5"><div class="bloco-header" onclick="tB('s7b5')"><div class="bloco-tempo">55–60 min</div><div class="bloco-titulo">Encerramento — Missões da Semana 7</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="missoes-box"><div class="missoes-title">Missões — Semana 7</div>
+<div class="missao-item"><div class="missao-num">01</div><div><div class="missao-nome">Diagnóstico completo</div><div class="missao-desc">Retomar as 8 áreas em casa com calma. Para as 3 com nota mais baixa: escrever o problema real, o que já tentou e o próximo passo concreto.</div><div class="missao-tag">Lógico · Leitura/Escrita</div><div class="missao-lembrete">📋 Trazer para o enc. 8 — base da dinâmica de estrutura</div></div></div>
+<div class="missao-item"><div class="missao-num">02</div><div><div class="missao-nome">Mapa de energia refinado</div><div class="missao-desc">Refinar o mapa — onde vai e o que retorna. Identificar o que drena sem retorno proporcional.</div><div class="missao-tag">Visual · Lógico</div><div class="missao-lembrete">📋 Trazer para o enc. 8</div></div></div>
+<div class="missao-item"><div class="missao-num">03</div><div><div class="missao-nome">Uma decisão adiada tomada</div><div class="missao-desc">Das 3 listadas hoje, escolher a menor e tomar essa semana. Não as 3. Só uma. De verdade, com ação concreta.</div><div class="missao-tag">Cinestésico · Lógico</div><div class="missao-lembrete">📋 Qual das 3 vai ser e o prazo — digitar no chat</div></div></div>
+</div>
+<div class="fala">"Uma observação: a maioria das decisões adiadas não é difícil de tomar porque falta informação. É difícil porque tomar a decisão significa assumir que você sabe o que precisa ser feito. Quando você decide, você para de pagar o custo emocional da dúvida — e libera energia pra usar em algo que importa."</div>
+<div class="ponte-box"><div class="ponte-label">Ponte para o Encontro 8</div><div class="ponte-fala">"Semana que vem pegamos o diagnóstico que fizemos hoje e vamos transformar em estrutura real. Vamos falar de como sair do operacional, de como construir um negócio que funciona sem depender da sua presença em tudo, e de como criar um plano de 90 dias que realmente sai do papel. Venham com o diagnóstico aprofundado e com o mapa de energia feito — porque o enc. 8 é o encontro mais prático do pilar Negócios. A gente vai construir coisas concretas juntos."</div></div>
+</div></div>`;
+S[8]=`<div class="script-header">
+  <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#EF9F27;margin-bottom:8px">Pilar: Negócios · Encontro 8 de 10</div>
+  <div class="script-enc-title">Do Caos para o Sistema</div>
+  <div class="script-enc-sub">O oitavo encontro é o mais prático de toda a mentoria. Sem teoria. Aqui a gente pega o diagnóstico da semana passada e transforma em estrutura real — As 3 Listas, visão de 12 meses e o Plano de 90 dias que finalmente sai do papel.</div>
+  <div class="script-enc-meta"><span>⏱ 60 minutos</span><span>👥 Turma completa</span><span>🎯 Estrutura · Delegação · Plano de 90 dias · Visão de 12 meses</span></div>
+</div>
+<div class="bloco open" id="s8b1"><div class="bloco-header" onclick="tB('s8b1')"><div class="bloco-tempo">0–7 min</div><div class="bloco-titulo">Abertura — colhendo as missões da semana</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Oitavo encontro. Encerramos hoje o pilar Negócios — e esse encontro é diferente dos outros. Não tem muita teoria. Tem construção. Saímos daqui com algo concreto na mão."</div>
+<div class="fala">"Antes de construir — quero saber o que vocês trouxeram da semana. Começo pela decisão adiada. Quem tomou a decisão que se comprometeu na semana passada — digita S no chat."</div>
+<div class="dinamica"><div class="din-title">Check-in das 3 missões</div><div class="din-desc"><strong>Decisão tomada:</strong> Para quem fez — "O que foi? O que aconteceu depois?" 1 ou 2 relatos breves. Isso inspira quem não tomou.<br><br><strong>Diagnóstico aprofundado:</strong> "Quem aprofundou as 3 áreas mais baixas? S ou N." Para quem fez — qual área foi mais difícil de olhar com honestidade?<br><br><strong>Mapa de energia:</strong> "Quem tinha mais N do que R na lista?" Esse número vai aparecer no exercício de hoje.<br><br><div class="lembrete">📋 Não gaste mais de 7 minutos nessa abertura. O enc. 8 é denso em construção.</div></div></div>
+</div></div>
+<div class="bloco" id="s8b2"><div class="bloco-header" onclick="tB('s8b2')"><div class="bloco-tempo">7–28 min</div><div class="bloco-titulo">Conteúdo — Do Caos para o Sistema</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="script-sublabel">8.1 — O dono que não sai do operacional</div>
+<div class="fala">"Imagina um homem num barco — remando com tudo que tem. O barco se move. Mas ele está tão ocupado remando que nunca para pra olhar pra onde está indo. Pode estar remando na direção errada. Esse é o dono que não sai do operacional. Sair do operacional não é trabalhar menos. É trabalhar no que só você pode fazer — e criar sistema pra tudo que outra pessoa pode fazer igual ou melhor do que você."</div>
+<div class="script-sublabel">8.2 — O modelo das 3 listas</div>
+<div class="fala">"Vou apresentar um modelo simples que vai mudar a forma como vocês olham pro tempo dentro do negócio. Chamo de As 3 Listas."</div>
+<div class="dinamica"><div class="din-title">O modelo das 3 listas</div><div class="din-desc"><strong>Lista 1 — O que só eu posso fazer:</strong> Decisões estratégicas, relacionamentos-chave, cultura do negócio, visão. Máximo 5 itens. É onde o dono deveria passar a maior parte do tempo — e onde a maioria passa menos.<br><br><strong>Lista 2 — O que pode ser delegado ou ensinado:</strong> Processos repetitivos, tarefas operacionais com padrão claro. Tudo que pode ser documentado e entregue para outra pessoa.<br><br><strong>Lista 3 — O que precisa ser eliminado ou automatizado:</strong> Reuniões sem pauta. Processos duplicados. Aprovações desnecessárias. Tudo que drena energia sem retorno.<br><br><strong>A regra de ouro:</strong> Lista 2 — delega ou ensina. Lista 3 — elimina ou automatiza. Só a Lista 1 justifica o seu tempo pessoal.<br><br><div class="lembrete">📋 Após as 3 listas, dê 30 segundos para pensar em qual lista cada um passa mais tempo hoje.</div></div></div>
+<div class="script-sublabel">8.3 — Estrutura mínima para escalar</div>
+<div class="fala">"Estrutura mínima são 4 coisas: um organograma simples de quem faz o quê — mesmo que seja só você e mais dois. Um processo documentado para as 3 tarefas mais repetidas. Uma reunião semanal de 30 minutos com pauta fixa. E um número que representa a saúde do negócio que você olha toda semana sem falta."</div>
+<div class="script-sublabel">8.4 — Visão de 12 meses em uma frase</div>
+<div class="fala">"Onde você quer que seu negócio esteja daqui a 12 meses? Em uma frase. Porque se você não consegue dizer em uma frase onde está indo, sua equipe não sabe. Seu cliente não sabe. A frase não precisa ser grandiosa. Precisa ser verdadeira e específica o suficiente para guiar decisões."</div>
+<div class="verde-box"><div class="verde-title">Frase âncora do encontro</div><div class="verde-desc"><strong>"Sistema não é burocracia. Sistema é liberdade. O negócio com sistema libera o dono. O negócio sem sistema prende o dono."</strong><br><br>Peça que digitem no chat.</div></div>
+</div></div>
+<div class="bloco" id="s8b3"><div class="bloco-header" onclick="tB('s8b3')"><div class="bloco-tempo">28–50 min</div><div class="bloco-titulo">Dinâmica — As 3 Listas + Visão de 12 meses + Plano de 90 dias</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="dinamica"><div class="din-title">Exercício 1 — As 3 Listas aplicadas (7 min em silêncio)</div><div class="din-desc"><strong>Lista 1 — O que só eu posso fazer:</strong> Mínimo 3, máximo 5 itens. Se passar de 5 — você está se iludindo.<br><br><strong>Lista 2 — O que posso delegar ou ensinar essa semana:</strong> Mínimo 3 itens. Para cada um, escrever o nome de quem poderia receber — ou o perfil de quem precisaria contratar.<br><br><strong>Lista 3 — O que preciso eliminar ou automatizar:</strong> Sem limite. Tudo que vier.<br><br><div class="lembrete">📋 "Quem tem mais coisas na Lista 1 do que nas outras duas?" Esse é o diagnóstico de dono preso no operacional.</div></div></div>
+<div class="dinamica"><div class="din-title">Exercício 2 — Visão de 12 meses em uma frase (5 min)</div><div class="din-desc">Cada um escreve a frase no papel. 3 minutos. Quem quiser ler em voz alta — lê. O grupo ouve sem comentar.<br><br><strong>Critério para uma boa frase:</strong> É específica? Tem número ou indicador claro? Guia decisões?<br><br><div class="lembrete">📋 Essa frase vai para o Plano de 90 dias agora. Ela é o norte.</div></div></div>
+<div class="dinamica"><div class="din-title">Exercício 3 — Plano de 90 dias (10 min)</div><div class="din-desc">Com base na visão de 12 meses, montar o plano em 3 blocos de 30 dias:<br><br><strong>Mês 1 — ORGANIZAR:</strong> Foco em estrutura interna. Delegar pelo menos 1 tarefa da Lista 2. Eliminar pelo menos 1 item da Lista 3. Documentar 1 processo.<br><br><strong>Mês 2 — EXECUTAR:</strong> Foco em tração. Com estrutura mínima no lugar, executar a principal ação de crescimento.<br><br><strong>Mês 3 — AVALIAR:</strong> Foco em revisão. O que funcionou? O que não funcionou? Medir os números definidos.<br><br><strong>Para cada mês:</strong> 1 meta principal + 2 ou 3 ações concretas + 1 número de medição.<br><br><div class="lembrete">📋 Ao encerrar, peça que compartilhem a meta do Mês 1 em voz alta — só a meta. Isso cria comprometimento público com o primeiro passo.</div></div></div>
+</div></div>
+<div class="bloco" id="s8b4"><div class="bloco-header" onclick="tB('s8b4')"><div class="bloco-tempo">50–55 min</div><div class="bloco-titulo">Mentoria quente — uma pergunta por participante</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Antes das missões, quero abrir 5 minutos para o que chamo de mentoria quente. Cada um que quiser — pode trazer uma pergunta específica sobre o seu negócio. Não uma reflexão, uma pergunta concreta que precisa de resposta prática agora."</div>
+<div class="instrucao"><strong>Aceite 2 ou 3 perguntas — não mais.</strong> Responda de forma direta e aplicada. Se uma pergunta for muito específica: "Essa merece uma conversa no privado — mas posso dar a direção agora."</div>
+<div class="obs-box"><div class="obs-title">👁 Por que esse espaço existe</div><div class="obs-desc">Aqui você demonstra que conhece cada negócio individualmente — e entrega valor personalizado em público. Isso reforça a confiança no processo. <strong>Não pule esse bloco</strong> mesmo que o tempo esteja apertado.</div></div>
+</div></div>
+<div class="bloco" id="s8b5"><div class="bloco-header" onclick="tB('s8b5')"><div class="bloco-tempo">55–60 min</div><div class="bloco-titulo">Encerramento — Missões da Semana 8</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Oito encontros. Encerramos o pilar Negócios — e com ele, os quatro pilares. Deus, você mesmo, família, negócios. Não são silos — são um sistema. E vocês acabaram de mapear esse sistema inteiro."</div>
+<div class="missoes-box"><div class="missoes-title">Missões — Semana 8</div>
+<div class="missao-item"><div class="missao-num">01</div><div><div class="missao-nome">Completar o Plano de 90 dias</div><div class="missao-desc">Terminar o que começamos hoje — cada mês com meta, ações e número de medição. Trazer para o enc. 9.</div><div class="missao-tag">Lógico · Leitura/Escrita</div><div class="missao-lembrete">📋 Base da dinâmica de integração no enc. 9</div></div></div>
+<div class="missao-item"><div class="missao-num">02</div><div><div class="missao-nome">Delegar ou eliminar 1 item</div><div class="missao-desc">Da Lista 2 ou 3 de hoje — ação real, não planejamento. Essa semana.</div><div class="missao-tag">Cinestésico · Lógico</div><div class="missao-lembrete">📋 Qual item e quando — digitar no chat</div></div></div>
+<div class="missao-item"><div class="missao-num">03</div><div><div class="missao-nome">Visão de negócio em 1 parágrafo</div><div class="missao-desc">Expandir a frase de 12 meses para 1 parágrafo — onde está hoje, onde vai, qual o movimento principal. Trazer para o enc. 9.</div><div class="missao-tag">Leitura/Escrita · Lógico</div><div class="missao-lembrete">📋 Parte da integração dos 4 pilares no enc. 9</div></div></div>
+</div>
+<div class="fala">"Uma observação sobre o Plano de 90 dias: ele só funciona se você olhar pra ele toda semana. 10 minutos na segunda-feira de manhã perguntando: 'O que preciso fazer essa semana para avançar no que importa?' Esse hábito, mais do que qualquer estratégia, é o que separa o dono que cresce do dono que fica no lugar."</div>
+<div class="ponte-box"><div class="ponte-label">Ponte para o Encontro 9</div><div class="ponte-fala">"Semana que vem é o encontro de integração. Pela primeira vez desde que começamos, vamos colocar os 4 pilares lado a lado e ver como estão se relacionando — onde um alimenta o outro, onde um sabota o outro, e onde está a maior alavanca de mudança pra cada um de vocês. É o encontro mais estratégico da mentoria. Venham com tudo que construímos até aqui — o mapa de feridas, os rituais, as Regras da Casa, o Plano de 90 dias. Tudo. Porque vamos integrar."</div></div>
+</div></div>`;
+S[9]=`<div class="script-header">
+  <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Integração · Encontro 9 de 10</div>
+  <div class="script-enc-title">Integrando os 4 Pilares</div>
+  <div class="script-enc-sub">O nono encontro não tem conteúdo novo. Tem síntese. Pela primeira vez na jornada, o participante coloca os 4 pilares lado a lado e enxerga o padrão completo da própria vida — onde cada área alimenta as outras, onde cada área sabota as outras, e onde está a alavanca que muda tudo.</div>
+  <div class="script-enc-meta"><span>⏱ 60 minutos</span><span>👥 Turma completa</span><span>🎯 Síntese · Integração · Plano de Vida · Decisão de ruptura</span></div>
+</div>
+<div class="bloco open" id="s9b1"><div class="bloco-header" onclick="tB('s9b1')"><div class="bloco-tempo">0–8 min</div><div class="bloco-titulo">Abertura — check-in final + preparação para a síntese</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Nono encontro. Penúltimo. E quero começar dizendo algo antes de qualquer check-in: vocês chegaram até aqui. Nove semanas. Isso não é trivial. A maioria das pessoas começa processos e não termina. Vocês estão terminando. E o que vem agora é o ponto mais alto de tudo que construímos juntos."</div>
+<div class="dinamica"><div class="din-title">Check-in final das missões</div><div class="din-desc"><strong>Plano de 90 dias:</strong> "Quem completou? S ou N." Para 2 ou 3 — qual é a meta do Mês 1? Ouvir em voz alta.<br><br><strong>Delegação ou eliminação:</strong> "Quem executou a ação da Lista 2 ou 3?" O que foi? Breve.<br><br><strong>Visão em parágrafo:</strong> "Quem escreveu?" Para 1 ou 2 — ler o parágrafo em voz alta como testemunha.<br><br><div class="lembrete">📋 Último check-in antes do enc. 10. Quem não completou — o que falta? Consegue completar até o próximo encontro?</div></div></div>
+<div class="fala">"Hoje não vamos aprender nada novo. Hoje vamos ver o que já aprendemos — mas inteiro. Como um quebra-cabeça que você montou peça por peça nas últimas 9 semanas e que hoje, pela primeira vez, você vai olhar de longe e ver a imagem completa."</div>
+</div></div>
+<div class="bloco" id="s9b2"><div class="bloco-header" onclick="tB('s9b2')"><div class="bloco-tempo">8–22 min</div><div class="bloco-titulo">Conteúdo — O homem integrado vs. o homem fragmentado</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="script-sublabel">9.1 — O homem fragmentado</div>
+<div class="fala">"O homem fragmentado vive os 4 pilares como compartimentos separados. No trabalho ele é uma pessoa. Em casa é outra. Com Deus, quando lembra, é outra. O resultado é uma vida que funciona em partes — mas que nunca funciona como um todo. E o homem fica pulando de crise em crise sem perceber que o fogo vem do mesmo lugar."</div>
+<div class="script-sublabel">9.2 — Como os pilares se alimentam e se sabotam</div>
+<div class="fala">"Os pilares não são independentes. Eles se afetam o tempo todo."</div>
+<div class="dinamica"><div class="din-title">As conexões entre os pilares</div><div class="din-desc"><strong>Deus → Consigo Mesmo:</strong> O homem com âncora espiritual real tem mais clareza interna. Menos ansiedade de controle. Mais capacidade de enxergar padrões sem se defender deles.<br><br><strong>Consigo Mesmo → Família:</strong> O homem que conhece suas feridas para de projetá-las na família. O pai que entendeu sua história de abandono para de repetir o abandono com os filhos.<br><br><strong>Família → Negócios:</strong> O homem em paz com a família tem a mente mais livre para o negócio. Menos culpa no trabalho. Menos fuga para o trabalho.<br><br><strong>Negócios → Deus:</strong> O homem que constrói um negócio com propósito reconecta a espiritualidade ao cotidiano. O trabalho deixa de ser distração e vira expressão.<br><br><strong>As sabotagens:</strong> Ferida de abandono sabota confiança no negócio. Sem ancoragem espiritual, decisões vêm da ansiedade. Família em crise bloqueia clareza estratégica.</div></div>
+<div class="script-sublabel">9.3 — A alavanca central</div>
+<div class="fala">"Todo homem tem uma alavanca central. Uma área, uma decisão, um padrão — que se movida, move tudo ao redor. A pergunta que cada um precisa responder hoje é: qual é a minha alavanca? Se eu mover essa — o que mais se move junto?"</div>
+<div class="verde-box"><div class="verde-title">Frase âncora do encontro</div><div class="verde-desc"><strong>"O homem integrado não é perfeito em nenhum pilar. É honesto em todos. E porque é honesto — consegue agir em todos ao mesmo tempo, a partir de um centro único."</strong><br><br>Peça que digitem no chat.</div></div>
+</div></div>
+<div class="bloco" id="s9b3"><div class="bloco-header" onclick="tB('s9b3')"><div class="bloco-tempo">22–45 min</div><div class="bloco-titulo">Dinâmica — Diagrama de Integração + Plano de Vida em 1 página</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Pega uma folha. Vamos construir dois exercícios — o mapa visual da sua vida inteira e o plano que vai guiar o que vem depois."</div>
+<div class="dinamica"><div class="din-title">Exercício 1 — Diagrama de Integração (10 min)</div><div class="din-desc"><strong>Passo 1:</strong> Desenhe 4 círculos — um em cada quadrante. Escreva o nome de cada pilar dentro: Deus, Consigo Mesmo, Família, Negócios.<br><br><strong>Passo 2:</strong> Dentro de cada círculo, escreva uma nota de 1 a 10 de como cada pilar está hoje — após 9 semanas de trabalho.<br><br><strong>Passo 3:</strong> Desenhe setas entre os pilares — seta positiva (alimenta) ou negativa (sabota). Seja honesto.<br><br><strong>Passo 4:</strong> Circule o pilar que, se fortalecido, tem mais potencial de mover os outros. Essa é sua alavanca.<br><br><strong>Compartilhamento:</strong> Quem quiser compartilhar a alavanca que identificou — digita no chat. Só o nome do pilar.<br><br><div class="lembrete">📋 Esse diagrama acompanha as cartas — vai para o enc. 10 como material de base da declaração de ruptura.</div></div></div>
+<div class="dinamica"><div class="din-title">Exercício 2 — Plano de Vida em 1 página (13 min)</div><div class="din-desc">4 blocos. Não precisa ser perfeito. Precisa ser verdadeiro.<br><br><strong>Bloco 1 — Quem eu sou:</strong> Seus valores centrais, o que te move, o que você não abre mão. 3 frases.<br><br><strong>Bloco 2 — O que quero construir:</strong> Nos 4 pilares — o que você quer que esteja diferente em 1 ano? Uma frase por pilar.<br><br><strong>Bloco 3 — O que preciso soltar:</strong> Um padrão, uma crença, um comportamento, um medo. Máximo 3 itens.<br><br><strong>Bloco 4 — Minha decisão de ruptura:</strong> Em uma frase — qual é a mudança de vida que você está pronto para declarar no próximo encontro?<br><br><div class="lembrete">📋 O Bloco 4 é a preparação direta para o enc. 10. Se alguém travar: "Escreva a pergunta — O que eu precisaria decidir pra minha vida mudar de verdade?"</div></div></div>
+<div class="fala">"Quem quiser compartilhar algo de qualquer um dos 4 blocos — o espaço está aberto."</div>
+<div class="instrucao"><strong>Ouça com atenção total. Não analise. Não corrija. O que o participante compartilhar do Bloco 4 é um ensaio da declaração do enc. 10. Receba como testemunha.</strong></div>
+</div></div>
+<div class="bloco" id="s9b4"><div class="bloco-header" onclick="tB('s9b4')"><div class="bloco-tempo">45–53 min</div><div class="bloco-titulo">Preparação para o Encontro 10</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"O próximo encontro é presencial. É o Ponto de Ruptura. E pra chegar lá preparado, cada um vai fazer duas coisas essa semana."</div>
+<div class="dinamica"><div class="din-title">Duas missões específicas para o enc. 10</div><div class="din-desc"><strong>Missão 1 — A apresentação de 5 minutos:</strong><br>Preparar uma declaração para o grupo. Estrutura sugerida:<br>— Quem eu era quando entrei nessa mentoria (1 min)<br>— O que mudou em mim durante o processo (2 min)<br>— A decisão que estou tomando — meu Ponto de Ruptura (2 min)<br>Não precisa ser ensaiada até a perfeição. Precisa ser verdadeira.<br><br><strong>Missão 2 — A Carta para o Futuro Eu:</strong><br>Escrever uma carta para si mesmo — que será aberta em 6 meses. O que você quer que ele lembre? Que promessas você quer que ele tenha cumprido? A carta será entregue lacrada no enc. 10.<br><br><div class="lembrete">📋 Perguntar em qual dia da semana vão escrever a carta. Digitar no chat. Carta escrita com tempo e silêncio tem peso diferente de carta escrita no desespero da última hora.</div></div></div>
+<div class="ritual-box"><div class="ritual-title">⭐ Sobre o encontro 10 — o que revelar e o que guardar</div><div class="ritual-desc">Diga que é presencial e que haverá um ritual de encerramento. <strong>Não revele o brinde surpresa.</strong> Não revele o formato detalhado. O que você pode dizer: <em>"O próximo encontro vai ser diferente de tudo que fizemos até aqui. É presencial. Venham com a apresentação preparada, com a carta escrita e com o coração aberto. O que vai acontecer lá — não vou contar agora. Só vou dizer que você vai querer ter estado presente de verdade."</em></div></div>
+</div></div>
+<div class="bloco" id="s9b5"><div class="bloco-header" onclick="tB('s9b5')"><div class="bloco-tempo">53–60 min</div><div class="bloco-titulo">Encerramento — Missões da Semana 9</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Nove encontros. Uma semana. E depois — o Ponto de Ruptura."</div>
+<div class="fala">"O que aconteceu aqui nas últimas nove semanas não tem preço. Vocês foram a lugares que a maioria dos homens nunca vai. Foram fundo nas feridas. Foram honestos com a família. Olharam pra dentro do negócio sem se esconder. E chegaram aqui — inteiros, mais conscientes, mais prontos."</div>
+<div class="missoes-box"><div class="missoes-title">Missões — Semana 9</div>
+<div class="missao-item"><div class="missao-num">01</div><div><div class="missao-nome">Apresentação de 5 minutos</div><div class="missao-desc">Quem você era, o que mudou, a decisão de ruptura. Verdadeira — não perfeita.</div><div class="missao-tag">Verbal · Social</div><div class="missao-lembrete">📋 Usar no enc. 10 — declaração pública de ruptura</div></div></div>
+<div class="missao-item"><div class="missao-num">02</div><div><div class="missao-nome">Carta para o Futuro Eu</div><div class="missao-desc">Escrever para si mesmo — lacrá-la e trazer para o enc. 10. Abrir em 6 meses.</div><div class="missao-tag">Leitura/Escrita · Cinestésico</div><div class="missao-lembrete">📋 Perguntar em qual dia vão escrever — digitar no chat</div></div></div>
+<div class="missao-item"><div class="missao-num">03</div><div><div class="missao-nome">Reler tudo</div><div class="missao-desc">Plano de Vida, Diagrama de Integração e Plano de 90 dias. Chegar no enc. 10 com o que construiu vivo na memória.</div><div class="missao-tag">Leitura/Escrita · Lógico</div></div></div>
+</div>
+<div class="ponte-box"><div class="ponte-label">Ponte para o Encontro 10</div><div class="ponte-fala">"Semana que vem nos encontramos presencialmente pela primeira e única vez. E não é só um encontro — é um rito. Cada um de vocês vai ter a oportunidade de declarar, diante do grupo, a decisão que vai mudar a trajetória da sua vida. Não é pressão — é honra. Poucos homens chegam a esse momento com a clareza que vocês têm agora. Venham com a apresentação. Venham com a carta. Venham inteiros. O Ponto de Ruptura é de vocês."</div></div>
+</div></div>`;
+S[10]=`<div class="script-header" style="background:rgba(196,154,60,0.08);border:1px solid rgba(196,154,60,0.3);">
+  <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">◆ Encontro Final · 10 de 10 · Presencial · Londrina</div>
+  <div class="script-enc-title" style="font-family:'Playfair Display',serif;font-size:24px;">PONTO DE RUPTURA — A Decisão</div>
+  <div class="script-enc-sub">O décimo encontro não tem conteúdo. Não tem exercício. Tem o homem — de frente para si mesmo e para o grupo — declarando em voz alta quem decidiu ser. É o encontro mais simples em estrutura e o mais pesado em peso.</div>
+  <div class="script-enc-meta"><span>⏱ 90–120 minutos</span><span>📍 Presencial — Londrina</span><span>👥 Turma completa</span><span>🔒 Ritual surpresa</span></div>
+</div>
+
+<div class="ritual-box" style="margin-bottom:12px">
+  <div class="ritual-title">◆ Antes de tudo — o que preparar presencialmente</div>
+  <div class="ritual-desc">
+    <strong>Local:</strong> Espaço íntimo, cadeiras em círculo — sem mesa no centro. Todos no mesmo nível, incluindo você.<br><br>
+    <strong>Ambiente:</strong> Luz ambiente quente. Vela ou ponto de luz central. Música instrumental suave antes de começar — silencia quando o encontro abre.<br><br>
+    <strong>Material:</strong> Brindes com nomes escritos à mão (não visíveis ainda). Bacia à prova de fogo + papel e caneta para a queima. O Pacto de Ruptura impresso.<br><br>
+    <strong>Você chega 30 minutos antes.</strong> Receba cada homem na porta individualmente — não deixe ninguém entrar sozinho no espaço.
+  </div>
+</div>
+
+<div class="bloco open" id="s10b1"><div class="bloco-header" onclick="tB('s10b1')"><div class="bloco-tempo">0–10 min</div><div class="bloco-titulo">Abertura — recepção e entrada no espaço</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="instrucao"><strong>Receba cada homem individualmente na porta. Aperto de mão firme, olho no olho. Quando todos estiverem sentados no círculo, silenciar a música. Fique em pé no centro por um momento. Deixe o silêncio pesar.</strong></div>
+<div class="fala-pesada">"Bem-vindos. Desta vez não vou dizer 'bem-vindos de volta' — porque esse não é mais o mesmo lugar. E vocês não são mais os mesmos homens que estavam aqui dez semanas atrás.<br><br>Dez encontros. Dez semanas. Cada uma diferente da anterior. Cada uma pedindo mais de vocês do que a anterior.<br><br>Hoje não tem conteúdo. Não tem exercício. Hoje vocês chegam até aqui com tudo que fizeram — e entregam. Não pra mim. Pra vocês mesmos."</div>
+<div class="instrucao"><strong>Pause. Olhe para cada homem no círculo — um por um, devagar. Esse olhar diz: eu vi você nessa jornada.</strong></div>
+<div class="fala">"Antes de começar — vamos fazer 1 minuto de silêncio. Como fizemos no primeiro encontro. Dessa vez não é pra entrar no processo. É pra honrar o processo. Fechem os olhos."</div>
+<div class="instrucao"><strong>1 minuto de silêncio real. Não preencha. Esse silêncio conecta o primeiro encontro com o último — cria um arco completo.</strong></div>
+<div class="fala">"Abram os olhos. Estamos prontos."</div>
+</div></div>
+
+<div class="bloco" id="s10b2"><div class="bloco-header" onclick="tB('s10b2')"><div class="bloco-tempo">10–75 min</div><div class="bloco-titulo">As declarações — cada homem declara seu Ponto de Ruptura</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Agora cada um de vocês vai ter 5 minutos. Só vocês e o grupo. Ninguém interrompe. Ninguém avalia. Ninguém dá conselho. Só escuta.<br><br>Estrutura que cada um preparou: quem você era quando entrou nessa mentoria. O que mudou. E a decisão — o seu Ponto de Ruptura.<br><br>Não precisa ser perfeita. Precisa ser verdadeira."</div>
+<div class="ritual-box"><div class="ritual-title">Protocolo das declarações</div><div class="ritual-desc">
+<strong>Ordem:</strong> Peça voluntários. Não force — mas não deixe ninguém ficar para o final por medo. Se precisar, convide: "Quem quer abrir esse círculo?"<br><br>
+<strong>Durante cada declaração:</strong> Silêncio total. Olhe para quem está falando. Se alguém parar ao se emocionar — aguarde. O silêncio do grupo segura o espaço.<br><br>
+<strong>Após cada declaração:</strong> Pausa de 10 segundos. Depois diga somente: "Obrigado." Nada mais.<br><br>
+<strong>Tempo:</strong> 5 minutos por participante. Não corte ninguém no meio — se passar um pouco, deixa.
+</div></div>
+<div class="lembrete">📋 Tenha água disponível para todos. Declarações longas, emoção real — hidratação é cuidado simples que demonstra atenção.</div>
+<div class="obs-box"><div class="obs-title">👁 Se alguém não tiver preparado a declaração</div><div class="obs-desc"><strong>"Não precisa ser o que preparou. Pode ser só o que está sentindo agora. Uma frase. Uma palavra. O que quiser entregar aqui — é o suficiente."</strong> O espaço seguro foi construído em 9 semanas. Ele vai falar.</div></div>
+</div></div>
+
+<div class="bloco" id="s10b3"><div class="bloco-header" onclick="tB('s10b3')"><div class="bloco-tempo">75–90 min</div><div class="bloco-titulo">O Ritual — queima, pacto e entrega das cartas</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Agora vamos fazer algo que vocês não sabiam que ia acontecer. Um ritual de três partes. Cada uma tem um significado. Nenhuma é decorativa."</div>
+<div class="ritual-box"><div class="ritual-title">Parte 1 — A queima: soltar o que ficou para trás</div><div class="ritual-desc">
+<strong>Material:</strong> Uma folha em branco e caneta para cada um. Uma bacia à prova de fogo no centro do círculo.<br><br>
+<strong>Instrução para o grupo:</strong> "Escrevam agora — em uma frase ou uma palavra — o que vocês vão deixar pra trás. O padrão que não vai mais. O medo que não vai mais comandar. A versão de vocês que ficou menor do que sabem que são. Escrevam. Dobrem o papel."<br><br>
+<strong>O ato:</strong> Um por um, cada homem caminha até o centro, coloca o papel na bacia e o queima. Sem falar nada. Em silêncio. O grupo observa.<br><br>
+<strong>Enquanto queima:</strong> Fique em silêncio. O fogo faz o trabalho simbólico — não roube o momento com palavras.<br><br>
+<div class="lembrete">📋 Segurança: tenha água por perto. Espaço ventilado. Papéis dobrados queimam mais devagar e de forma controlada.</div>
+</div></div>
+<div class="ritual-box"><div class="ritual-title">Parte 2 — O Pacto de Ruptura</div><div class="ritual-desc">
+<strong>Material:</strong> Uma folha impressa para cada participante com o texto abaixo e espaço para assinatura.<br><br>
+<strong>O texto do Pacto:</strong><br><br>
+<div style="background:rgba(196,154,60,0.06);border:1px solid rgba(196,154,60,0.3);border-radius:8px;padding:16px;text-align:center;margin:8px 0;">
+  <div style="font-size:10px;font-weight:500;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px">PACTO DE RUPTURA</div>
+  <div style="font-size:13px;color:var(--text-2);line-height:1.9;font-style:italic;font-family:'Playfair Display',serif;">"Eu, ________________________, declaro que a partir deste dia escolho viver de forma intencional — alinhado a Deus, honesto comigo mesmo, presente com minha família e claro no meu negócio.<br><br>Declaro que a vida que quero não vai acontecer por acidente. Vai acontecer pela soma das decisões que tomo a partir de hoje.<br><br>Esse é o meu Ponto de Ruptura."</div>
+  <div style="font-size:11px;color:var(--text-3);margin-top:14px;border-top:0.5px solid rgba(196,154,60,0.2);padding-top:10px;">Assinatura: ____________________________     Data: ___/___/______</div>
+</div>
+<strong>O ato:</strong> Cada homem lê o pacto em voz baixa e assina. Em silêncio. Você assina junto — não como testemunha externa, mas como membro do círculo.
+</div></div>
+<div class="ritual-box"><div class="ritual-title">Parte 3 — Entrega das cartas lacradas</div><div class="ritual-desc">
+As cartas escritas para o Futuro Eu são entregues agora em envelope lacrado com o nome de cada um.<br><br>
+<strong>Instrução:</strong> "Essa carta foi escrita por quem vocês eram essa semana. Será lida por quem vocês serão em 6 meses. Guardem em lugar seguro. Daqui a 6 meses — abram. Leiam. E olhem de onde vieram."<br><br>
+Entregue cada carta pelo nome, olho no olho, com firmeza.<br><br>
+<div class="lembrete">📋 Sugira um lembrete no celular para daqui a 6 meses — "Abrir carta do Ponto de Ruptura."</div>
+</div></div>
+</div></div>
+
+<div class="bloco" id="s10b4"><div class="bloco-header" onclick="tB('s10b4')"><div class="bloco-tempo">90–100 min</div><div class="bloco-titulo">O brinde surpresa — entrega e significado</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Antes de fecharmos — tenho algo pra dar a cada um de vocês. Algo que não estava no programa. Que vocês não sabiam que estava vindo."</div>
+<div class="instrucao"><strong>Distribua os brindes pelo nome — um por um, com presença. Não em massa.</strong></div>
+<div class="dinamica"><div class="din-title">Opções de brinde — escolha a que mais ressoa com você</div><div class="din-desc">
+<strong>◆ Moeda gravada:</strong> "Ponto de Ruptura" + data da turma. Carrega no bolso. Lembra toda vez que toca.<br>
+<strong>◆ Diário de couro:</strong> Nome gravado + data da turma. Cada vez que escreve, lembra de onde veio.<br>
+<strong>◆ Pedra natural gravada:</strong> "Ponto de Ruptura" gravado. A pedra que você carrega como lembrete de quem você decidiu ser.<br>
+<strong>◆ Canivete gravado:</strong> Símbolo de corte com o passado. Alto impacto emocional.
+</div></div>
+<div class="fala">"Isso que está na mão de vocês não é um presente. É um símbolo. De um homem que chegou até aqui. Que foi fundo. Que tomou uma decisão. Toda vez que vocês tocarem nisso — lembrem do que fizeram aqui. Do que prometeram. Do que escolheram ser."</div>
+</div></div>
+
+<div class="bloco" id="s10b5"><div class="bloco-header" onclick="tB('s10b5')"><div class="bloco-tempo">100–120 min</div><div class="bloco-titulo">O fechamento — a última fala</div><div class="bloco-arrow">›</div></div>
+<div class="bloco-body">
+<div class="fala">"Não tem missão essa semana. Não tem tarefa. O que eu peço a cada um de vocês é só uma coisa: quando saírem daqui hoje — não vão direto para o celular. Vão para casa. Entrem pela porta. E façam a primeira coisa que sua decisão de ruptura pede. Uma ação. Pequena que seja. Hoje."</div>
+<div class="instrucao"><strong>Não explique mais do que isso. Deixe cada um descobrir o que é essa ação. Eles sabem.</strong></div>
+<div class="fala-pesada">"Quero terminar dizendo algo que não disse em nenhum dos encontros anteriores.<br><br>Quando comecei a trabalhar com homens, aprendi uma coisa que muda tudo: um homem que se conhece e que decide mudar — não muda só a si mesmo. Muda todos ao redor. Os filhos crescem num ambiente diferente. A esposa vive com um homem diferente. A equipe trabalha para um líder diferente. O legado que fica é diferente.<br><br>O que aconteceu nessas dez semanas não foi sobre vocês. Foi sobre todos que vocês tocam.<br><br>E eu tive o privilégio de estar aqui. De testemunhar. De acompanhar cada um de vocês nessa travessia.<br><br>Obrigado pela confiança. Pela honestidade. Pela coragem de aparecer — semana após semana — mesmo quando era difícil.<br><br>Esse círculo fica. Mesmo depois de hoje. Porque o que foi construído aqui não se desfaz com o tempo — só se aprofunda.<br><br>Isso é o Ponto de Ruptura."</div>
+<div class="instrucao"><strong>Após essa fala — silêncio. Não encerre com informações logísticas. Deixe o silêncio ser o fechamento. Depois, quando sentir que o momento pediu — vá até cada homem e dê um abraço real. Sem palavra. Só presença.</strong></div>
+<div class="ritual-box"><div class="ritual-title">O abraço de encerramento — em círculo</div><div class="ritual-desc">
+Depois da fala final — proponha que o grupo faça um círculo de pé, ombro a ombro.<br><br>
+30 segundos em silêncio, no círculo, de pé.<br><br>
+Depois — cada um abraça quem está ao lado.<br><br>
+O encontro termina não com palmas, não com gritos — mas com homens se abraçando em silêncio.<br><br>
+<strong>Esse é o encerramento.</strong>
+</div></div>
+<div class="ritual-box" style="margin-top:12px"><div class="ritual-title">Pós-mentoria — o que fazer nos próximos dias</div><div class="ritual-desc">
+<strong>No dia seguinte:</strong> Mensagem individual no WhatsApp para cada participante — curta, pessoal, com o nome. "Como você está?" Nada mais.<br><br>
+<strong>Em 7 dias:</strong> Mensagem no grupo — "Uma semana depois do Ponto de Ruptura. O que mudou?"<br><br>
+<strong>Em 30 dias:</strong> Check-in individual ou encontro bônus de revisão — como está indo o Plano de 90 dias?<br><br>
+<strong>Em 6 meses:</strong> Lembrar o grupo de abrir as cartas. Esse momento vai gerar depoimentos poderosos para a turma 2.
+</div></div>
+</div></div>`;
 
 function renderVisao(){
   const c=document.getElementById('enc-list-visao');
