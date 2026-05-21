@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ponto de Ruptura — Mentoria Masculina</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0a0a0a;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+  }
+
+  .wrapper { width: 100%; max-width: 520px; }
+
+  .header { text-align: center; margin-bottom: 2rem; }
+
+  .logo-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 100px; padding: 5px 16px; margin-bottom: 1.5rem;
+    font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase;
+  }
+
+  .logo-dot { width: 5px; height: 5px; border-radius: 50%; background: #c9a84c; }
+
+  .header h1 {
+    font-size: 2.4rem; font-weight: 700; color: #ffffff;
+    letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 0.6rem;
+  }
+
+  .header h1 span { color: #c9a84c; }
+
+  .header p {
+    font-size: 0.9rem; color: rgba(255,255,255,0.35);
+    line-height: 1.7; max-width: 360px; margin: 0 auto 1.2rem;
+  }
+
+  .pillars-line {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0; margin-bottom: 0;
+  }
+
+  .pillar-text {
+    font-size: 11px; font-weight: 300; letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.3); text-transform: uppercase;
+  }
+
+  .pillar-sep {
+    width: 1px; height: 10px; background: rgba(255,255,255,0.12);
+    margin: 0 12px;
+  }
+
+  .card {
+    background: #141414; border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 20px; padding: 2rem; margin-top: 1.8rem;
+  }
+
+  label {
+    display: block; font-size: 11px; font-weight: 400;
+    color: rgba(255,255,255,0.4); margin-bottom: 6px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  .form-group { margin-bottom: 1rem; }
+
+  .form-row {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 12px; margin-bottom: 1rem;
+  }
+
+  .form-row .form-group { margin-bottom: 0; }
+
+  input, select {
+    width: 100%; background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09); border-radius: 10px;
+    padding: 11px 13px; font-size: 14px; color: #fff;
+    transition: border-color 0.2s; outline: none;
+    appearance: none; -webkit-appearance: none; font-family: inherit;
+  }
+
+  input::placeholder { color: rgba(255,255,255,0.18); }
+  input:focus, select:focus { border-color: rgba(201,168,76,0.45); }
+
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.25)' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 13px center; padding-right: 34px;
+  }
+
+  select option { background: #1a1a1a; color: #fff; }
+
+  .section-lbl {
+    font-size: 12px; font-weight: 400; color: rgba(255,255,255,0.45);
+    margin-bottom: 12px; letter-spacing: 0; text-transform: none;
+  }
+
+  .mentoria-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .mentoria-card { position: relative; cursor: pointer; }
+  .mentoria-card input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+
+  .mentoria-label {
+    display: flex; flex-direction: column; align-items: center; gap: 7px;
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px; padding: 16px 10px; cursor: pointer;
+    transition: all 0.2s; text-align: center;
+  }
+
+  .mentoria-card input[type="radio"]:checked + .mentoria-label {
+    background: rgba(201,168,76,0.08); border-color: rgba(201,168,76,0.6);
+  }
+
+  .mentoria-icon { font-size: 22px; }
+  .mentoria-title { font-size: 13px; font-weight: 500; color: #fff; }
+  .mentoria-desc { font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.4; }
+
+  hr { border: none; border-top: 1px solid rgba(255,255,255,0.05); margin: 1.3rem 0; }
+
+  .submit-btn {
+    width: 100%; background: #c9a84c; border: none; border-radius: 11px;
+    padding: 14px; font-size: 14px; font-weight: 600; color: #000; cursor: pointer;
+    transition: all 0.2s; display: flex; align-items: center; justify-content: center;
+    gap: 8px; font-family: inherit; letter-spacing: 0.01em;
+  }
+
+  .submit-btn:hover { background: #d4b45a; transform: translateY(-1px); }
+  .submit-btn:active { transform: translateY(0); }
+  .submit-btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+  .status-msg {
+    display: none; margin-top: 1rem; padding: 11px 14px;
+    border-radius: 9px; font-size: 13px; text-align: center;
+  }
+  .status-msg.success {
+    display: block; background: rgba(16,185,129,0.08);
+    border: 1px solid rgba(16,185,129,0.25); color: #6ee7b7;
+  }
+  .status-msg.error {
+    display: block; background: rgba(239,68,68,0.08);
+    border: 1px solid rgba(239,68,68,0.25); color: #fca5a5;
+  }
+
+  .footer-note {
+    text-align: center; margin-top: 1.5rem;
+    font-size: 11px; color: rgba(255,255,255,0.18); line-height: 1.7;
+  }
+
+  .spinner {
+    width: 15px; height: 15px; border: 2px solid rgba(0,0,0,0.25);
+    border-top-color: #000; border-radius: 50%;
+    animation: spin 0.6s linear infinite; display: none;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  @media (max-width: 480px) {
+    .form-row { grid-template-columns: 1fr; }
+    .header h1 { font-size: 1.9rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="header">
+    <div class="logo-badge">
+      <div class="logo-dot"></div>
+      Mentoria Masculina
+    </div>
+    <h1>Ponto de<br><span>Ruptura</span></h1>
+    <p>Clareza, decisão e transformação nos 4 pilares que definem um homem.</p>
+    <div class="pillars-line">
+      <span class="pillar-text">Deus</span>
+      <div class="pillar-sep"></div>
+      <span class="pillar-text">Eu mesmo</span>
+      <div class="pillar-sep"></div>
+      <span class="pillar-text">Família</span>
+      <div class="pillar-sep"></div>
+      <span class="pillar-text">Negócios</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <form id="mentoriaForm">
+
+      <div class="form-group">
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" placeholder="Seu nome" required>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="seu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="whatsapp">WhatsApp</label>
+          <input type="tel" id="whatsapp" placeholder="(00) 00000-0000" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="idade">Idade</label>
+          <input type="number" id="idade" placeholder="Ex: 35" min="18" max="99" required>
+        </div>
+        <div class="form-group">
+          <label for="estado_civil">Estado civil</label>
+          <select id="estado_civil" required>
+            <option value="" disabled selected>Selecionar</option>
+            <option value="solteiro">Solteiro</option>
+            <option value="namorando">Namorando</option>
+            <option value="noivo">Noivo</option>
+            <option value="casado">Casado</option>
+            <option value="divorciado">Divorciado</option>
+            <option value="viuvo">Viúvo</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="profissao">Profissão</label>
+        <input type="text" id="profissao" placeholder="Sua profissão ou cargo" required>
+      </div>
+
+      <hr>
+
+      <p class="section-lbl">Qual formato de mentoria você prefere?</p>
+      <div class="mentoria-options">
+        <div class="mentoria-card">
+          <input type="radio" name="tipo_mentoria" id="individual" value="individual">
+          <label class="mentoria-label" for="individual">
+            <div class="mentoria-icon">👤</div>
+            <div class="mentoria-title">Individual</div>
+            <div class="mentoria-desc">Atenção 100% focada no seu processo</div>
+          </label>
+        </div>
+        <div class="mentoria-card">
+          <input type="radio" name="tipo_mentoria" id="grupo" value="grupo">
+          <label class="mentoria-label" for="grupo">
+            <div class="mentoria-icon">👥</div>
+            <div class="mentoria-title">Em grupo</div>
+            <div class="mentoria-desc">Força coletiva com outros homens</div>
+          </label>
+        </div>
+      </div>
+
+      <hr>
+
+      <button type="submit" class="submit-btn" id="submitBtn">
+        <div class="spinner" id="spinner"></div>
+        <span id="btnText">Quero participar da mentoria</span>
+        <span id="btnArrow">→</span>
+      </button>
+
+      <div class="status-msg" id="statusMsg"></div>
+    </form>
+  </div>
+
+  <p class="footer-note">
+    10 encontros online · 1 hora por semana · 100% masculina<br>
+    Seus dados são tratados com total privacidade.
+  </p>
+</div>
+
+<script>
+  const SUPABASE_URL = 'https://lymmzhslhwidqcztcfsn.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5bW16aHNsaHdpZHFjenRjZnNuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU2ODI2ODMsImV4cCI6MjA5MTI1ODY4M30.BLlPs4BbxuV3TtCfPJz01fVbBsOBTEJmeTGMvTNkHEk';
+
+  // ===== COLOQUE SEU NÚMERO AQUI: 55 + DDD + número =====
+  const SEU_WHATSAPP = '5543996694899';
+
+  document.getElementById('whatsapp').addEventListener('input', function() {
+    let n = this.value.replace(/\D/g, '');
+    if (n.length <= 10) this.value = n.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+    else this.value = n.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+  });
+
+  document.getElementById('mentoriaForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const tipoMentoria = document.querySelector('input[name="tipo_mentoria"]:checked');
+    if (!tipoMentoria) {
+      showStatus('Selecione o formato da mentoria antes de continuar.', 'error');
+      return;
+    }
+
+    const nome         = document.getElementById('nome').value.trim();
+    const email        = document.getElementById('email').value.trim();
+    const whatsapp     = document.getElementById('whatsapp').value.trim();
+    const idade        = parseInt(document.getElementById('idade').value);
+    const profissao    = document.getElementById('profissao').value.trim();
+    const estado_civil = document.getElementById('estado_civil').value;
+    const tipo         = tipoMentoria.value;
+
+    // Abre o WhatsApp imediatamente no clique (antes do async — evita bloqueio de popup)
+    
+    const tipoLabel = tipo === 'individual' ? 'individual' : 'em grupo';
+    const msg = encodeURIComponent(
+      `Olá, meu nome é ${nome}, tenho interesse na mentoria ${tipoLabel}, qual o próximo passo?`
+    );
+    window.open(`https://wa.me/${SEU_WHATSAPP}?text=${msg}`, '_blank');
+
+    setLoading(true);
+
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/ponto_de_ruptura_leads`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({ nome, email, whatsapp, idade, profissao, estado_civil, tipo_mentoria: tipo })
+      });
+
+      if (!res.ok) throw new Error(await res.text());
+
+      showStatus('✅ Inscrição enviada! Entraremos em contato em breve.', 'success');
+      this.reset();
+
+    } catch (err) {
+      console.error(err);
+      showStatus('Erro ao enviar. Tente novamente ou entre em contato pelo WhatsApp.', 'error');
+    } finally {
+      setLoading(false);
+    }
+  });
+
+  function setLoading(on) {
+    document.getElementById('submitBtn').disabled = on;
+    document.getElementById('spinner').style.display = on ? 'block' : 'none';
+    document.getElementById('btnText').textContent = on ? 'Enviando...' : 'Quero participar da mentoria';
+    document.getElementById('btnArrow').style.display = on ? 'none' : 'inline';
+  }
+
+  function showStatus(msg, type) {
+    const el = document.getElementById('statusMsg');
+    el.textContent = msg;
+    el.className = `status-msg ${type}`;
+  }
+</script>
+</body>
+</html>
