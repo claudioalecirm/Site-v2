@@ -1,6 +1,9 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "crons": [
+    { "path": "/api/anamnese", "schedule": "0 12 * * *" }
+  ],
   "routes": [
     { "src": "/", "dest": "/index.html" },
     { "src": "/pontoderuptura", "dest": "/pontoderuptura.html" },
@@ -12,6 +15,7 @@
     { "src": "/interesse", "dest": "/Interesse.html" },
     { "src": "/feedback", "dest": "/feedback.html" },
     { "src": "/PDR", "dest": "/PDR.html" },
-    { "src": "/Forms", "dest": "/Formulario.html" }
+    { "src": "/Forms", "dest": "/Formulario.html" },
+    { "src": "/expectativa", "dest": "/expectativa.html" }
   ]
 }
