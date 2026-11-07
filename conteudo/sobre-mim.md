@@ -33,7 +33,7 @@ Por isso fundei a **Tríade Humana**, empresa dedicada a desenvolver pessoas e l
 
 Hoje atuo em três frentes:
 - **Mentor de homens:** acompanhamento próximo para homens que querem clareza, direção e uma vida com Deus sólida, não religiosa.
-- **Criador do movimento Mesa de Governo:** encontros que posicionam homens nos 4 segmentos da vida: Deus, família, consigo mesmo e negócios.
+- **Criador do movimento Mesa de Governo:** encontros que posicionam homens nos 4 segmentos da vida: Deus, consigo mesmo, família e negócios.
 - **Treinador do Mente Blindada:** treinamento para empresas que querem **equipes e lideranças emocionalmente fortes, que decidem sob pressão.**
 
 Há mais de 10 anos ajudo homens a enxergar o que sozinhos não conseguem ver, a tomar decisões com clareza e a construir uma vida **livre e leve.** Não sou coach de motivação nem palestrante de fim de semana. Sou um mentor que senta do lado, olha nos olhos e constrói junto.

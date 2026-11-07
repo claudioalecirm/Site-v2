@@ -6,7 +6,7 @@ Status: **fechado** (aprovado pelo Claudio). Nenhuma menção a "Febracis" na ho
 
 ## Abertura
 # Um homem posicionado muda a realidade e o destino de tudo à sua volta.
-Claudio Alecrim · Coach Integral Sistêmico e mentor de homens
+Claudio Alecrim · Coach Integral Sistêmico, mentor de homens e treinador de lideranças
 **[Aplicar para uma conversa]**
 
 ## Faixa de números
@@ -16,7 +16,7 @@ Claudio Alecrim · Coach Integral Sistêmico e mentor de homens
 
 ## Para você
 - **Governo Pessoal:** um ano de mentoria individual para o homem que travou e não sabe por quê. *12 vagas por ano.* → Conhecer (/mentoria)
-- **Mesa de Governo:** o movimento que posiciona homens em Deus, família, em si mesmos e nos negócios. → Próxima edição (https://mesadegoverno.com.br)
+- **Mesa de Governo:** o movimento que posiciona homens em Deus, em si mesmos, na família e nos negócios. → Próxima edição (https://mesadegoverno.com.br)
 
 ## Para sua empresa
 - **Mente Blindada:** equipes e lideranças emocionalmente fortes, que decidem sob pressão. → Conhecer (/treinamentos)
@@ -33,3 +33,7 @@ Hoje, como fundador da Tríade Humana e Coach Integral Sistêmico, eu ajudo home
 **[Aplicar para uma conversa]**
 
 *Para cima e para frente. Sempre.*
+
+## Regras fixas
+- Ordem dos 4 segmentos, SEMPRE: **Deus, consigo mesmo, família e negócios.** Nunca alterar.
+- Sem o selo "Mentor de homens · Londrina" acima do título da abertura.

@@ -14,7 +14,7 @@ Você trabalha, se esforça, tenta. Mas algo invisível te segura no mesmo lugar
 
 ## Governo Pessoal
 
-Um ano de acompanhamento individual, próximo e exigente, para o homem que decidiu assumir o governo da própria vida em **todas as áreas**: Deus, família, ele mesmo e os negócios.
+Um ano de acompanhamento individual, próximo e exigente, para o homem que decidiu assumir o governo da própria vida em **todas as áreas**: Deus, ele mesmo, a família e os negócios.
 
 Não é curso. Não é palestra. Não é motivação. É um processo em que eu caminho do seu lado, faço as perguntas que você tem evitado e te ajudo a enxergar o que sozinho você não consegue ver.
 
