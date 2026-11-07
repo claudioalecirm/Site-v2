@@ -2,20 +2,24 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "crons": [
-    { "path": "/api/anamnese", "schedule": "0 12 * * *" }
+    { "path": "/api/aplicar", "schedule": "0 12 * * *" }
   ],
-  "routes": [
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/pontoderuptura", "dest": "/pontoderuptura.html" },
-    { "src": "/lista-ruptura", "dest": "/lista_ruptura.html" },
-    { "src": "/mesadegoverno", "dest": "/mesadegoverno.html" },
-    { "src": "/lista_mesadegoverno", "dest": "/lista_mesadegoverno.html" },
-    { "src": "/homemespiritual", "dest": "/homemespiritual.html" },
-    { "src": "/governopessoal", "dest": "/governopessoal.html" },
-    { "src": "/interesse", "dest": "/Interesse.html" },
-    { "src": "/feedback", "dest": "/feedback.html" },
-    { "src": "/PDR", "dest": "/PDR.html" },
-    { "src": "/Forms", "dest": "/Formulario.html" },
-    { "src": "/expectativa", "dest": "/expectativa.html" }
+  "redirects": [
+    { "source": "/mesadegoverno", "destination": "https://mesadegoverno.com.br", "permanent": false },
+    { "source": "/lista_mesadegoverno", "destination": "https://mesadegoverno.com.br", "permanent": false },
+    { "source": "/governopessoal", "destination": "/mentoria", "permanent": false },
+    { "source": "/homemespiritual", "destination": "/mentoria", "permanent": false },
+    { "source": "/interesse", "destination": "/aplicar", "permanent": false },
+    { "source": "/Interesse", "destination": "/aplicar", "permanent": false },
+    { "source": "/pontoderuptura", "destination": "/", "permanent": false },
+    { "source": "/lista-ruptura", "destination": "/", "permanent": false },
+    { "source": "/lista_ruptura", "destination": "/", "permanent": false },
+    { "source": "/PDR", "destination": "/", "permanent": false },
+    { "source": "/pdr", "destination": "/", "permanent": false },
+    { "source": "/Forms", "destination": "/", "permanent": false },
+    { "source": "/Formulario", "destination": "/", "permanent": false },
+    { "source": "/expectativa", "destination": "/", "permanent": false },
+    { "source": "/feedback", "destination": "/", "permanent": false },
+    { "source": "/obrigado", "destination": "/", "permanent": false }
   ]
 }
