@@ -76,9 +76,15 @@
   .card-wide .card-body { flex: 1; }
   .card-wide p { flex: none; margin-bottom: 0; }
   .card-wide .card-cta { flex: none; }
+  .card { --pad: clamp(32px, 4vw, 48px); padding: var(--pad); overflow: hidden; }
+  .card-img { margin: calc(-1 * var(--pad)) calc(-1 * var(--pad)) 34px; aspect-ratio: 16 / 10; overflow: hidden; }
+  .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; filter: saturate(.9); }
+  .card:hover .card-img img { transform: scale(1.04); }
+  .card-wide .card-img { margin: calc(-1 * var(--pad)) 0 calc(-1 * var(--pad)) calc(-1 * var(--pad)); width: 38%; aspect-ratio: auto; align-self: stretch; min-height: 260px; }
   @media (max-width: 760px) {
     .cards { grid-template-columns: 1fr; }
     .card-wide { flex-direction: column; align-items: flex-start; gap: 28px; }
+    .card-wide .card-img { margin: calc(-1 * var(--pad)) calc(-1 * var(--pad)) 6px; width: calc(100% + 2 * var(--pad)); aspect-ratio: 16 / 10; min-height: 0; }
   }
 
   /* ---------- sobre ---------- */
@@ -156,6 +162,7 @@
         <div class="group-label reveal">Para você</div>
         <div class="cards">
           <a href="/mentoria" class="card reveal">
+            <div class="card-img"><img src="/img/claudio-close.jpg" alt="Claudio Alecrim, mãos juntas, olhar firme" loading="lazy" style="object-position:center 25%"></div>
             <div class="card-tag">Mentoria individual · Anual</div>
             <h3>Governo Pessoal</h3>
             <p>Um ano de mentoria um a um para você assumir o governo da sua vida e acessar o próximo nível.</p>
@@ -163,6 +170,7 @@
             <span class="link-arrow">Conhecer</span>
           </a>
           <a href="https://mesadegoverno.com.br" class="card reveal">
+            <div class="card-img"><img src="/img/mesa-salao.jpg" alt="Homens reunidos em uma edição da Mesa de Governo" loading="lazy" style="object-position:center 80%"></div>
             <div class="card-tag">Movimento · Encontros</div>
             <h3>Mesa de Governo</h3>
             <p>O movimento que posiciona homens em Deus, em si mesmos, na família e nos negócios.</p>
@@ -174,6 +182,7 @@
       <div class="group">
         <div class="group-label reveal">Para sua empresa</div>
         <a href="/treinamentos" class="card card-wide reveal">
+          <div class="card-img"><img src="/img/claudio-notebook.jpg" alt="Claudio Alecrim concentrado diante do notebook" loading="lazy" style="object-position:center 30%"></div>
           <div class="card-body">
             <div class="card-tag">Treinamento in-company</div>
             <h3>Mente Blindada</h3>
@@ -184,6 +193,12 @@
       </div>
     </div>
   </section>
+
+  <!-- faixa da Mesa -->
+  <figure class="band-img reveal">
+    <img src="/img/mesa-roda.jpg" alt="Homens à mesa em uma edição da Mesa de Governo" loading="lazy">
+    <figcaption><div class="wrap"><p>"Num evento você recebe conhecimento. No movimento você acessa um posicionamento."</p><span>Mesa de Governo</span></div></figcaption>
+  </figure>
 
   <!-- sobre -->
   <section class="sec about">
