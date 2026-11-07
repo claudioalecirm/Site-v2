@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aplicar · Claudio Alecrim</title>
+<meta name="description" content="Aplique para o Governo Pessoal, a Mesa de Decisão ou o Mente Blindada. Toda aplicação é lida pessoalmente por Claudio Alecrim.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+<style>
+  .apply { padding: clamp(140px, 16vw, 190px) 0 clamp(80px, 10vw, 120px); }
+  .apply-in { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(40px, 7vw, 96px); align-items: start; }
+  .apply-side { position: sticky; top: 120px; }
+  .apply-side h1 { font-size: clamp(38px, 4.6vw, 58px); }
+  .apply-side .lead { margin-top: 26px; }
+  .apply-side .signature { margin-top: 40px; }
+  @media (max-width: 900px) { .apply-in { grid-template-columns: 1fr; } .apply-side { position: static; } }
+
+  .form { border: 1px solid var(--line); background: var(--bg-2); padding: clamp(28px, 4vw, 52px); }
+  .field { margin-bottom: 28px; }
+  .field label, .field legend { display: block; margin-bottom: 10px; font: 500 12px/1.4 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--cream); }
+  .field .hint { display: block; margin-top: 6px; font-size: 13px; color: var(--muted); text-transform: none; letter-spacing: 0; font-weight: 400; }
+  .field input[type=text], .field input[type=email], .field input[type=tel], .field select, .field textarea {
+    width: 100%; padding: 15px 16px; background: var(--bg); border: 1px solid rgba(240,235,224,.14); color: var(--cream);
+    font: 400 16px/1.4 var(--sans); border-radius: 0; outline: none; transition: border-color .2s; -webkit-appearance: none; appearance: none;
+  }
+  .field textarea { min-height: 120px; resize: vertical; }
+  .field select { background-image: linear-gradient(45deg, transparent 50%, var(--gold) 50%), linear-gradient(135deg, var(--gold) 50%, transparent 50%); background-position: calc(100% - 22px) 50%, calc(100% - 16px) 50%; background-size: 6px 6px; background-repeat: no-repeat; padding-right: 44px; }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--gold); }
+  .field.erro input, .field.erro select, .field.erro textarea, .field.erro .options { border-color: #c0614f; }
+  .field .msg-erro { display: none; margin-top: 8px; font-size: 13px; color: #e08a78; }
+  .field.erro .msg-erro { display: block; }
+  fieldset.field { border: 0; padding: 0; margin: 0 0 28px; min-width: 0; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; }
+  @media (max-width: 560px) { .row { grid-template-columns: 1fr; } }
+
+  .options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; border: 1px solid transparent; }
+  .options.col1 { grid-template-columns: 1fr; }
+  @media (max-width: 560px) { .options { grid-template-columns: 1fr; } }
+  .opt input { position: absolute; opacity: 0; pointer-events: none; }
+  .opt span { display: block; padding: 15px 16px; border: 1px solid rgba(240,235,224,.14); background: var(--bg); font-size: 15px; color: var(--text); cursor: pointer; transition: border-color .2s, color .2s, background .2s; }
+  .opt span small { display: block; margin-top: 3px; font-size: 13px; color: var(--muted); }
+  .opt input:checked + span { border-color: var(--gold); color: var(--cream); background: var(--gold-soft); }
+  .opt input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  .scale { display: grid; grid-template-columns: repeat(11, 1fr); gap: 6px; border: 1px solid transparent; }
+  .scale .opt span { padding: 13px 0; text-align: center; font-size: 15px; }
+  .scale-legend { display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: var(--muted); }
+  @media (max-width: 560px) { .scale { grid-template-columns: repeat(6, 1fr); } }
+
+  .grupo { display: none; padding-top: 8px; border-top: 1px solid var(--line); margin-top: 8px; }
+  .grupo.ativo { display: block; }
+  .grupo-titulo { margin: 22px 0 22px; font: italic 400 22px/1.2 var(--serif); color: var(--gold-l); }
+
+  .consent { display: flex; gap: 14px; align-items: flex-start; font-size: 15px; cursor: pointer; }
+  .consent input { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--gold); flex: none; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .enviar { width: 100%; justify-content: center; margin-top: 8px; }
+  .enviar[disabled] { opacity: .6; cursor: wait; }
+  .erro-geral { display: none; margin-top: 18px; padding: 14px 16px; border: 1px solid #c0614f; color: #e8a596; font-size: 15px; }
+  .erro-geral.on { display: block; }
+
+  .obrigado { display: none; text-align: center; padding: clamp(28px, 5vw, 60px) 0; }
+  .obrigado.on { display: block; }
+  .obrigado h2 { margin-bottom: 22px; }
+  .obrigado .lead { margin: 0 auto 36px; }
+  .obrigado .signature { margin-top: 44px; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="/" class="brand">CLAUDIO ALECRIM<span>Mentor de Homens</span></a>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav-links">
+      <a href="/sobre">Sobre</a>
+      <a href="/mentoria">Mentoria</a>
+      <a href="https://mesadegoverno.com.br">Mesa de Governo</a>
+      <a href="/treinamentos">Empresas</a>
+      <a href="/aplicar" class="btn">Aplicar</a>
+    </nav>
+  </div>
+</header>
+
+<main class="apply">
+  <div class="wrap apply-in">
+
+    <aside class="apply-side reveal">
+      <p class="kicker">Aplicação</p>
+      <h1>Toda aplicação é <em>lida pessoalmente.</em></h1>
+      <p class="lead">Responda com sinceridade. Eu leio cada aplicação e entro em contato em até 48 horas.</p>
+      <p class="signature">Para cima e para frente. Sempre.</p>
+    </aside>
+
+    <div class="form reveal">
+      <form id="form-aplicar" novalidate>
+        <div class="hp" aria-hidden="true"><label>Site <input type="text" name="site" tabindex="-1" autocomplete="off"></label></div>
+
+        <div class="field" data-campo="nome">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" autocomplete="name" maxlength="120">
+          <span class="msg-erro">Informe seu nome.</span>
+        </div>
+        <div class="row">
+          <div class="field" data-campo="whatsapp">
+            <label for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="(43) 99999-9999" maxlength="20">
+            <span class="msg-erro">Informe um WhatsApp com DDD.</span>
+          </div>
+          <div class="field" data-campo="email">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" autocomplete="email" maxlength="160">
+            <span class="msg-erro">Informe um e-mail válido.</span>
+          </div>
+        </div>
+        <div class="field" data-campo="cidade">
+          <label for="cidade">Cidade</label>
+          <input type="text" id="cidade" name="cidade" autocomplete="address-level2" maxlength="120">
+          <span class="msg-erro">Informe sua cidade.</span>
+        </div>
+
+        <fieldset class="field" data-campo="busca">
+          <legend>O que você busca?</legend>
+          <div class="options">
+            <label class="opt"><input type="radio" name="busca" value="governo-pessoal"><span>Governo Pessoal<small>Mentoria individual anual</small></span></label>
+            <label class="opt"><input type="radio" name="busca" value="mesa-de-decisao"><span>Mesa de Decisão<small>Um encontro para uma decisão</small></span></label>
+            <label class="opt"><input type="radio" name="busca" value="mente-blindada"><span>Mente Blindada<small>Para minha empresa</small></span></label>
+            <label class="opt"><input type="radio" name="busca" value="ainda-nao-sei"><span>Ainda não sei<small>Quero conversar primeiro</small></span></label>
+          </div>
+          <span class="msg-erro">Escolha uma opção.</span>
+        </fieldset>
+
+        <!-- pessoal -->
+        <div class="grupo" id="grupo-pessoal">
+          <p class="grupo-titulo">Sobre você</p>
+          <fieldset class="field" data-campo="formato">
+            <legend>Prefere presencial ou online?</legend>
+            <div class="options">
+              <label class="opt"><input type="radio" name="formato" value="presencial"><span>Presencial<small>Londrina</small></span></label>
+              <label class="opt"><input type="radio" name="formato" value="online"><span>Online</span></label>
+            </div>
+            <span class="msg-erro">Escolha uma opção.</span>
+          </fieldset>
+          <div class="field" data-campo="motivo">
+            <label for="motivo">Em poucas palavras: o que te trouxe até aqui?</label>
+            <textarea id="motivo" name="motivo" maxlength="2000"></textarea>
+            <span class="msg-erro">Conte em poucas palavras.</span>
+          </div>
+          <fieldset class="field" data-campo="disposicao">
+            <legend>De 0 a 10, quanto você está disposto a fazer o que precisa ser feito?</legend>
+            <div class="scale" id="escala"></div>
+            <div class="scale-legend"><span>0 · nada</span><span>10 · tudo</span></div>
+            <span class="msg-erro">Escolha um número.</span>
+          </fieldset>
+        </div>
+
+        <!-- empresa -->
+        <div class="grupo" id="grupo-empresa">
+          <p class="grupo-titulo">Sobre sua empresa</p>
+          <div class="row">
+            <div class="field" data-campo="empresa">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" autocomplete="organization" maxlength="160">
+              <span class="msg-erro">Informe a empresa.</span>
+            </div>
+            <div class="field" data-campo="cargo">
+              <label for="cargo">Seu cargo</label>
+              <input type="text" id="cargo" name="cargo" autocomplete="organization-title" maxlength="120">
+              <span class="msg-erro">Informe seu cargo.</span>
+            </div>
+          </div>
+          <fieldset class="field" data-campo="participantes">
+            <legend>Quantas pessoas participariam?</legend>
+            <div class="options">
+              <label class="opt"><input type="radio" name="participantes" value="ate-20"><span>Até 20</span></label>
+              <label class="opt"><input type="radio" name="participantes" value="21-50"><span>21 a 50</span></label>
+              <label class="opt"><input type="radio" name="participantes" value="51-100"><span>51 a 100</span></label>
+              <label class="opt"><input type="radio" name="participantes" value="acima-100"><span>Acima de 100</span></label>
+            </div>
+            <span class="msg-erro">Escolha uma opção.</span>
+          </fieldset>
+          <div class="field" data-campo="desafio_equipe">
+            <label for="desafio_equipe">Qual o maior desafio da sua equipe hoje?</label>
+            <textarea id="desafio_equipe" name="desafio_equipe" maxlength="2000"></textarea>
+            <span class="msg-erro">Conte em poucas palavras.</span>
+          </div>
+        </div>
+
+        <div class="field" data-campo="consentimento" style="margin-top:12px">
+          <label class="consent" style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--text);font-size:15px">
+            <input type="checkbox" name="consentimento" value="sim">
+            <span>Autorizo o contato pelo WhatsApp e e-mail informados.</span>
+          </label>
+          <span class="msg-erro">É preciso autorizar o contato para enviarmos.</span>
+        </div>
+
+        <button type="submit" class="btn enviar" id="enviar">Enviar aplicação</button>
+        <div class="erro-geral" id="erro-geral" role="alert">Não conseguimos enviar agora. Tente de novo em instantes ou <a href="https://wa.me/5543996694899" style="color:var(--gold);text-decoration:underline">fale direto no WhatsApp</a>.</div>
+      </form>
+
+      <div class="obrigado" id="obrigado" role="status" aria-live="polite">
+        <p class="kicker" style="justify-content:center">Aplicação recebida</p>
+        <h2>Recebi sua <em>aplicação.</em></h2>
+        <p class="lead">Vou ler pessoalmente e entro em contato em até 48 horas.</p>
+        <a class="btn" id="btn-whats" href="https://wa.me/5543996694899">Falar agora no WhatsApp</a>
+        <p class="signature">Para cima e para frente. Sempre.</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-in">
+      <a href="/" class="brand">CLAUDIO ALECRIM<span>Mentor de Homens</span></a>
+      <nav class="footer-links">
+        <a href="/sobre">Sobre</a>
+        <a href="/mentoria">Mentoria</a>
+        <a href="https://mesadegoverno.com.br">Mesa de Governo</a>
+        <a href="/treinamentos">Mente Blindada</a>
+        <a href="https://instagram.com/claudioalecrim">Instagram</a>
+        <a href="https://wa.me/5543996694899">WhatsApp</a>
+      </nav>
+    </div>
+    <p class="footer-base">© Claudio Alecrim · Tríade Humana · Londrina, PR</p>
+  </div>
+</footer>
+
+<script src="/js/site.js"></script>
+<script>
+(function () {
+  var WHATS = '5543996694899';
+  var NOMES = { 'governo-pessoal': 'Governo Pessoal', 'mesa-de-decisao': 'Mesa de Decisão', 'mente-blindada': 'Mente Blindada', 'ainda-nao-sei': 'uma conversa' };
+  var form = document.getElementById('form-aplicar');
+  var gPessoal = document.getElementById('grupo-pessoal');
+  var gEmpresa = document.getElementById('grupo-empresa');
+  var inicio = Date.now();
+
+  // escala 0 a 10
+  var escala = document.getElementById('escala');
+  for (var n = 0; n <= 10; n++) {
+    escala.insertAdjacentHTML('beforeend', '<label class="opt"><input type="radio" name="disposicao" value="' + n + '"><span>' + n + '</span></label>');
+  }
+
+  function valor(nome) {
+    var el = form.elements[nome];
+    if (!el) return '';
+    if (el.type === 'checkbox') return el.checked;
+    return (el.value || '').trim();
+  }
+
+  function atualizarGrupos() {
+    var b = valor('busca');
+    gEmpresa.classList.toggle('ativo', b === 'mente-blindada');
+    gPessoal.classList.toggle('ativo', !!b && b !== 'mente-blindada');
+  }
+  form.addEventListener('change', function (e) {
+    if (e.target.name === 'busca') atualizarGrupos();
+    var f = e.target.closest('.field'); if (f) f.classList.remove('erro');
+  });
+  form.addEventListener('input', function (e) {
+    var f = e.target.closest('.field'); if (f) f.classList.remove('erro');
+  });
+
+  // pré-seleção vinda dos botões (ex.: /aplicar?busca=mente-blindada)
+  var pre = new URLSearchParams(location.search).get('busca');
+  if (pre && NOMES[pre]) {
+    var r = form.querySelector('input[name=busca][value="' + pre + '"]');
+    if (r) { r.checked = true; atualizarGrupos(); }
+  }
+
+  // máscara simples de telefone
+  var tel = document.getElementById('whatsapp');
+  tel.addEventListener('input', function () {
+    var d = tel.value.replace(/\D/g, '').slice(0, 11);
+    if (d.length > 6) tel.value = '(' + d.slice(0, 2) + ') ' + d.slice(2, d.length - 4) + '-' + d.slice(-4);
+    else if (d.length > 2) tel.value = '(' + d.slice(0, 2) + ') ' + d.slice(2);
+    else tel.value = d;
+  });
+
+  function validar() {
+    var b = valor('busca');
+    var regras = {
+      nome: valor('nome').length >= 2,
+      whatsapp: valor('whatsapp').replace(/\D/g, '').length >= 10,
+      email: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(valor('email')),
+      cidade: valor('cidade').length >= 2,
+      busca: !!b,
+      consentimento: valor('consentimento') === true
+    };
+    if (b === 'mente-blindada') {
+      regras.empresa = valor('empresa').length >= 2;
+      regras.cargo = valor('cargo').length >= 2;
+      regras.participantes = !!valor('participantes');
+      regras.desafio_equipe = valor('desafio_equipe').length >= 3;
+    } else if (b) {
+      regras.formato = !!valor('formato');
+      regras.motivo = valor('motivo').length >= 3;
+      regras.disposicao = valor('disposicao') !== '';
+    }
+    var primeiro = null;
+    Object.keys(regras).forEach(function (k) {
+      var f = form.querySelector('[data-campo="' + k + '"]');
+      if (!f) return;
+      f.classList.toggle('erro', !regras[k]);
+      if (!regras[k] && !primeiro) primeiro = f;
+    });
+    if (primeiro) primeiro.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return !primeiro;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('erro-geral').classList.remove('on');
+    if (!validar()) return;
+
+    var b = valor('busca');
+    var dados = {
+      site: valor('site'),
+      busca: b,
+      nome: valor('nome'), whatsapp: valor('whatsapp'), email: valor('email'), cidade: valor('cidade'),
+      consentimento: valor('consentimento') === true,
+      tempo_s: Math.round((Date.now() - inicio) / 1000),
+      origem: document.referrer ? document.referrer.slice(0, 200) : ''
+    };
+    if (b === 'mente-blindada') {
+      dados.empresa = valor('empresa'); dados.cargo = valor('cargo');
+      dados.participantes = valor('participantes'); dados.desafio_equipe = valor('desafio_equipe');
+    } else {
+      dados.formato = valor('formato'); dados.motivo = valor('motivo');
+      dados.disposicao = Number(valor('disposicao'));
+    }
+
+    var btn = document.getElementById('enviar');
+    btn.disabled = true; btn.textContent = 'Enviando...';
+
+    fetch('/api/aplicar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(dados) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok && j.ok, j: j }; }); })
+      .then(function (res) {
+        if (!res.ok) throw new Error('falhou');
+        var msg = 'Olá, Claudio! Acabei de enviar minha aplicação para ' + NOMES[b] + ' pelo site. Sou ' + dados.nome.split(' ')[0] + '.';
+        document.getElementById('btn-whats').href = 'https://wa.me/' + WHATS + '?text=' + encodeURIComponent(msg);
+        form.style.display = 'none';
+        var ob = document.getElementById('obrigado');
+        ob.classList.add('on');
+        ob.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      })
+      .catch(function () {
+        btn.disabled = false; btn.textContent = 'Enviar aplicação';
+        document.getElementById('erro-geral').classList.add('on');
+      });
+  });
+})();
+</script>
+</body>
+</html>
