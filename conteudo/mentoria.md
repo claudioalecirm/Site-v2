@@ -58,3 +58,6 @@ Muda o posicionamento. Muda o casamento. Mudam os resultados no trabalho e a rel
 - Mesa de Decisão não tem página própria nem cartão na home; aparece só no fim de /mentoria.
 - Formulário de aplicação único com a pergunta "O que você busca?": Governo Pessoal / Mesa de Decisão / Ainda não sei.
 - Sem preço no site.
+
+## Direção de tom (definida pelo Claudio)
+A página abre com a dor (storytelling para o homem se reconhecer) e fecha com a solução. O tom e a energia sobem conforme ele lê: da dor, para o processo, para a transformação e a chamada. Na home, os cartões falam só do destino, nunca da dor.

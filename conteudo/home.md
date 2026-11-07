@@ -15,7 +15,7 @@ Claudio Alecrim · Coach Integral Sistêmico, mentor de homens e treinador de li
 | anos acompanhando pessoas | homens acompanhados | edições da Mesa de Governo | homens liderados |
 
 ## Para você
-- **Governo Pessoal:** um ano de mentoria individual para o homem que travou e não sabe por quê. *12 vagas por ano.* → Conhecer (/mentoria)
+- **Governo Pessoal:** um ano de mentoria um a um para você assumir o governo da sua vida e acessar o próximo nível. *12 vagas por ano.* → Conhecer (/mentoria)
 - **Mesa de Governo:** o movimento que posiciona homens em Deus, em si mesmos, na família e nos negócios. → Próxima edição (https://mesadegoverno.com.br)
 
 ## Para sua empresa
